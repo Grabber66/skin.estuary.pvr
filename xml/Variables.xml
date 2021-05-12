@@ -1778,6 +1778,12 @@
 		<value condition="String.IsEmpty(ListItem.Season) + String.IsEmpty(ListItem.Episode)">$INFO[ListItem.EpisodeName]</value>
 		<value>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,.]$INFO[ListItem.EpisodeName, ]</value>
   	</variable>
+	<variable name="SeasonEpisodeLabel3">
+		<value condition="!Integer.IsGreater(ListItem.Season,9) + !Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.Season,S0]$INFO[ListItem.Episode,E0]</value>
+		<value condition="!Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.Season,S0]$INFO[ListItem.Episode,E]</value>
+		<value condition="!Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E0]</value>
+		<value>$INFO[ListItem.Season,S]$INFO[ListItem.Episode,E]</value>
+	</variable>
 	<variable name="ExpirationDateTimeLabel">
  		<value condition="!String.IsEmpty(ListItem.ExpirationDate)">$LOCALIZE[19299] : [COLOR white]$INFO[ListItem.ExpirationDate] $INFO[ListItem.ExpirationTime][/COLOR][CR]</value>
  	</variable>

@@ -16,7 +16,7 @@
 					<width>881</width>
 					<height>100%</height>
 					<onleft>PreviousChannelGroup</onleft>
-					<onright>60</onright>
+					<onright>NextChannelGroup</onright>
 					<onup>11</onup>
 					<ondown>11</ondown>
 					<pagecontrol>60</pagecontrol>
@@ -179,9 +179,10 @@
 					<textoffsetx>40</textoffsetx>
 					<width>1300</width>
 					<height>70</height>
-					<font>font37</font>
+					<font>font30</font>
 					<aligny>center</aligny>
-					<label>&lt; $INFO[VideoPlayer.ChannelGroup] &gt;</label>
+					<label>$INFO[VideoPlayer.ChannelGroup]</label>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
 					<shadowcolor>text_shadow</shadowcolor>
 				</control>
 			</control>
