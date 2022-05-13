@@ -97,7 +97,7 @@
 					<width>881</width>
 					<onleft>PreviousChannelGroup</onleft>
 					<onright>NextChannelGroup</onright>
-					<onup>2</onup>
+					<onup>11</onup>
 					<ondown>11</ondown>
 					<pagecontrol>60</pagecontrol>
 					<movement>5</movement>
@@ -303,6 +303,7 @@
 					<onup>61</onup>
 					<animation effect="zoom" start="100,100" end="50,100" center="881,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
 					<orientation>vertical</orientation>
+					<visible>false</visible>
 				</control>
 				<include>PVRChannelInfoPanel</include>
 			</control>
