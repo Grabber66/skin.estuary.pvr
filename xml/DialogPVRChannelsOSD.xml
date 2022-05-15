@@ -10,11 +10,11 @@
 				<include>Animation_BottomSlide</include>
 				<include content="ContentPanel">
 					<param name="width" value="945" />
-					<param name="height" value="460" />
-					<param name="top" value="640" />
+					<param name="height" value="90%" />
+					<param name="top" value="20" />
 				</include>
 				<control type="label">
-					<top>665</top>
+					<top>20</top>
 					<width>885</width>
 					<height>40</height>
 					<aligny>center</aligny>
@@ -24,7 +24,7 @@
 					<visible>Skin.HasSetting(ShowPVRGroups)</visible>
 				</control>
 				<control type="group">
-					<top>660</top>
+					<top>15</top>
 					<width>885</width>
 					<visible>!Skin.HasSetting(ShowPVRGroups)</visible>
 					<control type="image">
@@ -92,8 +92,8 @@
 				</control>
 				<control type="fixedlist" id="11">
 					<left>0</left>
-					<top>720</top>
-					<bottom>10</bottom>
+					<top>80</top>
+					<bottom>140</bottom>
 					<width>881</width>
 					<onleft>PreviousChannelGroup</onleft>
 					<onright>NextChannelGroup</onright>
@@ -293,8 +293,8 @@
 					</itemlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<top>720</top>
-					<bottom>7</bottom>
+					<top>80</top>
+					<bottom>140</bottom>
 					<left>869</left>
 					<width>12</width>
 					<onleft>11</onleft>
@@ -303,7 +303,6 @@
 					<onup>61</onup>
 					<animation effect="zoom" start="100,100" end="50,100" center="881,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
 					<orientation>vertical</orientation>
-					<visible>false</visible>
 				</control>
 				<include>PVRChannelInfoPanel</include>
 			</control>
