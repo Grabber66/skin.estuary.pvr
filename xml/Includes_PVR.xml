@@ -1272,7 +1272,7 @@
 			<bottom>0</bottom>
 			<height>460</height>
 			<control type="label">
-				<top>45</top>
+				<top>-80</top>
 				<left>40</left>
 				<right>30</right>
 				<height>40</height>
@@ -1282,7 +1282,7 @@
 				<scroll>true</scroll>
 			</control>
 			<control type="label">
-				<top>90</top>
+				<top>-35</top>
 				<left>40</left>
 				<right>30</right>
 				<height>30</height>
@@ -1292,7 +1292,7 @@
 				<scroll>true</scroll>
 			</control>
 			<control type="image">
-				<top>140</top>
+				<top>15</top>
 				<left>40</left>
 				<width>340</width>
 				<height>245</height>
@@ -1300,7 +1300,7 @@
 				<fadetime>200</fadetime>
 			</control>
 			<control type="image">
-				<top>140</top>
+				<top>15</top>
 				<left>40</left>
 				<width>340</width>
 				<height>245</height>
@@ -1313,7 +1313,7 @@
 				<param name="left" value="170" />
 			</include>
 			<control type="label">
-				<top>135</top>
+				<top>10</top>
 				<left>405</left>
 				<right>30</right>
 				<font>font12</font>
@@ -1322,8 +1322,8 @@
 			</control>
 			<control type="textbox">
 				<left>405</left>
-				<top>180</top>
-				<bottom>77</bottom>
+				<top>55</top>
+				<bottom>136</bottom>
 				<right>30</right>
 				<font>font12</font>
 				<align>justify</align>
@@ -1333,9 +1333,9 @@
 			</control>
 			<control type="textbox">
 				<left>405</left>
-				<top>140</top>
+				<top>15</top>
 				<right>30</right>
-				<bottom>77</bottom>
+				<bottom>136</bottom>
 				<font>font12</font>
 				<align>justify</align>
 				<label>$INFO[Container(11).ListItem.Plot]</label>
@@ -1344,9 +1344,9 @@
 			</control>
 			<control type="label">
 				<left>405</left>
-				<top>170</top>
+				<top>45</top>
 				<right>30</right>
-				<height>200</height>
+				<height>205</height>
 				<font>font25_title</font>
 				<textcolor>grey</textcolor>
 				<align>center</align>
