@@ -36,6 +36,11 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 3.4.1+matrix ###
+- .5
+  * Bugfix Video OSD
+  * Radio Channel Groups in Home Menu added
+
+
 - .4
   * Texture update
   * Movie set Info fixed  
