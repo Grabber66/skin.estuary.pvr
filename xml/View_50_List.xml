@@ -90,6 +90,17 @@
 				</control>
 			</control>
 		</control>
+		<control type="label">
+			<font>font_clock</font>
+
+			<top>0</top>
+			<zorder>3</zorder>
+			<right>20</right>
+			<height>200</height>
+			<width>600</width>
+			<align>right</align>
+			<label>[B]$INFO[System.Time][/B]</label>
+		</control>
 	</include>
 	<include name="ListContainer">
 		<param name="left">0</param>
@@ -241,6 +252,7 @@
 	<include name="ListThumbInfoPanel">
 		<param name="flip_bg">false</param>
 		<definition>
+
 			<control type="group">
 				<depth>DepthContentPanel</depth>
 				<include content="ContentPanel">
