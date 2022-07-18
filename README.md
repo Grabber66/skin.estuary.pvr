@@ -35,12 +35,25 @@ If you navigate in your movie library, you'll have a new entry now to (re)assign
 supports animated poster only.
 
 ![](resources/setup_ap.png)
+
+### 3.4.1+matrix ###
+- .8
+  * fix text adjustment in settings
+  * fix incorrect shown clearlogo
+  * set "show cast list" as general option in video info
+
+
+- .7
+  * Dutch + Hungarian language updated (many thanks to Klojum and frodo19)
+  * some adjustments
+  * introducing Font Economica 
+
+
 - .6
   * Fix cast aspect ratio for 21:9 displays
   * Improved Next Popup for TV-Shows
 
 
-### 3.4.1+matrix ###
 - .5
   * Bugfix Video OSD
   * Radio Channel Groups in Home Menu added
@@ -507,3 +520,4 @@ Note: In my opinion, the adaptation to Kodi 19 is complete. Future changes will 
 ![Improved OSD](resources/screenshots/screenshot_9.png)
 ![simplified OSD](resources/screenshots/screenshot_10.png)
 ![colored flags](resources/screenshots/screenshot_11.png)
+![improved nextup info](resources/screenshots/screenshot_12.png)
