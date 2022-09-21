@@ -1017,7 +1017,7 @@
 				<width>276</width>
 				<height>155</height>
 				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
-				<aspectratio aligny="top">keep</aspectratio>
+				<aspectratio>scale</aspectratio>
 				<visible>![!Skin.HasSetting(HideWidgetLabels) + Window.IsVisible(Home)]</visible>
 			</control>
 			<control type="image">
@@ -1026,7 +1026,7 @@
 				<width>350</width>
 				<height>197</height>
 				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[InfoWallThumbVar]</texture>
-				<aspectratio aligny="top">keep</aspectratio>
+				<aspectratio>scale</aspectratio>
 				<visible>[!Skin.HasSetting(HideWidgetLabels) + Window.IsVisible(Home)]</visible>
 			</control>
 			<control type="image">
@@ -2051,7 +2051,7 @@
 				<onup condition="Integer.IsGreater(Container.NumPages,1)">54</onup>
 				<onup condition="!Integer.IsGreater(Container.NumPages,1) + !Skin.HasSetting(KioskMode)">9000</onup>
 				<ondown>54</ondown>
-				<viewtype label="31101">icon</viewtype>
+				<viewtype label="$LOCALIZE[31101]">icon</viewtype>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>531</pagecontrol>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
