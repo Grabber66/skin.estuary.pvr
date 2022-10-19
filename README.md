@@ -37,9 +37,17 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 3.4.2+matrix ###
+- .7
+  * make simplified seek bar optional (skin settings)
+  * improved skin settings
+  * Bugfixes
+
+
 - .6
   * Refinements on PVR EPG view
   * show seek bar only (without OSD parts) while seeking
+  * close power menu on Poweroff (RPM) before rpm addon starts
+  * Introducing audio samplerate flag for lossless audio codecs 
 
 
 - .5
