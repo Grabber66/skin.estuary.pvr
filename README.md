@@ -37,6 +37,14 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 3.4.2+matrix ###
+- .8
+  * Hungarian language update
+  * Font fix of Economica font family
+  * PVR OSD: Introducing last five channel switch (optional)
+  * smaller fixes
+  * add missing studio logos on several widget layouts
+
+
 - .7
   * make simplified seek bar optional (skin settings)
   * improved skin settings

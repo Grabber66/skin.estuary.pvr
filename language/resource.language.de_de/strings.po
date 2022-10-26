@@ -1117,12 +1117,12 @@ msgstr "Popup-Benachrichtigungen während der Wiedergabe verhindern"
 #: /xml/SkinSettings.xml
 msgctxt "#31278"
 msgid "Music OSD"
-msgstr "Musik"
+msgstr "Musik OSD"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31279"
 msgid "Video OSD"
-msgstr "Videos"
+msgstr "Video OSD"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31280"
@@ -2489,3 +2489,15 @@ msgstr "OSD Artwork"
 msgctxt "#31630"
 msgid "Use simple Seekbar on Chapter and Time Seeking"
 msgstr "Benutze einfache Suchleiste bei Kapitel- und zeitlichen Sprüngen"
+
+msgctxt "#31631"
+msgid "Action on 'last channel switch' OSD Button"
+msgstr "Aktion für 'letzter Kanal' OSD Button"
+
+msgctxt "#31632"
+msgid "Switch to last Channel directly"
+msgstr "Schalte direkt auf letzten Kanal"
+
+msgctxt "#31633"
+msgid "Show last five Channels"
+msgstr "Zeige die letzten fünf Kanäle"
