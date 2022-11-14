@@ -37,6 +37,15 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 3.4.2+matrix ###
+- .9
+  * add "play trailer" to contextmenu
+  * fix unmatched parentheses in Home.xml
+  * fix doubled background in flex view
+  * fix position and size of context menu in flix view
+  * last seen movie template added (reset/modify main menu required)
+  * seek bar components modified
+
+
 - .8
   * Hungarian language update
   * Font fix of Economica font family
