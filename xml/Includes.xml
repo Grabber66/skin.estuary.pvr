@@ -1888,7 +1888,7 @@
 		</definition>
 	</include>
 	<include name="MediaFlagsInfoDialogRight">
-		<param name="infolabel_prefix"></param>
+		<param name="infolabel_prefix" />
 		<param name="pvr">false</param>
 		<param name="resolution_var">$VAR[3DFlagVar]</param>
 		<param name="audiocodec_var">$VAR[AudioCodecFlagVar]</param>
@@ -2014,8 +2014,7 @@
 				<control type="group">
 					<width>162</width>
 					<top>5</top>
-					<visible>[!String.IsEmpty($PARAM[infolabel_prefix]ListItem.EndTimeResume) | !String.IsEmpty($PARAM[infolabel_prefix]ListItem.EndTime)] + !$PARAM[infolabel_prefix]ListItem.IsFolder + !$PARAM[infolabel_prefix]ListItem.IsCollection + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow)</visible>
-					<visible>!String.Contains($PARAM[infolabel_prefix]ListItem.EndTimeResume,AM) + !String.Contains($PARAM[infolabel_prefix]ListItem.EndTimeResume,PM)</visible>
+					<visible>![String.Contains($PARAM[infolabel_prefix]ListItem.EndTimeResume,AM) | String.Contains($PARAM[infolabel_prefix]ListItem.EndTimeResume,PM) | String.Contains($PARAM[infolabel_prefix]ListItem.EndTime,AM) | String.Contains($PARAM[infolabel_prefix]ListItem.EndTime,PM)] + [!String.IsEmpty($PARAM[infolabel_prefix]ListItem.EndTimeResume) | !String.IsEmpty($PARAM[infolabel_prefix]ListItem.EndTime)] + !$PARAM[infolabel_prefix]ListItem.IsFolder + !$PARAM[infolabel_prefix]ListItem.IsCollection + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow)</visible>
 					<include content="MediaFlag">
 						<param name="texture" value="flags/finishtime.png" />
 						<param name="width" value="162" />
@@ -2050,8 +2049,7 @@
 				<control type="group">
 					<width>222</width>
 					<top>5</top>
-					<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.EndTimeResume) + !$PARAM[infolabel_prefix]ListItem.IsFolder + !$PARAM[infolabel_prefix]ListItem.IsCollection + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow)</visible>
-					<visible>String.Contains($PARAM[infolabel_prefix]ListItem.EndTimeResume,AM) | String.Contains($PARAM[infolabel_prefix]ListItem.EndTimeResume,PM)</visible>
+					<visible>[String.Contains($PARAM[infolabel_prefix]ListItem.EndTimeResume,AM) | String.Contains($PARAM[infolabel_prefix]ListItem.EndTimeResume,PM) | String.Contains($PARAM[infolabel_prefix]ListItem.EndTime,AM) | String.Contains($PARAM[infolabel_prefix]ListItem.EndTime,PM)] + [!String.IsEmpty($PARAM[infolabel_prefix]ListItem.EndTimeResume) | !String.IsEmpty($PARAM[infolabel_prefix]ListItem.EndTime)] + !$PARAM[infolabel_prefix]ListItem.IsFolder + !$PARAM[infolabel_prefix]ListItem.IsCollection + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,tvshow)</visible>
 					<include content="MediaFlag">
 						<param name="texture" value="flags/finishtime_long.png" />
 						<param name="width" value="222" />
@@ -3053,7 +3051,7 @@
 						<timeperimage>3000</timeperimage>
 						<randomize>true</randomize>
 						<animation effect="slide" end="-10000,-10000" time="0" condition="[Control.IsVisible(502) | Control.IsVisible(510)] + !$EXP[infodialog_active]">Conditional</animation>
-						<visible>!Window.IsVisible(Home.xml)</visible>
+						<visible>!Window.IsVisible(Home.xml) + Skin.HasSetting(show_fanart)</visible>
 						<visible>![Control.IsVisible(55) + [Container.Content(years) | Container.Content(countries) | Container.Content(directors) | Container.Content(studios) | Container.Content(tags) | Container.Content(actors) | Container.Content(playlists) | Container.Content(files)]] + ![Control.IsVisible(52) + [Container.Content(years) | Container.Content(countries) | Container.Content(directors) | Container.Content(studios) | Container.Content(tags) | Container.Content(actors) | Container.Content(playlists) | Container.Content(files)]]</visible>
 					</control>
 					<control type="multiimage" id="32112">
@@ -3065,7 +3063,7 @@
 						<timeperimage>3000</timeperimage>
 						<randomize>true</randomize>
 						<animation effect="slide" end="-10000,-10000" time="0" condition="Control.IsVisible(502) + !$EXP[infodialog_active]">Conditional</animation>
-						<visible>!Window.IsVisible(Home.xml)</visible>
+						<visible>!Window.IsVisible(Home.xml) + Skin.HasSetting(show_fanart)</visible>
 						<visible>Skin.HasSetting(show_fanart) + !String.IsEmpty(Skin.String(global-background))</visible>
 					</control>
 					<control type="image">

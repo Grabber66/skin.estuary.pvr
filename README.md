@@ -37,9 +37,19 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 3.4.2+matrix ###
+- .11
+  * update playlist view
+  * extend setting 'Show Fanart' to all video views (affected earlier only to home widgets)
+  * fix missing channel logo in PVR info views
+  * fix usage of endtime and endtime resume media flags
+
+
 - .10
-  * include "Jump to Letter" in Flix view
+  * include 'Jump to Letter' in Flix view
   * make 'Play Trailer' in context menu customizable
+  * show next timer and available disk space in tv timers window
+  * remove skin setting 'use poster view for music videos'
+  * add title labels to poster view widgets
 
 - .9
   * add "play trailer" to contextmenu
