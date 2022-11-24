@@ -1,5 +1,7 @@
 # Skin Estuary MOD V2 for KODI 19 Matrix KN Edition #
 
+**Some screenshots You'll find at the end of this Readme**
+
 ## Installation Notes ##
 
 It's strongly recommended to install the skin via the "Kodinerds Repo", as this is the only way to guarantee that additional 
@@ -41,7 +43,8 @@ supports animated poster only.
   * update playlist view
   * extend setting 'Show Fanart' to all video views (affected earlier only to home widgets)
   * fix missing channel logo in PVR info views
-  * fix usage of endtime and endtime resume media flags
+  * fix wrong used mediaflag of endtime and endtime resume with appendix AM/PM
+  * fix wrong position of channel group infolabel in PVR channel OSD
 
 
 - .10
@@ -611,3 +614,6 @@ Note: In my opinion, the adaptation to Kodi 19 is complete. Future changes will 
 ![simplified OSD](resources/screenshots/screenshot_10.png)
 ![colored flags](resources/screenshots/screenshot_11.png)
 ![improved nextup info](resources/screenshots/screenshot_12.png)
+![improved PVR event icons](resources/screenshots/screenshot_13.png)
+![various color...](resources/screenshots/screenshot_14.png)
+![...and font schemes](resources/screenshots/screenshot_15.png)
