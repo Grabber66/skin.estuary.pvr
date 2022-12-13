@@ -63,6 +63,9 @@
 	<expression name="ValentineTheme">$EXP[ValentineTime] + $EXP[EnableTheme]</expression>
 	<!-- Expression lossless audio -->
 	<expression name="isLossless">String.isEqual(Videoplayer.AudioCodec,cdda) | String.IsEqual(VideoPlayer.AudioCodec,wavpack) | String.IsEqual(Videoplayer.AudioCodec,flac) | String.IsEqual(Videoplayer.AudioCodec,pcm_bluray) | String.IsEqual(Videoplayer.AudioCodec,wav) | String.IsEqual(Videoplayer.AudioCodec,pcm) | String.IsEqual(Videoplayer.AudioCodec,pcm_s16le) | String.IsEqual(Videoplayer.AudioCodec,alac) | String.IsEqual(Videoplayer.AudioCodec,pcm_s24le) | String.IsEqual(Videoplayer.AudioCodec,ape) | String.IsEqual(Videoplayer.AudioCodec,sacd)</expression>
+	<!-- Expression Seek, Skip Forwarding and Rewinding -->
+	<expression name="isSeeking">Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding</expression>
+
 	<include name="CommonScrollbars">
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
@@ -3146,7 +3149,7 @@
 						<onclick>SetFocus(8000)</onclick>
 						<visible>!Control.IsVisible(6160) + !Window.IsVisible(script-globalsearch.xml)</visible>
 						<visible>[Control.HasFocus(531) | Control.HasFocus(5199) | Control.HasFocus(50600) | Control.HasFocus(502600)] + ![Control.IsVisible(51) | Control.IsVisible(53) | Control.IsVisible(503) | Control.IsVisible(506) | Control.IsVisible(510)]</visible>
-						<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)</visible>
+						<visible>[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557])] + [String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)]</visible>
 						<animation effect="slide" end="-186,0" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
 					</control>
 					<control type="button">
@@ -3160,7 +3163,7 @@
 						<onclick>SetFocus(8000)</onclick>
 						<visible>!Control.IsVisible(6160)</visible>
 						<visible>[Control.HasFocus(531) | Control.HasFocus(5199)] + [Control.IsVisible(51) | Control.IsVisible(53) | Control.IsVisible(503) | Control.IsVisible(506) | Control.IsVisible(510)]</visible>
-						<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)</visible>
+						<visible>[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557])] + [String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)]</visible>
 						<animation effect="slide" end="-184,0" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
 					</control>
 					<control type="button" id="6160">
@@ -3201,7 +3204,7 @@
 						<texturenofocus />
 						<visible>Control.HasFocus(531) | Control.HasFocus(5199) | Control.HasFocus(50600) | Control.HasFocus(502600)</visible>
 						<animation effect="fade" time="200">VisibleChange</animation>
-						<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)</visible>
+						<visible>[String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557])] + [String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)]</visible>
 						<visible>!Window.IsVisible(script-globalsearch.xml)</visible>
 						<animation effect="slide" end="-186,0" time="0" condition="Skin.HasSetting(KioskMode)">Conditional</animation>
 					</control>
@@ -3665,6 +3668,11 @@
 			<top>$PARAM[top]</top>
 		</definition>
 	</include>
+	<include name="ItemMovement">
+		<definition>
+			<movement>$PARAM[movement]</movement>
+		</definition>
+	</include>
 	<include name="ContextMenuPosition">
 		<definition>
 			<top>$PARAM[top]</top>
@@ -3767,7 +3775,7 @@
 					<top>-50</top>
 					<height>80</height>
 					<texture>dialogs/dialog-bg-nobo.png</texture>
-					<visible>!Pvr.IsTimeShift + [Player.Seeking | Player.DisplayAfterSeek]</visible>
+					<visible>!Pvr.IsTimeShift + $EXP[isSeeking]</visible>
 				</control>
 				<control type="image">
 					<left>-20</left>
@@ -3775,7 +3783,7 @@
 					<top>-100</top>
 					<height>130</height>
 					<texture>dialogs/dialog-bg-nobo.png</texture>
-					<visible>Pvr.IsTimeShift + [Player.Seeking | Player.DisplayAfterSeek]</visible>
+					<visible>Pvr.IsTimeShift + $EXP[isSeeking]</visible>
 				</control>
 				<control type="group" id="6000">
 					<top>-5</top>
@@ -4087,7 +4095,7 @@
 					<texture background="true" fallback="DefaultVideoCover.png">$VAR[NowPlayingPosterVar]</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)] + !String.StartsWith(Player.Filenameandpath,http)</visible>
+					<visible>[VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos)] + !String.StartsWith(Player.Filenameandpath,http)</visible>
 				</control>
 				<control type="image">
 					<depth>DepthOSD+</depth>
@@ -4122,7 +4130,7 @@
 					<texture background="true" fallback="DefaultVideoFanart.png">$VAR[NowPlayingLandscapeVar]</texture>
 					<bordertexture border="21">overlays/shadow.png</bordertexture>
 					<bordersize>20</bordersize>
-					<visible>![VideoPlayer.HasMenu + System.HasMediaDVD] + ![VideoPlayer.Content(movies) + !String.StartsWith(Player.Filenameandpath,http)] + ![VideoPlayer.Content(episodes) + !String.StartsWith(Player.Filenameandpath,http)] + !VideoPlayer.Content(LiveTV) + !Window.IsVisible(MusicVisualisation.xml)</visible>
+					<visible>![VideoPlayer.HasMenu + System.HasMediaDVD] + ![VideoPlayer.Content(movies) + !String.StartsWith(Player.Filenameandpath,http)] + ![VideoPlayer.Content(episodes) + !String.StartsWith(Player.Filenameandpath,http)] + ![VideoPlayer.Content(musicvideos) + !String.StartsWith(Player.Filenameandpath,http)] + !VideoPlayer.Content(LiveTV) + !Window.IsVisible(MusicVisualisation.xml)</visible>
 				</control>
 				<control type="group">
 					<control type="image">
