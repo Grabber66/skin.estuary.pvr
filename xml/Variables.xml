@@ -411,6 +411,7 @@
 		<value condition="Container.Content(musicvideos) + Control.HasFocus(11120)">special://skin/extras/views/musicvideos/502.png</value>
 		<value condition="Container.Content(musicvideos) + Control.HasFocus(11122)">special://skin/extras/views/musicvideos/506.png</value>
 		<value condition="Container.Content(musicvideos) + Control.HasFocus(11123)">special://skin/extras/views/musicvideos/507.png</value>
+		<value condition="Container.Content(musicvideos) + Control.HasFocus(11126)">special://skin/extras/views/musicvideos/510.png</value>
 		<value>special://skin/extras/views/splash_small.png</value>
 	</variable>
 	<variable name="VideoLibraryScanLabel">
@@ -1084,6 +1085,11 @@
 	<variable name="WidgetActionVar">
 		<value condition="String.IsEqual(Skin.String(widget_action),31589)">$LOCALIZE[31589]</value>
 		<value condition="String.IsEqual(Skin.String(widget_action),31590)">$LOCALIZE[31590]</value>
+		<value>$LOCALIZE[31334]</value>
+	</variable>
+	<variable name="WidgetActionPVRVar">
+		<value condition="String.IsEqual(Skin.String(widget_action_pvr),31589)">$LOCALIZE[31589]</value>
+		<value condition="String.IsEqual(Skin.String(widget_action_pvr),31590)">$LOCALIZE[31590]</value>
 		<value>$LOCALIZE[31334]</value>
 	</variable>
 	<variable name="TimerWidgetActionVar">
