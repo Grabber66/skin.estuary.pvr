@@ -121,7 +121,7 @@
 					<width>881</width>
 					<onleft>PreviousChannelGroup</onleft>
 					<onright>NextChannelGroup</onright>
-					<onup>2</onup>
+					<onup>11</onup>
 					<ondown>11</ondown>
 					<pagecontrol>60</pagecontrol>
 					<movement>5</movement>
