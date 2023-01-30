@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">8000</defaultcontrol>
 	<controls>
 		<control type="group">
 			<visible>!Skin.HasSetting(EnableSplashScreen)</visible>
@@ -8,7 +7,8 @@
 				<depth>DepthBackground</depth>
 				<include>FullScreenDimensions</include>
 				<aspectratio>scale</aspectratio>
-				<texture>$VAR[ThemesVar]background.jpg</texture>
+				<texture>$VAR[ThemesVar]</texture>
+				<visible>!Skin.HasSetting(enable_splash_background)</visible>
 			</control>
 			<control type="image">
 				<depth>DepthBackground</depth>
