@@ -39,6 +39,12 @@ supports animated poster only.
 ### 4.1.0+nexus ###
 - .2
   * Add option for customizing own splash background
+  * Add title list to album view pt.1
+  * Add additional info to album view pt.2
+  * Add option "prefer album fanart over artist fanart" in music visualisation
+  * Fix MPAA rating "Rated M"
+  * Add background opacity values to splash background
+  * Update NL language
 
 
 - .1

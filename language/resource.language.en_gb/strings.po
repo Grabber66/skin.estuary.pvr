@@ -1203,7 +1203,7 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31295"
-msgid "Show CDArt on video info"
+msgid "Show CDArt on video OSD"
 msgstr ""
 
 #: /xml/VideoOSD.xml
@@ -2682,4 +2682,8 @@ msgstr ""
 
 msgctxt "#31640"
 msgid "Enable background for splash screen"
+msgstr ""
+
+msgctxt "#31641"
+msgid "Prefer Album Fanart over Artist Fanart"
 msgstr ""
