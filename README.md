@@ -37,6 +37,12 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.1.0+nexus ###
+- .3
+  * Fix missing HDR flag
+  * Move themes back from Textures.xbt to file system
+  * Improved smart play list (last seen movies)
+  * Add last played flag to flix view
+
 - .2
   * Add option for customizing own splash background
   * Add title list to album view pt.1
@@ -66,7 +72,7 @@ supports animated poster only.
 ### 4.0.2+nexus ###
 - .18
   * hungarian language updated
-  * flixview improvements (background for sets, movie sets poster)
+  * flix view improvements (background for sets, movie sets poster)
   * run condition of pvr artwork module for pvr nextup fixed
  
 
