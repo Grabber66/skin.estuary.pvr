@@ -36,12 +36,21 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 
-### 4.1.0+nexus ###
+### 4.1.1+nexus ###
+- .0
+  * coloured flags updated (Thanks to Frodo19)
+  * Introducing volume amplification button (DSP) to video OSD
+  * add Audio DSP addon to required addons list
+  * Home images changed
+  * Improvements on Flix view (just one more...)
+
+
 - .3
   * Fix missing HDR flag
   * Move themes back from Textures.xbt to file system
   * Improved smart play list (last seen movies)
   * Add last played flag to flix view
+
 
 - .2
   * Add option for customizing own splash background
@@ -324,3 +333,5 @@ supports animated poster only.
 ![improved PVR event icons](resources/screenshots/screenshot_13.png)
 ![various color...](resources/screenshots/screenshot_14.png)
 ![...and font schemes](resources/screenshots/screenshot_15.png)
+![Audio DSP](resources/screenshots/screenshot_16.png)
+![Flix Landscape](resources/screenshots/screenshot_17.png)
