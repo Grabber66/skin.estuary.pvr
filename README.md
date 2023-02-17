@@ -37,14 +37,22 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.1.1+nexus ###
+- .1
+  * remove fanart/landscape from seek bar
+
+
 - .0
   * coloured flags updated (Thanks to Frodo19)
   * Introducing volume amplification button (DSP) to video OSD
   * add Audio DSP addon to required addons list
   * Home images changed
   * Improvements on Flix view (just one more...)
+  * add transparency option to seekbar background
+  * add missing list view to tvshow episodes
+  * fix TV-14 rating (wrongly shown as MPAA-14)
+  * fix bug on seasonal themes
 
-
+### 4.1.0+nexus ###
 - .3
   * Fix missing HDR flag
   * Move themes back from Textures.xbt to file system
