@@ -24,7 +24,12 @@
 				<left>30</left>
 				<bottom>8</bottom>
 				<width>402</width>
-				<height>132</height>
+				<include content="ItemHeight" condition="!Pvr.IsTimeShift">
+					<param name="height">132</param>
+				</include>
+				<include content="ItemHeight" condition="Pvr.IsTimeShift">
+					<param name="height">182</param>
+				</include>
 				<visible>Skin.HasSetting(ShowSeekBar) + !Skin.HasSetting(SmallOSDVideo) + $EXP[isSeeking]</visible>
 				<control type="image">
 					<texture  colordiffuse="$VAR[SeekBarOpacityVar]">dialogs/dialog-bg-nobo.png</texture>
@@ -32,10 +37,10 @@
 				<control type="textbox">
 					<left>5</left>
 					<right>5</right>
-					<top>2</top>
-					<bottom>2</bottom>
+					<top>12</top>
+					<bottom>12</bottom>
 					<font>font14</font>
-					<scroll>true</scroll>
+					<autoscroll delay="2000" time="3000" repeat="20000">Skin.HasSetting(autoscroll)</autoscroll>
 					<label>[B]$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,, - ]$INFO[VideoPlayer.Title][/B]</label>
 					<align>center</align>
 					<aligny>center</aligny>

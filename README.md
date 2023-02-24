@@ -37,8 +37,15 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.1.1+nexus ###
+- .2
+  * remove doubled episode title on PVR timer widget
+  * remove overlapping between title and plot in list view
+  * smaller fixes
+
+
 - .1
-  * remove fanart/landscape from seek bar
+  * improving + removing fanart/landscape from seek bar
+  * fix display of long titles/filenames on list view (issue #114)
 
 
 - .0

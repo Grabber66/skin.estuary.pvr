@@ -65,7 +65,6 @@
 	<expression name="isLossless">String.isEqual(Videoplayer.AudioCodec,cdda) | String.IsEqual(VideoPlayer.AudioCodec,wavpack) | String.IsEqual(Videoplayer.AudioCodec,flac) | String.IsEqual(Videoplayer.AudioCodec,pcm_bluray) | String.IsEqual(Videoplayer.AudioCodec,wav) | String.IsEqual(Videoplayer.AudioCodec,pcm) | String.IsEqual(Videoplayer.AudioCodec,pcm_s16le) | String.IsEqual(Videoplayer.AudioCodec,alac) | String.IsEqual(Videoplayer.AudioCodec,pcm_s24le) | String.IsEqual(Videoplayer.AudioCodec,ape) | String.IsEqual(Videoplayer.AudioCodec,sacd)</expression>
 	<!-- Expression Seek, Skip Forwarding and Rewinding -->
 	<expression name="isSeeking">Player.Seeking | Player.HasPerformedSeek(5) | Player.Forwarding | Player.Rewinding</expression>
-
 	<include name="CommonScrollbars">
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
@@ -3655,7 +3654,7 @@
 			</control>
 		</definition>
 	</include>
-	<include name="WidgetHeight">
+	<include name="ItemHeight">
 		<definition>
 			<height>$PARAM[height]</height>
 		</definition>
@@ -3690,7 +3689,6 @@
 	<include name="SeekBarProgress">
 		<control type="group">
 			<visible>Player.SeekEnabled</visible>
-			<visible>!Window.IsVisible(sliderdialog)</visible>
 			<control type="button" id="87">
 				<include>HiddenObject</include>
 				<onup>200</onup>
@@ -4213,7 +4211,7 @@
 						<fadetime>100</fadetime>
 					</control>
 					<control type="image">
-						<right>0</right>
+						<right>30</right>
 						<bottom>350</bottom>
 						<width>500</width>
 						<height>281</height>
@@ -4937,7 +4935,7 @@
 				<animation effect="slide" end="0,-50" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive">Conditional</animation>
 			</control>
 			<control type="image">
-				<right>0</right>
+				<right>30</right>
 				<bottom>180</bottom>
 				<width>400</width>
 				<height>225</height>
