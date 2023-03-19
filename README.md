@@ -37,6 +37,14 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.1.1+nexus ###
+- .5
+  * fix missing thumb/icon on extended list view for some plugins
+  * disable/enable addon 'CU LrcLyrics' (song text) via script
+  * improved Music OSD settings
+  * fix missing artists pictures on actors category for musicvideos
+  * add artist pictures to video info dialog
+
+
 - .4
   * improved music OSD
   * changed cond visibility of metadata editor (video/music info)  
