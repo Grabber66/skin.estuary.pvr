@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: Estuary MOD v2
 # Addon id: skin.estuary.modv2
-# Addon Provider: Guilouz
+# Addon Provider: Guilouz, PvD
 msgid ""
 msgstr ""
 "Project-Id-Version: KODI Main\n"
@@ -2548,3 +2548,7 @@ msgstr "hohe Hintergrundtransparenz der Suchleiste"
 msgctxt "#31643"
 msgid "Use Poster View"
 msgstr "Zeige Posteransicht"
+
+msgctxt "#31644"
+msgid "Arial Unicode based"
+msgstr "Arial Unicode basierend"
