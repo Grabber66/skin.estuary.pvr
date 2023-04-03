@@ -141,7 +141,7 @@
  					<label>$LOCALIZE[31023]</label>
  					<label2>[B]$INFO[Container.Viewmode][/B]</label2>
  					<onclick>Container.NextViewMode</onclick>
- 					<visible>Window.IsActive(MyPVRChannels.xml) | Window.IsActive(MyPVRGuide.xml)</visible>
+ 					<visible>Window.IsActive(MyPVRChannels.xml)</visible>
  				</control>
 				<control type="button" id="6054">
 					<include>MediaMenuItemsCommon</include>
@@ -232,6 +232,18 @@
 					<label>$LOCALIZE[19077]</label>
 					<visible>Window.IsActive(MyPVRTimers.xml)</visible>
 				</control>
+				<control type="label" id="203">
+					<include>MediaMenuLabelCommon</include>
+					<label>$LOCALIZE[31020]</label>
+					<visible>Window.IsActive(MyPVRGuide.xml)</visible>
+				</control>
+				<control type="button" id="6059">
+					<include>MediaMenuItemsCommon</include>
+					<label>$LOCALIZE[31645]</label>
+					<onclick>SetFocus(50)</onclick>
+					<onclick>ActivateWindow(pvrguidecontrols)</onclick>
+					<visible>Window.IsActive(MyPVRGuide.xml)</visible>
+				</control>
 				<control type="group" id="141000">
 					<control type="grouplist" id="14100">
 						<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
@@ -241,7 +253,7 @@
 						<itemgap>-17</itemgap>
 						<left>5</left>
 						<onleft>14100</onleft>
-						<onup>8</onup>
+						<onup>6059</onup>
 						<ondown>6056</ondown>
 						<visible>Player.HasMedia + [$EXP[sidebar_visible]]</visible>
 						<visible>!System.HasActiveModalDialog</visible>
@@ -338,6 +350,7 @@
             <height>100</height>
             <texture>dialogs/logo.png</texture>
             <animation effect="slide" end="0,-70" time="0" condition="Window.Isvisible(AddonBrowser.xml)">Conditional</animation>
+			<visible>!Player.HasMedia</visible>
         </control>
 		<control type="button" id="3">
 			<description>Viewtype Toggle</description>

@@ -37,8 +37,20 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.1.1+nexus ###
+- .9
+  * fix display of PVR status icon (Record, Timer, Scheduler, Premiered, ...) on EPG grid
+
+
+- .8
+  * quick fix of helper script (cause kodi to crash when file path is a plugin call)
+
+
 - .7
-  * calculate (and display) size of a file object by helper script
+  * calculate/display size of a file object by helper script
+  * remove horizontal EPG grid layout
+  * add EPG navigation entry to side blade (PVR EPG only)
+  * add progress indicator to recording widget (PVR) 
+  * smaller modifications on several views
   
 - .6
   * fix overlapping genre/plotline in Flix View
