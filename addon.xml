@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.estuary.modv2" version="4.1.1+nexus.9" name="Estuary MOD V2 Nexus" provider-name="Guilouz, K20 branch by PvD">
+<addon id="skin.estuary.modv2" version="4.1.1+nexus..10" name="Estuary MOD V2 Nexus" provider-name="Guilouz, K20 branch by PvD">
 	<requires>
 		<import addon="xbmc.python" version="3.0.1"/>
 		<import addon="xbmc.gui" version="5.16.0"/>
@@ -18,6 +18,7 @@
 		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
 	</extension>
 	<extension point="xbmc.service" library="scripts/services.py" visible="!String.IsEmpty(Window(home).Property(CurrentSkin))" />
+	<extension point="xbmc.python.script" library="scripts/helpers.py" />
 	<extension point="kodi.context.item">
       	<menu id="kodi.core.main">
       		<item library="scripts/context_menu_jumptoletter.py">

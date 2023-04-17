@@ -2714,7 +2714,7 @@
 					<top>0</top>
 					<width>110%</width>
 					<height>180</height>
-					<texture colordiffuse="$VAR[Bars_Opacity]">frame/InfoBar.png</texture>
+					<texture colordiffuse="$VAR[Bars_Opacity]">frame/osdfade.png</texture>
 					<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 					<visible>$PARAM[visible]</visible>
 				</control>
@@ -3101,7 +3101,7 @@
 					<bottom>0</bottom>
 					<width>110%</width>
 					<height>135</height>
-					<texture flipy="true" colordiffuse="$VAR[Bars_Opacity]">frame/InfoBar.png</texture>
+					<texture flipy="true" colordiffuse="$VAR[Bars_Opacity]">frame/osdfade.png</texture>
 				</control>
 				<control type="group">
 					<visible>$PARAM[info_visible]</visible>
@@ -4125,10 +4125,10 @@
 					<control type="image">
 						<description>Cover Live TV, RDS Radio, Stream (Addon)</description>
 						<depth>DepthOSD+</depth>
-						<left>10</left>
-						<bottom>5</bottom>
-						<width>440</width>
-						<height>440</height>
+						<left>8</left>
+						<bottom>3</bottom>
+						<width>444</width>
+						<height>444</height>
 						<aspectratio aligny="bottom">stretch</aspectratio>
 						<texture colordiffuse="$VAR[BorderColorVar]">colors/white.png</texture>
 						<bordertexture border="21">overlays/shadow.png</bordertexture>
@@ -4142,20 +4142,8 @@
 						<width>440</width>
 						<height>440</height>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<texture background="true">$VAR[RadioPlayerCover]</texture>
+						<texture background="true" fallback="DefaultAudio.png">$VAR[RadioPlayerCover]</texture>
 						<bordersize>20</bordersize>
-						<visible>[VideoPlayer.Content(LiveTV) + Pvr.IsPlayingRadio] | [Window.IsVisible(MusicVisualisation.xml) + Player.IsInternetStream]</visible>
-					</control>
-					<control type="image">
-						<depth>DepthOSD+</depth>
-						<left>14</left>
-						<bottom>9</bottom>
-						<width>432</width>
-						<height>432</height>
-						<aspectratio aligny="center" align="center">keep</aspectratio>
-						<texture background="true" fallback="DefaultAudio.png">$INFO[Player.Art(thumb)]</texture>
-						<bordersize>20</bordersize>
-						<visible>String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.AlbumThumb)) + String.IsEmpty(Window(Home).Property(SkinHelper.Player.Art.Thumb))</visible>
 						<visible>[VideoPlayer.Content(LiveTV) + Pvr.IsPlayingRadio] | [Window.IsVisible(MusicVisualisation.xml) + Player.IsInternetStream]</visible>
 					</control>
 					<include content="BusyPvrArtworkSpinner">

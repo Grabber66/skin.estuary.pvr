@@ -37,8 +37,19 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.1.1+nexus ###
+- .10
+  * fix "switch to last channel" in video OSD
+  * some icons added
+  * enable flix view for tvshow seasons
+  * music OSD settings menu optimized
+
+ 
 - .9
   * fix display of PVR status icon (Record, Timer, Scheduler, Premiered, ...) on EPG grid
+  * fix addon activation of lrclyrics in Music OSD settings
+  * add a "Black Screen" button to music OSD: show a black screen while playing music
+  * fix live TV video OSD flickering on channel/window changes
+  * smaller improvements in PVR section
 
 
 - .8

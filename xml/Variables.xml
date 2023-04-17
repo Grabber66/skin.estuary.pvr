@@ -127,6 +127,7 @@
 			<value condition="Skin.HasSetting(seasons.506)">$LOCALIZE[31217]</value>
 			<value condition="Skin.HasSetting(seasons.507)">$LOCALIZE[31346]</value>
 			<value condition="Skin.HasSetting(seasons.508)">$LOCALIZE[31412]</value>
+			<value condition="Skin.HasSetting(seasons.510)">$LOCALIZE[31620]</value>
 			<value>$LOCALIZE[31348]</value>
 	</variable>
 	<variable name="SettingsForcedViewsEpisodesVar">
@@ -278,7 +279,7 @@
 		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 	</variable>
 	<variable name="RadioPlayerCover">
-		<value/>
+		<value condition="!String.IsEmpty(Player.Icon)">$INFO[Player.Icon]</value>
     </variable>
 	<variable name="DialogMusicInfoThumbBackVar">
 		<value condition="!String.IsEmpty(ListItem.Art(back))">$LOCALIZE[31369]</value>
@@ -1706,6 +1707,8 @@
 		<value condition="Control.HasFocus(606) + PVR.IsRecordingPlayingChannel">$LOCALIZE[19059]</value>
 		<value condition="Control.HasFocus(606)">$LOCALIZE[264]</value>
 		<value condition="Control.HasFocus(6051)">$LOCALIZE[209]</value>
+		<value condition="Control.HasFocus(608) + Skin.HasSetting(dim_screen)">$LOCALIZE[31646]</value>
+		<value condition="Control.HasFocus(608) + !Skin.HasSetting(dim_screen)">$LOCALIZE[31647]</value>
 		<value condition="Control.HasFocus(620)">$LOCALIZE[31033]$INFO[MusicPlayer.UserRating, : ]</value>
 		<value condition="Control.HasFocus(621)">$LOCALIZE[559]</value>
 		<value condition="Control.HasFocus(704)">$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</value>
