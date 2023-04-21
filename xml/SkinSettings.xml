@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<!-- determine startup action, that has to perform -->
+	<onload>RunScript(script.embuary.helper,action=getkodisetting,setting=lookandfeel.startupaction)</onload>
+	<!-- build main menu -->
 	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onunload>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
@@ -706,8 +709,9 @@
 				<control type="radiobutton" id="503">
 					<label>$LOCALIZE[31051]</label>
 					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(EnableSplashScreen)</onclick>
+					<onclick condition="String.IsEqual(Window(home).property(lookandfeel.startupaction),0)">Skin.ToggleSetting(EnableSplashScreen)</onclick>
 					<selected>!Skin.HasSetting(EnableSplashScreen)</selected>
+					<enable>String.IsEqual(Window(home).property(lookandfeel.startupaction),0)</enable>
 				</control>
 				<control type="radiobutton" id="504">
                     <label>$LOCALIZE[31640]</label>

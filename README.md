@@ -11,6 +11,13 @@ you install an addon from a repository and not from ZIP.
 To install the Kodinerds repository visit the page "https://repo.kodinerds.net", download the repository zip (red button) 
 and install it. After that you can install the skin directly from the repository under "Look & Feel", "Skins".
 
+## Installation from Git ##
+
+If you want to install the latest version from Git (before this has added to Kodinerds Repo) just download the Addon from here 
+https://github.com/b-jesch/skin.estuary.modv2/tree/Nexus (green Code button), **rename the root folder inside the ZIP** 
+from ```skin.estuary.modv2-Nexus``` to ```skin.estuary.modv2``` and choose 'install from zip' inside Kodi. **Renaming 
+the root folder inside the ZIP needs unpacking/packing the zip in some cases.**
+
 ### File name flagging ###
 If you want to use special flags like HDR or Dolby Vision or special 3D formats you have to name your files with proper tags, 
 preferably before the file extension: 
@@ -37,11 +44,18 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.1.1+nexus ###
+- .11
+  * fix wrong startup behaviour (Issue #120) if startup window and startup action is set (Interface, Startup)
+  * add Embuary Helper to skin dependencies 
+
+
 - .10
   * fix "switch to last channel" in video OSD
   * some icons added
   * enable flix view for tvshow seasons
   * music OSD settings menu optimized
+  * introduce Radio RDS info screen
+  * set opacity of music fanart similar to background opacity
 
  
 - .9
