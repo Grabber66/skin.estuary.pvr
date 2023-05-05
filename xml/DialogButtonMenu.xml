@@ -133,11 +133,11 @@
 					</item>
 					<item>
 						<label>$LOCALIZE[31556]</label>
-						<icon>special://skin/extras/icons/Power menu/reboot_emmc.png</icon>
+						<icon>special://skin/extras/icons/Power menu/reboot_android.png</icon>
 						<onclick>System.ExecWait("/usr/sbin/rebootfromnand")</onclick>
 						<onclick>Reboot</onclick>
 						<visible>System.CanReboot</visible>
-						<visible>System.PathExist("/dev/system") | System.PathExist("/dev/userdata")</visible>
+						<visible>System.PathExist("/dev/system") | System.PathExist("/dev/userdata") | System.PathExist("/dev/super")</visible>
 						<visible>!Skin.HasSetting(ExtendedPowerMenu)</visible>
 					</item>
 					<item>
@@ -367,11 +367,11 @@
 					</item>
 					<item>
 						<label>$LOCALIZE[31556]</label>
-						<icon>special://skin/extras/icons/Power menu/reboot_emmc.png</icon>
+						<icon>special://skin/extras/icons/Power menu/reboot_android.png</icon>
 						<onclick>System.ExecWait("/usr/sbin/rebootfromnand")</onclick>
 						<onclick>Reboot</onclick>
 						<visible>System.CanReboot</visible>
-						<visible>System.PathExist("/dev/system") | System.PathExist("/dev/userdata")</visible>
+						<visible>System.PathExist("/dev/system") | System.PathExist("/dev/userdata") | System.PathExist("/dev/super")</visible>
 						<visible>!Skin.HasSetting(ExtendedPowerMenu)</visible>
 					</item>
 					<item>
@@ -523,7 +523,7 @@
 						<onclick>System.ExecWait("/usr/sbin/rebootfromnand")</onclick>
 						<onclick>Reboot</onclick>
 						<visible>System.CanReboot</visible>
-						<visible>System.PathExist("/dev/system") | System.PathExist("/dev/userdata")</visible>
+						<visible>System.PathExist("/dev/system") | System.PathExist("/dev/userdata") | System.PathExist("/dev/super")</visible>
 						<visible>!Skin.HasSetting(ExtendedPowerMenu)</visible>
 					</item>
 					<item>
