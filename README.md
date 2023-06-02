@@ -44,8 +44,19 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.1.1+nexus ###
+- .14
+  * extended info views (Embuary) modified
+
+
+- .13
+  * fix missing font definitions
+  * fix mistakenly displayed chaptercount in music player
+  * smaller fixes
+
+
 - .12
   * add support for Android Super Partition (issue #122)
+  * add title info to Mosaic view
 
 
 - .11
