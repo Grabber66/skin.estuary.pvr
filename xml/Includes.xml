@@ -2877,7 +2877,7 @@
 						</control>
 					</control>
 					<control type="label">
-<-- zeige Uhr in PVRChannels -->		<visible>[Window.IsVisible(MyPVRChannels.xml)] + ![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyFavourites.xml) + !Container.Content(addons)] + ![Window.IsVisible(DialogButtonMenu.xml) + Skin.HasSetting(powermenu_list)]</visible>
+<-- zeige Uhr in PVRChannels -->		<visible>[Window.IsVisible(MyPVRChannels.xml)] | ![Window.IsVisible(MyVideoNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyMusicNav.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyPics.xml) + !Container.Content(addons)] + ![Window.IsVisible(MyFavourites.xml) + !Container.Content(addons)] + ![Window.IsVisible(DialogButtonMenu.xml) + Skin.HasSetting(powermenu_list)]</visible>
 						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 						<animation effect="slide" end="0,-10" time="0" condition="String.IsEqual(Skin.Font,Arial)">Conditional</animation>
 						<font>font_clock</font>
