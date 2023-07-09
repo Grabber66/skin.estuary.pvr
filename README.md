@@ -44,10 +44,23 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.1.2+nexus ###
+- .2
+  * fix wrong plot position on PVR Icon Wall when "show channel groups" on EPG grid is selected
+  * adjustments on mosaic views
+  * add animation to PVR NextUp
+
+
+- .1
+  * minor adjustments
+  * fix player plot display on info if small Video OSD is selected
+
+
 - .0
   * introducing auto stop timer (stop player after an amount of time when player is paused, configurable)
   * fix condition (issue #123)
-  * add season label to flix view items (tv show season view) 
+  * add season label to flix view items (tv show season view)
+  * convert all home images to baseline JPEG format specification
+  * fix pause bug on PVR related OSD Info, remove pause on info for LiveTV/Recordings
 
 
 ### 4.1.1+nexus ###
