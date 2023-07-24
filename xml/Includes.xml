@@ -2948,6 +2948,10 @@
 						<texture>$INFO[Weather.FanartCode,special://skin/extras/weather/,.png]</texture>
 						<visible>Skin.HasSetting(show_weatherinfo) + Weather.IsFetched + ![String.IsEqual(Weather.FanartCode,na)]</visible>
 					</control>
+					<include content="BatteryIndicator" condition="Skin.HasSetting(show_battery)">
+						<param name="width">120</param>
+						<param name="top">16</param>
+					</include>
 					<control type="image">
 						<top>8</top>
 						<left>-20</left>
@@ -2978,6 +2982,53 @@
 				</control>
 			</control>
 			<include>TouchBackButton</include>
+		</definition>
+	</include>
+	<include name="BatteryIndicator">
+		<param name="top">16</param>
+		<param name="left">10</param>
+		<param name="width">120</param>
+		<definition>
+			<control type="group">
+				<top>$PARAM[top]</top>
+				<width>$PARAM[width]</width>
+				<left>$PARAM[left]</left>
+				<height>26</height>
+				<visible>Skin.HasSetting(show_battery)</visible>
+				<control type="image">
+					<width>100</width>
+					<height>26</height>
+					<texture>flags/battery_load.png</texture>
+				</control>
+				<control type="progress">
+					<top>8</top>
+					<left>11</left>
+					<width>25</width>
+					<height>10</height>
+					<texturebg border="3" colordiffuse="$VAR[BackgroundColorVar]">colors/white50.png</texturebg>
+					<midtexture colordiffuse="$VAR[SkinColorVar]">colors/white.png</midtexture>
+					<info>System.BatteryLevel</info>
+					<visible>Integer.IsGreater(System.BatteryLevel,9)</visible>
+				</control>
+				<control type="progress">
+					<top>8</top>
+					<left>11</left>
+					<width>25</width>
+					<height>10</height>
+					<texturebg border="3" colordiffuse="$VAR[BackgroundColorVar]">colors/white50.png</texturebg>
+					<midtexture colordiffuse="FFFF0000">colors/white.png</midtexture>
+					<info>System.BatteryLevel</info>
+					<visible>Integer.IsLessOrEqual(System.BatteryLevel,9)</visible>
+				</control>
+				<control type="label">
+					<top>-2</top>
+					<left>50</left>
+					<width>45</width>
+					<font>font09</font>
+					<align>center</align>
+					<label>$INFO[System.BatteryLevel]</label>
+				</control>
+			</control>
 		</definition>
 	</include>
 	<include name="BreadcrumbsLabel">
@@ -3700,23 +3751,6 @@
 				<onleft>StepBack</onleft>
 				<onclick condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onclick>
 			</control>
-			<control type="ranges">
-				<height>10</height>
-				<colordiffuse>$VAR[SkinColorVar]</colordiffuse>
-				<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
-				<lefttexture>colors/white.png</lefttexture>
-				<midtexture colordiffuse="FFFF0000">colors/white.png</midtexture>
-				<righttexture>colors/white.png</righttexture>
-				<info>Player.Cutlist</info>
-			</control>
-			<control type="ranges">
-				<top>4</top>
-				<height>6</height>
-				<colordiffuse>$VAR[SkinColorVar]</colordiffuse>
-				<texturebg border="3" colordiffuse="00FFFFFF">colors/white.png</texturebg>
-				<righttexture>colors/white.png</righttexture>
-				<info>Player.Chapters</info>
-			</control>
 			<control type="group">
 				<visible>![Player.Seeking | HasPerformedSeek(3)]</visible>
 				<include>Visible_Fade</include>
@@ -3841,6 +3875,23 @@
 					<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
 					<midtexture colordiffuse="$VAR[SkinColorVar]">colors/white.png</midtexture>
 					<visible>!VideoPlayer.HasEpg + !Player.ChannelPreviewActive</visible>
+				</control>
+				<control type="ranges">
+					<height>10</height>
+					<colordiffuse>$VAR[SkinColorVar]</colordiffuse>
+					<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
+					<lefttexture>colors/white.png</lefttexture>
+					<midtexture colordiffuse="FFFF0000">colors/white.png</midtexture>
+					<righttexture>colors/white.png</righttexture>
+					<info>Player.Cutlist</info>
+				</control>
+				<control type="ranges">
+					<top>4</top>
+					<height>6</height>
+					<colordiffuse>$VAR[SkinColorVar]</colordiffuse>
+					<texturebg border="3" colordiffuse="00FFFFFF">colors/white.png</texturebg>
+					<righttexture>colors/white.png</righttexture>
+					<info>Player.Chapters</info>
 				</control>
 				<control type="slider" id="401">
 					<left>5</left>

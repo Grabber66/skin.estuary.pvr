@@ -44,6 +44,12 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 1.0.0+omega ###
+- .1
+  * Introducing battery level indicator
+  * Update Player Process Info (again thanks to frodo19)
+  * Move Chapter/Cutmarkers to seekbar
+
+
 - .0
   * initial commit
   * add animation to PVR NextUp
