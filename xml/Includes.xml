@@ -89,7 +89,7 @@
 					<right>0</right>
 					<top>0</top>
 					<bottom>0</bottom>
-					<width>13</width>
+					<width>12</width>
 					<onleft>50</onleft>
 					<onright condition="$EXP[isJump2Letter]">SetFocus(8000)</onright>
 					<onright condition="!$EXP[isJump2Letter]">50</onright>
@@ -99,7 +99,6 @@
 					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 					<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531)">conditional</animation>
 					<visible>Control.IsVisible(52) | Control.IsVisible(500) | Control.IsVisible(504) | Control.IsVisible(55) | Control.IsVisible(501) | Control.IsVisible(54) | Control.IsVisible(505) | Control.IsVisible(507)</visible>
-					<hitrect x="-20" y="0" w="80" bottom="0r" />
 				</control>
 			</control>
 			<control type="group">
@@ -112,17 +111,15 @@
 					<left>0</left>
 					<bottom>70</bottom>
 					<width>100%</width>
-					<height>11</height>
+					<height>12</height>
 					<texturesliderbackground />
 					<onup>50</onup>
 					<ondown condition="String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)">SetFocus(8000)</ondown>
 					<orientation>horizontal</orientation>
 					<visible>Control.IsVisible(51) | Control.IsVisible(53) | Control.IsVisible(503) | Control.IsVisible(506) | Control.IsVisible(510)</visible>
-					<animation effect="slide" end="0,6" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(5199)">conditional</animation>
 					<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 					<animation effect="slide" end="0,90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
-					<hitrect x="0" y="20" w="100%" h="40" />
 				</control>
 			</control>
 		</control>
@@ -3116,6 +3113,7 @@
 					<include>ColoredBackgroundImages</include>
 				</control>
 				<control type="group" id="31111">
+					<visible>Skin.HasSetting(show_fanart) + !Window.IsVisible(Home.xml) + !$EXP[infodialog_active]</visible>
 					<visible>![Player.HasVideo + !Skin.HasSetting(background_showvideo)] | !String.IsEmpty(Window(Videos).Property(PlayingBackgroundMedia))</visible>
 					<depth>DepthBackground</depth>
 					<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
@@ -3123,11 +3121,11 @@
 					<animation effect="fade" time="400">VisibleChange</animation>
 					<control type="image" id="32112">
 						<include>FullScreenDimensions</include>
-						<aspectratio>scale</aspectratio>
+						<aspectratio aligny="center">scale</aspectratio>
 						<fadetime>400</fadetime>
 						<animation effect="fade" time="400">VisibleChange</animation>
 						<texture background="true" colordiffuse="$VAR[Background_Opacity]">$VAR[MediaFanartVar]</texture>
-						<visible>Skin.HasSetting(show_fanart) + !Window.IsVisible(Home.xml) + !Control.IsVisible(502) + !Control.IsVisible(510) + !$EXP[infodialog_active]</visible>
+						<visible>!Control.IsVisible(502) + !Control.IsVisible(510)</visible>
 					</control>
 					<control type="image">
 						<left>-3</left>
@@ -3139,7 +3137,16 @@
 						<include>OpenClose_Left</include>
 						<animation effect="fade" time="400">VisibleChange</animation>
 						<texture background="true" colordiffuse="$VAR[Background_Opacity]">$VAR[PosterVar]</texture>
-						<visible>Control.IsVisible(502) + !$EXP[infodialog_active]</visible>
+						<visible>Control.IsVisible(502)</visible>
+					</control>
+					<control type="image">
+						<include>FullScreenDimensions</include>
+						<aspectratio aligny="center">scale</aspectratio>
+						<fadetime>400</fadetime>
+						<include>OpenClose_Left</include>
+						<animation effect="fade" time="400">VisibleChange</animation>
+						<texture background="true" colordiffuse="$VAR[Background_Opacity]">$VAR[AddonsFanartVar]</texture>
+						<visible>Window.IsActive(addoninformation) | Window.IsActive(addonbrowser) | Window.IsActive(1100)</visible>
 					</control>
 				</control>
 			</control>
