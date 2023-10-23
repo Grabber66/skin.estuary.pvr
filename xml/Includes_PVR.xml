@@ -1376,7 +1376,7 @@
 				<height>30</height>
 				<font>font12</font>
 				<textcolor>$VAR[SkinColorVar]</textcolor>
-				<label>[B]$INFO[Container(11).ListItem.Genre, $LOCALIZE[515] : [COLOR white],[/COLOR]][/B]</label>
+				<label>[B]$INFO[Container(11).ListItem.NextTitle, $LOCALIZE[31396] : [COLOR white],[/COLOR]][/B]</label>
 				<scroll>true</scroll>
 			</control>
 			<control type="group">
@@ -1430,7 +1430,7 @@
 					<top>180</top>
 					<font>font12</font>
 					<align>justify</align>
-					<label>$INFO[Container(11).ListItem.Plot]$INFO[Container(11).ListItem.NextTitle,[CR][CR][B]$LOCALIZE[31396] : [/B]]</label>
+					<label>$INFO[Container(11).ListItem.Plot]$INFO[Container(11).ListItem.NextTitle,[CR][CR][B]$INFO[Container(11).ListItem.Genre, $LOCALIZE[515]   : [COLOR white],[/COLOR]][/B]</label>
 					<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>!String.IsEmpty(Container(11).ListItem.EpisodeName) | !String.IsEmpty(Container(11).ListItem.Season) | !String.IsEmpty(Container(11).ListItem.Episode)</visible>
 				</control>
@@ -1438,7 +1438,7 @@
 					<top>140</top>
 					<font>font12</font>
 					<align>justify</align>
-					<label>$INFO[Container(11).ListItem.Plot]$INFO[Container(11).ListItem.NextTitle,[CR][CR][B]$LOCALIZE[31396] : [/B]]</label>
+					<label>$INFO[Container(11).ListItem.Plot]$INFO[Container(11).ListItem.NextTitle,[CR][CR][B]$INFO[Container(11).ListItem.Genre, $LOCALIZE[515]   : [COLOR white],[/COLOR]][/B]</label>
 					<autoscroll delay="10000" time="3000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
 					<visible>String.IsEmpty(Container(11).ListItem.EpisodeName) + String.IsEmpty(Container(11).ListItem.Season) + String.IsEmpty(Container(11).ListItem.Episode)</visible>
 				</control>
