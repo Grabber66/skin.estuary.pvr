@@ -57,7 +57,7 @@ if __name__ == '__main__':
 
     xbmc.sleep(1000)
     monitor = xbmc.Monitor()
-    xbmc.log('Estuary MOD V2 Nexus service handler started', level=xbmc.LOGINFO)
+    xbmc.log('Estuary MOD PVR Omega service handler started', level=xbmc.LOGINFO)
 
     while not monitor.abortRequested():
         if monitor.waitForAbort(0.5): break
@@ -67,4 +67,4 @@ if __name__ == '__main__':
         if xbmc.getCondVisibility('Skin.HasSetting(ForcedViews.Enabled)'):
             content, mode = viewswitcher(content, mode)
 
-    xbmc.log('Estuary MOD V2 Nexus service handler finished')
+    xbmc.log('Estuary MOD PVR Omega service handler finished')
