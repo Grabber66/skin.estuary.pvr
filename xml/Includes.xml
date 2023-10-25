@@ -3008,7 +3008,7 @@
 					</control>
 					<control type="label">
 						<-- ToDo zeige Uhr in PVRChannels -->
-						<visible>![Window.IsVisible(videos) + !Container.Content(addons)] + ![Window.IsVisible(music) + !Container.Content(addons)] + ![Window.IsVisible(pictures) + !Container.Content(addons)] + ![Window.IsVisible(favouritesbrowser) + !Container.Content(addons)] + ![Window.IsVisible(shutdownmenu) + Skin.HasSetting(powermenu_list)]</visible>
+						<visible>[Window.IsVisible(MyPVRChannels.xml)] | ![Window.IsVisible(videos) + !Container.Content(addons)] + ![Window.IsVisible(music) + !Container.Content(addons)] + ![Window.IsVisible(pictures) + !Container.Content(addons)] + ![Window.IsVisible(favouritesbrowser) + !Container.Content(addons)] + ![Window.IsVisible(shutdownmenu) + Skin.HasSetting(powermenu_list)]</visible>
 						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 						<animation effect="slide" end="0,-10" time="0" condition="String.IsEqual(Skin.Font,Arial)">Conditional</animation>
 						<font>font_clock</font>
