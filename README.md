@@ -43,9 +43,15 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 
-### 1.0.0+omega ###
+### 21.0.0+omega ###
+- .7
+  * remove obsolete DialogFavourites.xml
+
+
 - .6
   * show PVR SIG and SNR flags only when LiveTV or Radio is playing
+  * add "More" folder for dynamic content containers (home screen)
+  * fix pvr targets in home screen widgets
 
 
 - .5
