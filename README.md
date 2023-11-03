@@ -44,9 +44,17 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 21.0.0+omega ###
+- .8
+  * fix some position adjustments on small Video OSD
+  
+
 - .7
   * remove obsolete DialogFavourites.xml
-
+  * fade out extended progress bar when music visualisation is active
+  * some seasonal backgrounds changed
+  * add more busy spinners
+  * add missing font definition
+  
 
 - .6
   * show PVR SIG and SNR flags only when LiveTV or Radio is playing

@@ -2957,8 +2957,8 @@
 							<width>660</width>
 							<itemgap>5</itemgap>
 							<usecontrolcoords>true</usecontrolcoords>
-							<!-- animated Equalizer Icon -->
 							<control type="multiimage">
+								<description>animated Equalizer Icon</description>
 								<top>7</top>
 								<imagepath colordiffuse="$VAR[SkinColorVar]">icons/equalizer</imagepath>
 								<width>40</width>
@@ -3852,6 +3852,39 @@
 			</control>
 		</definition>
 	</include>
+	<include name="BusySpinner">
+		<param name="outerSize">80</param>
+		<param name="innerSize">50</param>
+		<param name="outerSpeed">1000</param>
+		<param name="innerSpeed">1000</param>
+		<param name="outerMovement">-360</param>
+		<param name="innerMovement">360</param>
+		<param name="delay">0</param>
+		<param name="innervisibility">true</param>
+		<definition>
+			<control type="group">
+				<control type="image">
+					<centerleft>50%</centerleft>
+					<centertop>50%</centertop>
+					<width>$PARAM[outerSize]</width>
+					<height>$PARAM[outerSize]</height>
+					<aspectratio>keep</aspectratio>
+					<animation effect="rotate" end="$PARAM[outerMovement]" center="auto" time="$PARAM[outerSpeed]" delay="$PARAM[delay]" loop="true" reversible="false" condition="true">Conditional</animation>
+					<texture colordiffuse="$VAR[SkinColorVar]">$VAR[SpinnerTypePictureVar]</texture>
+				</control>
+				<control type="image">
+					<centerleft>50%</centerleft>
+					<centertop>50%</centertop>
+					<width>$PARAM[innerSize]</width>
+					<height>$PARAM[innerSize]</height>
+					<aspectratio>keep</aspectratio>
+					<animation effect="rotate" end="$PARAM[innerMovement]" center="auto" time="$PARAM[innerSpeed]" delay="$PARAM[delay]" loop="true" reversible="false" condition="true">Conditional</animation>
+					<texture colordiffuse="$VAR[SkinColorVar]">$VAR[SpinnerTypePictureVar]</texture>
+					<visible>$PARAM[innerVisibility]</visible>
+				</control>
+			</control>
+		</definition>
+	</include>
 	<include name="ItemHeight">
 		<definition>
 			<height>$PARAM[height]</height>
@@ -3870,6 +3903,11 @@
 	<include name="ItemTop">
 		<definition>
 			<top>$PARAM[top]</top>
+		</definition>
+	</include>
+	<include name="ItemBottom">
+		<definition>
+			<bottom>$PARAM[bottom]</bottom>
 		</definition>
 	</include>
 	<include name="ItemMovement">
@@ -5003,8 +5041,8 @@
 			<height>190</height>
 			<control type="group">
 				<animation effect="slide" end="0,-290" time="0" condition="Window.IsVisible(1138)">Conditional</animation>
-				<animation effect="slide" end="0,-350" time="50" tween="sine" easing="out" condition="Window.IsVisible(videobookmarks) | Window.IsVisible(1122) | Window.IsVisible(1139)">Conditional</animation>
-				<animation effect="slide" end="0,-250" time="50" tween="sine" easing="out" condition="Window.IsVisible(playerprocessinfo)">Conditional</animation>
+				<animation effect="slide" end="0,-340" time="50" tween="sine" easing="out" condition="Window.IsVisible(videobookmarks) | Window.IsVisible(1122) | Window.IsVisible(1139)">Conditional</animation>
+				<animation effect="slide" end="0,-280" time="50" tween="sine" easing="out" condition="Window.IsVisible(playerprocessinfo)">Conditional</animation>
 				<animation effect="slide" end="0,-50" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive">Conditional</animation>
 				<control type="image">
 					<left>0</left>
@@ -5022,11 +5060,11 @@
 					<aspectratio align="center" aligny="bottom">keep</aspectratio>
 					<visible>!Skin.HasSetting(enable_playerclearart)</visible>
 				</control>
-				<include content="SeekBar">
-					<param name="left">30</param>
-					<param name="bg_visibility">false</param>
-				</include>
 			</control>
+			<include content="SeekBar">
+				<param name="left">30</param>
+				<param name="bg_visibility">false</param>
+			</include>
 		</control>
 	</include>
 </includes>
