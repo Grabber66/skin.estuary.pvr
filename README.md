@@ -42,15 +42,14 @@ If you navigate in your movie library, you'll have a new entry now to (re)assign
 supports animated poster only.
 
 ![](resources/setup_ap.png)
+### 21.1.0+omega ###
+- .0
+  * Media flags completely revised (uniform size and improved common code basis)
+  * missing music info on radio broadcasts fixed
+
 
 ### 21.0.0+omega ###
-- .10
-    * missing poster in OSD while playing files fixed
-    * Slovakian language strings added
-    * Netherland language strings updated
-
-
-- .9
+- .9 
   * some icons added
   * Code Improvements on full video OSD
   * OSD media flags fixed/improved
