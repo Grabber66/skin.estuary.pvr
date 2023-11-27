@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- script.service.gto - InfoWindow Telecast Offers' - START -->
-<!-- Estuary Mod V2 Skin adapted -->
+<!-- Estuary Mod P Skin adapted -->
 <window>
     <defaultcontrol always="true">23</defaultcontrol>
     <include>DefaultDialogButton</include>
