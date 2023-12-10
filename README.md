@@ -48,6 +48,11 @@ supports animated poster only.
   * code improvements of rotating media (CD/DVD/BluRay) in Video-/Audio OSD
   * add active colors to buttons (dim, random playback) - audio OSD
   * improved lyrics scrolling text view (cu-lrclyrics) 
+  * add calculate module in helpers.py
+  * improve process info dialog
+  * replace calculate module of embuary helper with own functions in video info dialog.
+  * remove embuary helper addon from mandatory addons
+
 
 - .1
   * Flag "added to library" added
