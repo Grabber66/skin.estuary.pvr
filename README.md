@@ -44,8 +44,14 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.2.0+nexus ###
+- .4
+  * missing condition of showing disc art on visualisations fixed
+  
+
 - .3
   * function 'getKodiSetting' to helper added
+  * some navigation issues in Fullscreen video info fixed
+  * slide animation fixed if custom widgets are used
   
 
 - .2
