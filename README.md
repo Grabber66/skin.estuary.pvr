@@ -43,9 +43,15 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.0+omega ###
+- .2
+  * missing condition of showing disc art on visualisations fixed
+  
+
 - .1
   * Movie version item to movie category widget added
   * function 'getKodiSetting' to helper added
+  * several issues with video infos fixed
+  * slide animation fixed if custom widgets are used
 
 
 - .0
