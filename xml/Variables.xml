@@ -689,7 +689,7 @@
 		<value condition="ListItem.IsCollection + !String.IsEmpty(ListItem.Art(set.fanart))">$INFO[ListItem.Art(set.fanart)]</value>
 		<value condition="ListItem.IsCollection + !String.IsEmpty(ListItem.Art(setfanart))">$INFO[ListItem.Art(setfanart)]</value>
 		<value condition="ListItem.IsCollection + !String.IsEmpty(ListItem.Art(set.landscape))">$INFO[ListItem.Art(set.landscape)]</value>
-		<value condition="String.IsEqual(listitem.dbtype,episode) + Skin.HasSetting(hide_thumbforspoiler) + Integer.IsLess(ListItem.Playcount,1)">$VAR[InfoWidgetThumbVar]</value>
+		<value condition="String.IsEqual(listitem.dbtype,episode) + !$EXP[show_unwatchedthumbs] + Integer.IsLess(ListItem.Playcount,1)">$VAR[InfoWidgetThumbVar]</value>
 		<value condition="String.IsEqual(listitem.dbtype,episode) + String.IsEmpty(ListItem.Art(thumb)) + Integer.IsLess(ListItem.Playcount,1)">$VAR[InfoWidgetThumbVar]</value>
 		<value condition="String.IsEqual(listitem.dbtype,episode) + !String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(season.landscape))">$INFO[ListItem.Art(season.landscape)]</value>
@@ -701,7 +701,7 @@
 		<value>$INFO[ListItem.Art(thumb)]</value>
 	</variable>
 	<variable name="InfoWidgetThumbVar2">
-		<value condition="Skin.HasSetting(hide_thumbforspoiler) + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
+		<value condition="!$EXP[show_unwatchedthumbs] + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
 		<value>$INFO[ListItem.Art(fanart)]</value>
@@ -748,8 +748,8 @@
         <value condition="!String.IsEmpty(Player.Art(artist.clearart))">$INFO[Player.Art(artist.clearart)]</value>
 	</variable>
 	<variable name="PlayerInfoDiscArtVar">
-        <value condition="!String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
-        <value condition="!String.IsEmpty(Player.Art(album.discart))">$INFO[Player.Art(album.discart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(discart))">$INFO[Player.Art(discart)]</value>
+		<value condition="!String.IsEmpty(Player.Art(album.discart))">$INFO[Player.Art(album.discart)]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(PVR.Artwork.discart))">$INFO[Window(Home).Property(PVR.Artwork.discart)]</value>
 		<value condition="!Player.HasVideo">osd/cd.png</value>
 	</variable>
@@ -831,10 +831,6 @@
 	<variable name="BackgroundInfoVar">
 		<value condition="Skin.HasSetting(EnableExtraFanart) + [String.IsEmpty(ListItem.Art(fanart1)) | String.IsEmpty(ListItem.Art(tvshow.fanart1))]">$INFO[Window(home).Property(fanart)]</value>
 		<value condition="!Skin.HasSetting(EnableExtraFanart)">$INFO[Window(home).Property(fanart)]</value>
-	</variable>
-	<variable name="PlotSpoilerInfoVar">
-		<value condition="[Skin.HasSetting(hide_plotforspoiler) + String.IsEqual(ListItem.DBType,episode)] + Integer.IsLess(ListItem.Playcount,1) + !String.StartsWith(Container.FolderPath,plugin://)">$LOCALIZE[31230]</value>
-		<value>$INFO[ListItem.Plot]</value>
 	</variable>
 	<variable name="PlotSpoilerVar">
 		<value condition="[Skin.HasSetting(hide_plotforspoiler) + String.IsEqual(ListItem.DBType,episode)] + Integer.IsLess(ListItem.Playcount,1) + !String.StartsWith(Container.FolderPath,plugin://)">[COLOR white]$LOCALIZE[31230][/COLOR]</value>
@@ -1191,6 +1187,14 @@
 		<value condition="String.IsEqual(Skin.String(autoclose_osd),31584)">$LOCALIZE[31584]</value>
 		<value>$LOCALIZE[31334]</value>
 	</variable>
+	<variable name="ShowVideoResolutionVar">
+		<value condition="String.IsEqual(Skin.String(show_videoresolution),31578)">$LOCALIZE[31578]</value>
+		<value condition="String.IsEqual(Skin.String(show_videoresolution),31581)">$LOCALIZE[31581]</value>
+		<value condition="String.IsEqual(Skin.String(show_videoresolution),31582)">$LOCALIZE[31582]</value>
+		<value condition="String.IsEqual(Skin.String(show_videoresolution),31583)">$LOCALIZE[31583]</value>
+		<value condition="String.IsEqual(Skin.String(show_videoresolution),31584)">$LOCALIZE[31584]</value>
+		<value>$LOCALIZE[31334]</value>
+	</variable>	
 	<variable name="AutostopOsdVar">
 		<value condition="String.IsEqual(Skin.String(autostop_osd),31578)">$LOCALIZE[31578]</value>
 		<value condition="String.IsEqual(Skin.String(autostop_osd),31649)">$LOCALIZE[31649]</value>
@@ -1343,7 +1347,7 @@
 		<value condition="!String.IsEmpty(ListItem.Art(animatedposter)) + Skin.HasSetting(Skin_EnableAnimatedPosters)">$INFO[ListItem.Art(animatedposter)]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(tvshow.poster)) + Container.Content(seasons)">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(set)) + String.IsEqual(listitem.dbtype,set)">$INFO[ListItem.Art(set)]</value>
-		<value condition="Skin.HasSetting(hide_thumbforspoiler) + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
+		<value condition="!$EXP[show_unwatchedthumbs] + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
 		<value condition="String.IsEmpty(ListItem.Art(thumb)) + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(thumb)) + String.IsEqual(listitem.dbtype,episode)">$INFO[ListItem.Art(thumb)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + String.IsEqual(listitem.dbtype,episode)">$INFO[ListItem.Art(fanart)]</value>
@@ -1354,15 +1358,15 @@
 		<value condition="!String.IsEmpty(ListItem.Art(animatedposter)) + Skin.HasSetting(Skin_EnableAnimatedPosters)">$INFO[ListItem.Art(animatedposter)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(set)) + ListItem.IsFolder">$INFO[ListItem.Art(set)]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-		<value condition="Skin.HasSetting(hide_thumbforspoiler) + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
+		<value condition="!$EXP[show_unwatchedthumbs] + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="InfoWatchThumbVar">
-		<value condition="Skin.HasSetting(hide_thumbforspoiler) + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
+		<value condition="!$EXP[show_unwatchedthumbs] + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="InfoWallEpisodeVar">
-		<value condition="Skin.HasSetting(hide_thumbforspoiler) + Integer.IsLess(ListItem.Playcount,1)">$VAR[InfoWidgetThumbVar]</value>
+		<value condition="!$EXP[show_unwatchedthumbs] + Integer.IsLess(ListItem.Playcount,1)">$VAR[InfoWidgetThumbVar]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="IconWallPosterVar">
@@ -1525,6 +1529,14 @@
 		<value condition="ListItem.Property(addon.isinstalled)">OverlayWatched.png</value>
 		<value condition="!ListItem.IsParentFolder">OverlayUnwatched.png</value>
 	</variable>
+	<variable name="AddonsOriginVar">
+		<value condition="ListItem.Property(Addon.IsFromOfficialRepo) + ListItem.IsAutoUpdateable">icons/addonstatus/official.png</value>
+		<value condition="ListItem.Property(Addon.IsFromOfficialRepo)">icons/addonstatus/official-pinned.png</value>
+		<value condition="String.IsEqual(ListItem.AddonOrigin,$LOCALIZE[25014]) + ListItem.IsAutoUpdateable">icons/addonstatus/manual.png</value>
+		<value condition="String.IsEqual(ListItem.AddonOrigin,$LOCALIZE[25014])">icons/addonstatus/manual-pinned.png</value>
+		<value condition="ListItem.IsAutoUpdateable">icons/addonstatus/install.png</value>
+		<value>icons/addonstatus/install-pinned.png</value>
+	</variable>
 	<!-- special media flags -->
 	<variable name="MediaSourceFlagVar">
 		<value condition="String.Contains(ListItem.Filenameandpath,hdtv) | String.Contains(ListItem.Filenameandpath,pdtv) | String.Contains(ListItem.Filenameandpath,hdtvrip) | String.Contains(ListItem.Filenameandpath,tvrip)">flags/hdtv.png</value>
@@ -1553,6 +1565,12 @@
 	<variable name="VideoPlayerHdrTypeVar">
 		<value condition="String.Contains(Player.Filenameandpath,.hdrplus.) | String.Contains(Player.Filenameandpath,.12bit.)">flags/videoresolution/hdrplus.png</value>
 		<value>$INFO[VideoPlayer.HdrType,flags/videoresolution/,.png]</value>
+	</variable>
+	<variable name="VideoresolutionFullScreenVar">
+		<value condition="String.StartsWith(Player.Process(amlogic.eoft_gamut),HDR10+ )">flags/fullscreen/hdrplus_fs.png</value>
+		<value condition="String.StartsWith(Player.Process(amlogic.eoft_gamut),HDR10 )">flags/fullscreen/hdr_fs.png</value>
+		<value condition="String.StartsWith(Player.Process(amlogic.eoft_gamut),HLG)">flags/fullscreen/hlg_fs.png</value>
+		<value condition="String.StartsWith(Player.Process(amlogic.eoft_gamut),DV)">flags/fullscreen/dv_fs.png</value>
 	</variable>
 	<variable name="3DFlagVar">
 		<value condition="String.Contains(ListItem.Filenameandpath,3d.mvc)">flags/videoresolution/3Dmvc.png</value>

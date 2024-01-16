@@ -77,6 +77,8 @@
 	<expression name="PvrNextUpTimeSlot">[!Skin.HasSetting(disable_PVRNextUp) + Integer.IsEqual(PVR.EpgEventRemainingTime(hh),0) + Integer.IsEqual(PVR.EpgEventRemainingTime(mm),0) + Integer.IsLess(PVR.EpgEventRemainingTime(ss),36) + Integer.IsGreater(PVR.EpgEventRemainingTime(ss),4)]</expression>
 	<!-- Expression if PVR frontend has numbered Devices (#0 ... #8) -->
 	<expression name="PvrHasNumberedDevices">String.Contains(PVR.ActStreamDevice,#0) | String.Contains(PVR.ActStreamDevice,#1) | String.Contains(PVR.ActStreamDevice,#2) | String.Contains(PVR.ActStreamDevice,#3) | String.Contains(PVR.ActStreamDevice,#4) | String.Contains(PVR.ActStreamDevice,#5) | String.Contains(PVR.ActStreamDevice,#6) | String.Contains(PVR.ActStreamDevice,#7) | String.Contains(PVR.ActStreamDevice,#8)</expression>
+	<!-- Expression if show thumbs on unwatched episodes is set -->
+	<expression name="show_unwatchedthumbs">String.Contains(Window(home).Property(videolibrary.showunwatchedplots),2)</expression>
 	<include name="CommonScrollbars">
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
@@ -1040,7 +1042,7 @@
 					<param name="width" value="104" />
 					<param name="fallback" value="flags/audiochannel/fallback.png" />
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioChannels)" />
-					<param name="visible2" value="Skin.HasSetting(show_mediaaudiochannelsflag)" />
+					<param name="visible2" value="!Skin.HasSetting(show_mediaaudiochannelsflag)" />
 				</include>
 				<include content="MediaFlag">
 					<param name="width" value="5" />
@@ -1295,7 +1297,7 @@
 		<definition>
 			<control type="group">
 				<width>104</width>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(imdb))</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(imdb)) + [Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_bothrating)]</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/imdb.png" />
 					<param name="width" value="104" />
@@ -1306,7 +1308,7 @@
 			</control>
 			<control type="group">
 				<width>104</width>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(tmdb))</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(tmdb)) + [Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_bothrating)]</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/tmdb.png" />
 					<param name="width" value="104" />
@@ -1317,7 +1319,7 @@
 			</control>
 			<control type="group">
 				<width>104</width>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(themoviedb))</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(themoviedb)) + [Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_bothrating)]</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/tmdb.png" />
 					<param name="width" value="104" />
@@ -1325,11 +1327,10 @@
 					<param name="label_left" value="44" />
 					<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Rating(themoviedb)]" />
 				</include>
-
 			</control>
 			<control type="group">
 				<width>104</width>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(tvdb))</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(tvdb)) + [Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_bothrating)]</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/tvdb.png" />
 					<param name="width" value="104" />
@@ -1340,7 +1341,7 @@
 			</control>
 			<control type="group">
 				<width>112</width>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty(Window(Home).Property(rotten))</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty(Window(Home).Property(rotten)) + [Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_bothrating)]</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/rotten.png" />
 					<param name="width" value="112" />
@@ -1351,7 +1352,7 @@
 			</control>
 			<control type="group">
 				<width>104</width>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty(Window(Home).Property(metacritic))</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty(Window(Home).Property(metacritic)) + [Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_bothrating)]</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/metacritic.png" />
 					<param name="width" value="104" />
@@ -1362,7 +1363,7 @@
 			</control>
 			<control type="group">
 				<width>104</width>
-				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(trakt))</visible>
+				<visible>!Container.Content(albums) + !Container.Content(songs) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating(trakt)) + [Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_bothrating)]</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/trakt.png" />
 					<param name="width" value="104" />
@@ -1373,7 +1374,7 @@
 			</control>
 			<control type="group">
 				<width>104</width>
-				<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating) + [Container.Content(albums) | Container.Content(songs)]</visible>
+				<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating) + [Container.Content(albums) | Container.Content(songs)] + [Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_bothrating)]</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/rating.png" />
 					<param name="width" value="104" />
@@ -1384,7 +1385,7 @@
 			</control>
 			<control type="group">
 				<width>82</width>
-				<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.UserRating)</visible>
+				<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.UserRating) + [Skin.HasSetting(circle_userrating) | Skin.HasSetting(circle_bothrating)]</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/myrating.png" />
 					<param name="width" value="82" />
@@ -1399,6 +1400,7 @@
 		<param name="infolabel_prefix"/>
 		<param name="resolution_var">$VAR[3DFlagVar]</param>
 		<param name="audiocodec_var">$VAR[AudioCodecFlagVar]</param>
+		<param name="show_ratings">true</param>
 		<param name="visible">true</param>
 		<param name="align">left</param>
 		<definition>
@@ -1502,7 +1504,7 @@
 					<param name="label" value="$INFO[ListItem.Duration]" />
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Duration) + String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,song)" />
 				</include>
-				<include content="MediaFlagsRatings">
+				<include content="MediaFlagsRatings" condition="$PARAM[show_ratings]">
 					<param name="infolabel_prefix"/>
 				</include>
 				<include content="MediaFlag">
@@ -1565,7 +1567,6 @@
 			</control>
 		</definition>
 	</include>
-
 	<include name="MediaFlagsInfoDialogRight">
 		<param name="infolabel_prefix" />
 		<param name="pvr">false</param>
@@ -1674,7 +1675,6 @@
 			</control>
 		</definition>
 	</include>
-
 	<include name="MediaFlagPVR">
 		<control type="group">
 			<width>61</width>
@@ -3373,52 +3373,95 @@
 				<onup>200</onup>
 				<onunfocus condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onunfocus>
 				<ondown>200</ondown>
-				<onright>StepForward</onright>
+				<onright condition="!Player.Paused">StepForward</onright>
+				<onright condition="Player.Paused">PlayerControl(FrameAdvance(1))</onright>
 				<onleft>StepBack</onleft>
 				<onclick condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onclick>
 			</control>
 			<control type="group">
 				<visible>![Player.Seeking | HasPerformedSeek(3)]</visible>
 				<include>Visible_Fade</include>
-				<control type="slider">
-					<top>-5</top>
-					<height>20</height>
-					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-					<textureslidernib>osd/progress/nub_leftright.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="$VAR[SkinColorVar]">osd/progress/nub_leftright.png</textureslidernibfocus>
-					<info>Player.Progress</info>
-					<action>seek</action>
-					<visible>!Control.HasFocus(87) + !VideoPlayer.Content(LiveTV)</visible>
+				<control type="group">
+					<visible>Control.HasFocus(87)</visible>
+					<control type="slider">
+						<include content="OSDSliderNib">
+							<param name="nib_texture">osd/progress/nub_leftright.png</param>
+							<param name="focuscolor">$VAR[SkinColorVar]</param>
+						</include>
+						<info>Player.Progress</info>
+						<action>seek</action>
+						<visible>!VideoPlayer.Content(LiveTV) + !Player.FrameAdvance</visible>
+					</control>
+					<control type="slider">
+						<include content="OSDSliderNib">
+							<param name="nib_texture">osd/progress/nub_leftright_fa.png</param>
+							<param name="nib_height">24</param>
+							<param name="nib_top">-7</param>
+							<param name="focuscolor">$VAR[SkinColorVar]</param>
+						</include>
+						<info>Player.Progress</info>
+						<action>seek</action>
+						<visible>!VideoPlayer.Content(LiveTV) + Player.FrameAdvance</visible>
+					</control>
+					<control type="slider">
+						<include content="OSDSliderNib">
+							<param name="nib_texture">osd/progress/nub_leftright.png</param>
+							<param name="focuscolor">$VAR[SkinColorVar]</param>
+						</include>
+						<info>PVR.TimeshiftProgressPlayPos</info>
+						<action>pvr.seek</action>
+						<visible>VideoPlayer.Content(LiveTV) + !Player.FrameAdvance</visible>
+					</control>
+					<control type="slider">
+						<include content="OSDSliderNib">
+							<param name="nib_texture">osd/progress/nub_leftright_fa.png</param>
+							<param name="nib_height">24</param>
+							<param name="nib_top">-7</param>
+							<param name="focuscolor">$VAR[SkinColorVar]</param>
+						</include>
+						<info>PVR.TimeshiftProgressPlayPos</info>
+						<action>pvr.seek</action>
+						<visible>VideoPlayer.Content(LiveTV) + Player.FrameAdvance</visible>
+					</control>
 				</control>
-				<control type="slider">
-					<top>-5</top>
-					<height>20</height>
-					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-					<textureslidernib colordiffuse="$VAR[SkinColorVar]">osd/progress/nub_leftright.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="$VAR[SkinColorVar]">osd/progress/nub_leftright.png</textureslidernibfocus>
-					<info>Player.Progress</info>
-					<action>seek</action>
-					<visible>Control.HasFocus(87) + !VideoPlayer.Content(LiveTV)</visible>
-				</control>
-				<control type="slider">
-					<top>-5</top>
-					<height>20</height>
-					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-					<textureslidernib>osd/progress/nub_leftright.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="$VAR[SkinColorVar]">osd/progress/nub_leftright.png</textureslidernibfocus>
-					<info>PVR.TimeshiftProgressPlayPos</info>
-					<action>pvr.seek</action>
-					<visible>!Control.HasFocus(87) + VideoPlayer.Content(LiveTV)</visible>
-				</control>
-				<control type="slider">
-					<top>-5</top>
-					<height>20</height>
-					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-					<textureslidernib colordiffuse="$VAR[SkinColorVar]">osd/progress/nub_leftright.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="$VAR[SkinColorVar]">osd/progress/nub_leftright.png</textureslidernibfocus>
-					<info>PVR.TimeshiftProgressPlayPos</info>
-					<action>pvr.seek</action>
-					<visible>Control.HasFocus(87) + VideoPlayer.Content(LiveTV)</visible>
+				<control type="group">
+					<visible>!Control.HasFocus(87)</visible>
+					<control type="slider">
+						<include content="OSDSliderNib">
+							<param name="nib_texture">osd/progress/nub_leftright.png</param>
+						</include>
+						<info>Player.Progress</info>
+						<action>seek</action>
+						<visible>!VideoPlayer.Content(LiveTV) + !Player.FrameAdvance</visible>
+					</control>
+					<control type="slider">
+						<include content="OSDSliderNib">
+							<param name="nib_texture">osd/progress/nub_leftright_fa.png</param>
+							<param name="nib_height">24</param>
+							<param name="nib_top">-7</param>
+						</include>
+						<info>Player.Progress</info>
+						<action>seek</action>
+						<visible>!VideoPlayer.Content(LiveTV) + Player.FrameAdvance</visible>
+					</control>
+					<control type="slider">
+						<include content="OSDSliderNib">
+							<param name="nib_texture">osd/progress/nub_leftright.png</param>
+						</include>
+						<info>PVR.TimeshiftProgressPlayPos</info>
+						<action>pvr.seek</action>
+						<visible>VideoPlayer.Content(LiveTV) + !Player.FrameAdvance</visible>
+					</control>
+					<control type="slider">
+						<include content="OSDSliderNib">
+							<param name="nib_texture">osd/progress/nub_leftright_fa.png</param>
+							<param name="nib_height">24</param>
+							<param name="nib_top">-7</param>
+						</include>
+						<info>PVR.TimeshiftProgressPlayPos</info>
+						<action>pvr.seek</action>
+						<visible>VideoPlayer.Content(LiveTV) + Player.FrameAdvance</visible>
+					</control>
 				</control>
 			</control>
 		</control>
@@ -3542,7 +3585,7 @@
 					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>
 					<textureslidernib colordiffuse="$VAR[SkinColorVar]">osd/progress/nub_bar.png</textureslidernib>
 					<textureslidernibfocus colordiffuse="$VAR[SkinColorVar]">colors/white.png</textureslidernibfocus>
-					<visible>Player.SeekEnabled + !VideoPlayer.HasEpg + !Player.ChannelPreviewActive</visible>
+					<visible>Player.SeekEnabled + !VideoPlayer.HasEpg + !Player.ChannelPreviewActive + !Player.FrameAdvance</visible>
 				</control>
 				<control type="slider" id="402">
 					<left>5</left>
@@ -3552,7 +3595,7 @@
 					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_bar.png</texturesliderbar>
 					<textureslidernib colordiffuse="$VAR[SkinColorVar]">osd/progress/nub_bar.png</textureslidernib>
 					<textureslidernibfocus colordiffuse="$VAR[SkinColorVar]">colors/white.png</textureslidernibfocus>
-					<visible>Player.SeekEnabled + VideoPlayer.HasEpg + !Player.ChannelPreviewActive</visible>
+					<visible>Player.SeekEnabled + VideoPlayer.HasEpg + !Player.ChannelPreviewActive + !Player.FrameAdvance</visible>
 				</control>
 				<include content="SeekBarProgress" condition="![Window.IsVisible(videoosd) | Window.IsVisible(musicosd)]"/>
 				<control type="group">
@@ -3652,7 +3695,7 @@
 	</include>
 	<include name="OSDWithInfo">
 		<control type="group">
-			<visible>!Player.HasGame + !Window.IsVisible(1135)</visible>
+			<visible>!Player.HasGame + !Window.IsVisible(1135) + ![Window.IsVisible(visualisation) + Skin.HasSetting(dim_screen)]</visible>
 			<bottom>0</bottom>
 			<height>310</height>
 			<control type="group">
@@ -3722,6 +3765,7 @@
 					</include>
 					<control type="group">
 						<visible>[Window.IsVisible(visualisation) + !Skin.HasSetting(show_disc)] | [!Window.IsVisible(visualisation) + !Skin.HasSetting(show_discart)]</visible>
+						<visible>Skin.HasSetting(show_replacement) | !String.IsEmpty(Player.Art(discart)) | !String.IsEmpty(Player.Art(album.discart)) | !String.IsEmpty(Window(Home).Property(PVR.Artwork.discart))</visible>
 						<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="Player.Playing">Conditional</animation>
 						<control type="image" id="4393">
 							<aligny>top</aligny>
@@ -3758,37 +3802,35 @@
 				</control>
 				<control type="group">
 					<depth>DepthOSD+</depth>
-					<left>10</left>
+					<left>30</left>
 					<visible>!Window.IsVisible(visualisation) + !Pvr.IsPlayingRadio</visible>
 					<control type="image">
-						<width>440</width>
-						<height>660</height>
-						<bottom>5</bottom>
+						<width>400</width>
+						<height>620</height>
+						<bottom>25</bottom>
 						<aspectratio aligny="bottom">keep</aspectratio>
 						<texture background="true" fallback="DefaultVideoCover.png">$VAR[NowPlayingPosterVar]</texture>
-						<bordertexture border="21">overlays/shadow.png</bordertexture>
-						<bordersize>20</bordersize>
 					</control>
 					<include condition="!Player.IsInternetStream + [Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating) | Skin.HasSetting(circle_bothrating)]">VideoPlayerRatingCircle</include>
 				</control>
 				<control type="group">
 					<description>audio disc cover</description>
 					<depth>DepthOSD+</depth>
-					<left>10</left>
-					<bottom>5</bottom>
-					<width>440</width>
-					<height>440</height>
+					<left>30</left>
+					<bottom>25</bottom>
+					<width>400</width>
+					<height>400</height>
 					<visible>Window.IsVisible(visualisation) + !Pvr.IsPlayingRadio + !Player.IsInternetStream</visible>
 					<control type="image" id="4397">
 						<aspectratio aligny="bottom" align="center">keep</aspectratio>
 						<texture background="true" fallback="dialogs/defaultcdcover.png">$VAR[MusicPlayerCover]</texture>
-						<bordersize>20</bordersize>
 					</control>
 					<control type="label">
 						<left>40</left>
 						<right>30</right>
 						<align>center</align>
-						<top>245</top>
+						<aligny>top</aligny>
+						<top>225</top>
 						<font>Font-Disc</font>
 						<textcolor>grey</textcolor>
 						<wrapmultiline>true</wrapmultiline>
@@ -3811,23 +3853,30 @@
 						<bordersize>2</bordersize>
 						<visible>Skin.HasSetting(show_borders) + Skin.HasSetting(stationlogo_border)</visible>
 					</control>
+					<control type="image">
+						<depth>DepthOSD</depth>
+						<left>28</left>
+						<bottom>23</bottom>
+						<width>404</width>
+						<height>404</height>
+						<texture colordiffuse="$VAR[PvrIconBGVar]">colors/white.png</texture>
+						<visible>Skin.HasSetting(EnablePvrIconBG)</visible>
+					</control>
 					<control type="image" id="4392">
 						<depth>DepthOSD+</depth>
-						<left>10</left>
-						<bottom>5</bottom>
-						<width>440</width>
-						<height>440</height>
+						<left>30</left>
+						<bottom>25</bottom>
+						<width>400</width>
+						<height>400</height>
 						<aspectratio aligny="center" align="center">keep</aspectratio>
 						<texture background="true" fallback="DefaultAudio.png">$VAR[RadioPlayerCover]</texture>
-						<bordertexture border="20">overlays/shadow.png</bordertexture>
-						<bordersize>20</bordersize>
 						<visible>![Skin.HasSetting(show_borders) + Skin.HasSetting(stationlogo_border)]</visible>
 					</control>
-					<include content="BusyPvrArtworkSpinner">
-						<param name="top" value="80" />
-						<param name="left" value="190" />
-					</include>
 				</control>
+				<include content="BusyPvrArtworkSpinner">
+					<param name="top" value="80" />
+					<param name="left" value="190" />
+				</include>
 				<control type="group">
 					<height>151</height>
 					<right>30</right>
@@ -4154,14 +4203,12 @@
 		</control>
 		<control type="image">
 			<depth>DepthOSD+</depth>
-			<left>10</left>
-			<bottom>5</bottom>
-			<width>440</width>
-			<height>440</height>
+			<left>30</left>
+			<bottom>25</bottom>
+			<width>400</width>
+			<height>400</height>
 			<aspectratio aligny="bottom">keep</aspectratio>
 			<texture background="true">special://skin/extras/home-images/disc.jpg</texture>
-			<bordertexture border="21">overlays/shadow.png</bordertexture>
-			<bordersize>20</bordersize>
 			<visible>[VideoPlayer.HasMenu + System.HasMediadvd]</visible>
 		</control>
 	</include>

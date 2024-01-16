@@ -887,11 +887,6 @@ msgid "Plot masked to avoid spoilers."
 msgstr ""
 
 #: /xml/SkinSettings.xml
-msgctxt "#31231"
-msgid "Hide episodes plots to avoid spoilers"
-msgstr ""
-
-#: /xml/SkinSettings.xml
 msgctxt "#31233"
 msgid "Background color"
 msgstr ""
@@ -1349,11 +1344,6 @@ msgstr ""
 #: /xml/SkinSettings.xml
 msgctxt "#31325"
 msgid "Power menu style"
-msgstr ""
-
-#: /xml/Custom_1124_SettingsTVShowsWidgets.xml
-msgctxt "#31326"
-msgid "Hide thumbs episodes to avoid spoilers"
 msgstr ""
 
 #: /shortcuts/overrides.xml
@@ -1875,7 +1865,7 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31432"
-msgid "Scrapers ratings"
+msgid "Scraper ratings"
 msgstr ""
 
 #: /xml/SkinSettings.xml
@@ -2120,12 +2110,12 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31481"
-msgid "My ratings and scrapers ratings"
+msgid "My ratings and scraper ratings"
 msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31482"
-msgid "Scrapers ratings text color"
+msgid "Scraper ratings text color"
 msgstr ""
 
 #: /xml/SkinSettings.xml
@@ -2803,4 +2793,18 @@ msgstr ""
 
 msgctxt "#31669"
 msgid "Show Date added to Library"
+msgstr ""
+
+#: Skinsettings
+
+msgctxt "#31670"
+msgid "Show Video Resolution on Video start"
+msgstr ""
+
+msgctxt "#31671"
+msgid "Toggle Skin Debug"
+msgstr ""
+
+msgctxt "#31672"
+msgid "Show Replacement when primal CDArt is not available"
 msgstr ""

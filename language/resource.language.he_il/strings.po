@@ -923,11 +923,6 @@ msgid "Plot masked to avoid spoilers."
 msgstr "עלילה ממוסכת כדי למנוע ספוילרים"
 
 #: /xml/SkinSettings.xml
-msgctxt "#31231"
-msgid "Hide episodes plots to avoid spoilers"
-msgstr "הסתר פרקים  כדי למנוע ספוילרים"
-
-#: /xml/SkinSettings.xml
 msgctxt "#31233"
 msgid "Background color"
 msgstr "צבע רקע"
@@ -1384,11 +1379,6 @@ msgstr "אטימות עבור הסרגלים העליונים והתחתונים
 msgctxt "#31325"
 msgid "Power menu style"
 msgstr "עיצוב תפריט הכיבוי"
-
-#: /xml/Custom_1124_SettingsTVShowsWidgets.xml
-msgctxt "#31326"
-msgid "Hide thumbs episodes to avoid spoilers"
-msgstr "הסתר תמונות ממוזערות של פרקים כדי למנוע ספוילרים"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31327"
@@ -1874,11 +1864,6 @@ msgid "Show scrolling text"
 msgstr "הצג טקסט גלילה"
 
 #: /xml/SkinSettings.xml
-msgctxt "#31432"
-msgid "Scrapers ratings"
-msgstr "דירוגי סקאפרים"
-
-#: /xml/SkinSettings.xml
 msgctxt "#31433"
 msgid "My ratings"
 msgstr "הדירוגים שלי"
@@ -2121,16 +2106,6 @@ msgstr "2:37:1 (1920x810)"
 msgctxt "#31480"
 msgid "Scope mode"
 msgstr "מצב היקף"
-
-#: /xml/SkinSettings.xml
-msgctxt "#31481"
-msgid "My ratings and scrapers ratings"
-msgstr "דירוגי הדירוגים והמגרדים שלי"
-
-#: /xml/SkinSettings.xml
-msgctxt "#31482"
-msgid "Scrapers ratings text color"
-msgstr "מגרדים מדורגים את צבע הטקסט"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31483"

@@ -44,8 +44,25 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.2.0+nexus ###
+- .6
+  * visibility conditions of ratings extended to video info flags
+  * settings of 'hide for spoiler', 'hide episode thumb of unseen episodes' removed from skin settings
+
+
+- .5
+  * Debug controls to skin settings extras added
+  * added option showing CD replacement when primal CD art is not available
+  * some visible conditions of tv show widgets (Home) depends on Embuary helper/info implemented
+  * Frame skip (FrameAdvance) implemented
+  * Skin Setting of video resolution timings on video startup improved
+
+
 - .4
   * missing condition of showing disc art on visualisations fixed
+  * black screen mode while music playing improved (hide OSD independent of OSD info setting)
+  * Addon status symbols to addon lists added 
+  * customizable background to pvr radio station logos added (OSD)
+  * visible condition of audio channel count flag reversed
   
 
 - .3

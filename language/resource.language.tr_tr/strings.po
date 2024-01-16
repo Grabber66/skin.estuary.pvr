@@ -906,11 +906,6 @@ msgid "Plot masked to avoid spoilers."
 msgstr "Spoiler önlemek için maskelenmiş özet."
 
 #: /xml/SkinSettings.xml
-msgctxt "#31231"
-msgid "Hide episodes plots to avoid spoilers"
-msgstr "Spoiler önlemek için bölüm özetlerini gizle"
-
-#: /xml/SkinSettings.xml
 msgctxt "#31233"
 msgid "Background color"
 msgstr "Arka plan rengi"
@@ -1369,11 +1364,6 @@ msgstr "Üst ve alt çubuklar için şeffaflık"
 msgctxt "#31325"
 msgid "Power menu style"
 msgstr "Güç menüsü tarzı"
-
-#: /xml/Custom_1124_SettingsTVShowsWidgets.xml
-msgctxt "#31326"
-msgid "Hide thumbs episodes to avoid spoilers"
-msgstr "Spoiler önlemek için bölümlerde küçük resimleri gizle"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31327"
@@ -1855,11 +1845,6 @@ msgid "Show scrolling text"
 msgstr "Kaydırma metnini göster"
 
 #: /xml/SkinSettings.xml
-msgctxt "#31432"
-msgid "Scrapers ratings"
-msgstr "Scraper derecelendirmeleri"
-
-#: /xml/SkinSettings.xml
 msgctxt "#31433"
 msgid "My ratings"
 msgstr "Derecelendirmelerim"
@@ -2102,16 +2087,6 @@ msgstr "2:37:1 (1920x810)"
 msgctxt "#31480"
 msgid "Scope mode"
 msgstr "Kapsam modu"
-
-#: /xml/SkinSettings.xml
-msgctxt "#31481"
-msgid "My ratings and scrapers ratings"
-msgstr "Derecelendirmelerim ve scraper derecelendirmeleri"
-
-#: /xml/SkinSettings.xml
-msgctxt "#31482"
-msgid "Scrapers ratings text color"
-msgstr "Scrapers derecelendirmeleri metin rengi"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31483"
