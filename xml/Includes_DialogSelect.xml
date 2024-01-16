@@ -16,24 +16,41 @@
 				<left>0</left>
 				<top>80</top>
 				<width>920</width>
-				<bottom>2</bottom>
+				<bottom>52</bottom>
 				<texture border="40">buttons/dialogbutton-nofo.png</texture>
 			</control>
 			<control type="image">
 				<left>940</left>
-				<top>310</top>
+				<bottom>72</bottom>
 				<width>260</width>
 				<height>380</height>
 				<aspectratio aligny="bottom">keep</aspectratio>
 				<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
 				<bordersize>4</bordersize>
-				<texture border="4" background="true">$INFO[Container(6).ListItem.Icon]</texture>
+				<texture border="4" background="true">$VAR[VideoVersionPosterVar]</texture>
+			</control>
+			<control type="group">
+				<left>-30</left>
+				<bottom>0</bottom>
+				<height>70</height>
+				<width>980</width>
+				<visible>Control.HasFocus(6)</visible>
+				<include content="MediaFlagsInfoDialogLeft">
+					<param name="align" value="left" />
+					<param name="infolabel_prefix" value="Container(6)." />
+					<param name="show_ratings" value="false" />
+					<param name="resolution_var" value="$INFO[Container(6).ListItem.VideoResolution,flags/videoresolution/,.png]" />
+				</include>
+				<include content="MediaFlagsInfoDialogRight">
+					<param name="align" value="right" />
+					<param name="infolabel_prefix" value="Container(6)." />
+				</include>
 			</control>
 			<control type="list" id="3">
 				<left>20</left>
 				<top>100</top>
 				<width>880</width>
-				<bottom>20</bottom>
+				<bottom>80</bottom>
 				<onup>3</onup>
 				<ondown>3</ondown>
 				<onleft>9001</onleft>
@@ -49,24 +66,51 @@
 				<left>20</left>
 				<top>100</top>
 				<width>880</width>
-				<bottom>20</bottom>
+				<bottom>80</bottom>
 				<onup>6</onup>
 				<ondown>6</ondown>
 				<onleft>9001</onleft>
 				<onright>61</onright>
 				<pagecontrol>61</pagecontrol>
 				<scrolltime>200</scrolltime>
-				<itemlayout height="125" width="880">
+				<itemlayout height="135" width="880">
 					<control type="image">
-						<left>12</left>
-						<top>7.5</top>
-						<width>110</width>
-						<height>110</height>
-						<texture fallback="DefaultAddonMore.png">$VAR[InfoWallThumbVar2]</texture>
+						<left>7</left>
+						<top>7</top>
+						<width>197</width>
+						<height>111</height>
+						<texture fallback="DefaultAddonMore.png">$VAR[WidgetThumbViewVar]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
+					<control type="group">
+						<left>7</left>
+						<top>48</top>
+						<visible>ListItem.IsRecording | ListItem.HasReminder | ListItem.HasTimer | ListItem.IsCollection | ListItem.IsPlaying | ListItem.IsResumable | ListItem.HasArchive | Integer.IsGreater(ListItem.Playcount,0)</visible>
+						<control type="image">
+							<width>70</width>
+							<height>70</height>
+							<texture>overlays/overlay-bg.png</texture>
+						</control>
+						<control type="image">
+							<left>3</left>
+							<top>37</top>
+							<width>32</width>
+							<height>32</height>
+							<texture>$VAR[WallWatchedIconVar]</texture>
+						</control>
+					</control>
+					<control type="progress">
+						<left>7</left>
+						<top>98</top>
+						<width>197</width>
+						<height>1</height>
+						<texturebg />
+						<midtexture colordiffuse="$VAR[SkinColorVar]" border="3">progress/texturebg_alt_white.png</midtexture>
+						<info>ListItem.PercentPlayed</info>
+						<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+					</control>
 					<control type="label">
-						<left>135</left>
+						<left>220</left>
 						<top>0</top>
 						<right>14</right>
 						<height>125</height>
@@ -76,7 +120,7 @@
 						<visible>String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
-						<left>135</left>
+						<left>220</left>
 						<top>10</top>
 						<right>14</right>
 						<height>62.5</height>
@@ -86,7 +130,7 @@
 						<visible>!String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
-						<left>135</left>
+						<left>220</left>
 						<top>52.5</top>
 						<right>14</right>
 						<height>62.5</height>
@@ -96,9 +140,9 @@
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout height="125" width="880">
+				<focusedlayout height="135" width="880">
 					<control type="image">
-						<left>0</left>
+						<left>211</left>
 						<top>0</top>
 						<right>0</right>
 						<bottom>0</bottom>
@@ -106,15 +150,42 @@
 						<visible>Control.HasFocus(6)</visible>
 					</control>
 					<control type="image">
-						<left>12</left>
-						<top>7.5</top>
-						<width>110</width>
-						<height>110</height>
-						<texture fallback="DefaultAddonMore.png">$VAR[InfoWallThumbVar2]</texture>
+						<left>7</left>
+						<top>7</top>
+						<width>197</width>
+						<height>111</height>
+						<texture fallback="DefaultAddonMore.png">$VAR[WidgetThumbViewVar]</texture>
 						<aspectratio>keep</aspectratio>
 					</control>
+					<control type="group">
+						<left>7</left>
+						<top>48</top>
+						<visible>ListItem.IsRecording | ListItem.HasReminder | ListItem.HasTimer | ListItem.IsCollection | ListItem. IsPlaying | ListItem.IsResumable | ListItem.HasArchive | Integer.IsGreater(ListItem.Playcount,0)</visible>
+						<control type="image">
+							<width>70</width>
+							<height>70</height>
+							<texture>overlays/overlay-bg.png</texture>
+						</control>
+						<control type="image">
+							<left>3</left>
+							<top>37</top>
+							<width>32</width>
+							<height>32</height>
+							<texture>$VAR[WallWatchedIconVar]</texture>
+						</control>
+					</control>
+					<control type="progress">
+						<left>7</left>
+						<top>98</top>
+						<width>197</width>
+						<height>1</height>
+						<texturebg />
+						<midtexture colordiffuse="$VAR[SkinColorVar]" border="3">progress/texturebg_alt_white.png</midtexture>
+						<info>ListItem.PercentPlayed</info>
+						<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+					</control>
 					<control type="label">
-						<left>135</left>
+						<left>220</left>
 						<top>0</top>
 						<right>14</right>
 						<height>125</height>
@@ -125,7 +196,7 @@
 						<visible>String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
-						<left>135</left>
+						<left>220</left>
 						<top>10</top>
 						<right>14</right>
 						<height>62.5</height>
@@ -136,7 +207,7 @@
 						<visible>!String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
-						<left>135</left>
+						<left>220</left>
 						<top>52.5</top>
 						<right>14</right>
 						<height>62.5</height>
@@ -151,7 +222,7 @@
 				<left>910</left>
 				<top>100</top>
 				<width>12</width>
-				<bottom>20</bottom>
+				<bottom>70</bottom>
 				<onleft condition="Control.IsVisible(3)">3</onleft>
 				<onleft condition="Control.IsVisible(6)">6</onleft>
 				<onright>9001</onright>
@@ -161,7 +232,7 @@
 				<left>925</left>
 				<bottom>10</bottom>
 				<width>275</width>
-				<height>35</height>
+				<height>30</height>
 				<font>font12</font>
 				<align>right</align>
 				<textcolor>grey</textcolor>

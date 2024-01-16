@@ -932,11 +932,6 @@ msgid "Plot masked to avoid spoilers."
 msgstr "Sinopse oculto para evitar spoilers"
 
 #: /xml/SkinSettings.xml
-msgctxt "#31231"
-msgid "Hide episodes plots to avoid spoilers"
-msgstr "Esconda o enredo dos episódios para evitar spoilers"
-
-#: /xml/SkinSettings.xml
 msgctxt "#31233"
 msgid "Background color"
 msgstr "Cor de fundo"
@@ -1395,11 +1390,6 @@ msgstr "Opacidade das barras superior e inferior"
 msgctxt "#31325"
 msgid "Power menu style"
 msgstr "Estilo do menu de desligamento"
-
-#: /xml/Custom_1124_SettingsTVShowsWidgets.xml
-msgctxt "#31326"
-msgid "Hide thumbs episodes to avoid spoilers"
-msgstr "Ocultar miniaturas de episódios para evitar spoilers"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31327"
@@ -1892,11 +1882,6 @@ msgid "Show scrolling text"
 msgstr "Mostrar texto de rolagem"
 
 #: /xml/SkinSettings.xml
-msgctxt "#31432"
-msgid "Scrapers ratings"
-msgstr "Classificações de Scrapers"
-
-#: /xml/SkinSettings.xml
 msgctxt "#31433"
 msgid "My ratings"
 msgstr "Minhas avaliações"
@@ -2141,16 +2126,6 @@ msgstr "2:37:1 (1920x810)"
 msgctxt "#31480"
 msgid "Scope mode"
 msgstr "Modo de escopo"
-
-#: /xml/SkinSettings.xml
-msgctxt "#31481"
-msgid "My ratings and scrapers ratings"
-msgstr "Minhas avaliações e classificações de scrapers"
-
-#: /xml/SkinSettings.xml
-msgctxt "#31482"
-msgid "Scrapers ratings text color"
-msgstr "Cor do texto das avaliações dos Scrapers"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31483"

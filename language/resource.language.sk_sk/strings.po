@@ -891,11 +891,6 @@ msgid "Plot masked to avoid spoilers."
 msgstr "Dej je skrytý kvôli spoilerom."
 
 #: /xml/SkinSettings.xml
-msgctxt "#31231"
-msgid "Hide episodes plots to avoid spoilers"
-msgstr "Skryť dej epizód kvôli spoilerom"
-
-#: /xml/SkinSettings.xml
 msgctxt "#31233"
 msgid "Background color"
 msgstr "Farba pozadia"
@@ -1354,11 +1349,6 @@ msgstr "Priesvitnosť pre hornú a spodnú lištu"
 msgctxt "#31325"
 msgid "Power menu style"
 msgstr "Štýl ponuky napájania"
-
-#: /xml/Custom_1124_SettingsTVShowsWidgets.xml
-msgctxt "#31326"
-msgid "Hide thumbs episodes to avoid spoilers"
-msgstr "Skryť náhľady epizód kvôli spoilerom"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31327"
@@ -1884,11 +1874,6 @@ msgid "Show scrolling text"
 msgstr "Zobraziť skrolujúci text"
 
 #: /xml/SkinSettings.xml
-msgctxt "#31432"
-msgid "Scrapers ratings"
-msgstr "Hodnotenia scraperov"
-
-#: /xml/SkinSettings.xml
 msgctxt "#31433"
 msgid "My ratings"
 msgstr "Moje hodnotenia"
@@ -2127,16 +2112,6 @@ msgstr "2:37:1 (1920x810)"
 msgctxt "#31480"
 msgid "Scope mode"
 msgstr "Režim náhľadu"
-
-#: /xml/SkinSettings.xml
-msgctxt "#31481"
-msgid "My ratings and scrapers ratings"
-msgstr "Moje hodnotenia a hodnotenia scraperov"
-
-#: /xml/SkinSettings.xml
-msgctxt "#31482"
-msgid "Scrapers ratings text color"
-msgstr "Farba textu hodnotenia scraperov"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31483"

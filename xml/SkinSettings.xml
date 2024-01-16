@@ -234,6 +234,13 @@
 					<selected>!Skin.HasSetting(show_disc)</selected>
 					<onclick>Skin.ToggleSetting(show_disc)</onclick>
 				</control>
+				<control type="radiobutton" id="221">
+					<label>  ∟$LOCALIZE[31672]</label>
+					<include>DefaultSettingButton</include>
+					<selected>Skin.HasSetting(show_replacement)</selected>
+					<onclick>Skin.ToggleSetting(show_replacement)</onclick>
+					<visible>!Skin.HasSetting(show_disc)</visible>
+				</control>
 				<control type="radiobutton" id="210">
 					<label>$LOCALIZE[31289]</label>
 					<include>DefaultSettingButton</include>
@@ -267,10 +274,10 @@
 					<label>$LOCALIZE[31637]</label>
 					<include>DefaultSettingButton</include>
 					<onclick condition="System.HasAddon(script.cu.lrclyrics)">Skin.ToggleSetting(enable_lyrics)</onclick>
-					<onclick condition="System.HasAddon(script.cu.lrclyrics) + Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.modv2,toggleAddonStatus,script.cu.lrclyrics,true)</onclick>
-					<onclick condition="System.HasAddon(script.cu.lrclyrics) + !Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.modv2,toggleAddonStatus,script.cu.lrclyrics,false)</onclick>
+					<onclick condition="System.HasAddon(script.cu.lrclyrics) + Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.modv2,toggleAddonStatus,script.cu.lrclyrics,false)</onclick>
+					<onclick condition="System.HasAddon(script.cu.lrclyrics) + !Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.modv2,toggleAddonStatus,script.cu.lrclyrics,true)</onclick>
 					<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
-					<selected>!Skin.HasSetting(enable_lyrics)</selected>
+					<selected>Skin.HasSetting(enable_lyrics)</selected>
 				</control>
 				<control type="radiobutton" id="214">
 					<label>  ∟$LOCALIZE[31379]</label>
@@ -744,6 +751,20 @@
 					<onclick>Skin.ToggleSetting(DisableThemes)</onclick>
 					<selected>!Skin.HasSetting(DisableThemes)</selected>
 				</control>
+				<control type="button" id="510">
+					<label>$LOCALIZE[31670]</label>
+					<label2>$VAR[ShowVideoResolutionVar]</label2>
+					<visible>System.HasAddon(service.coreelec.settings)</visible>
+					<include>DefaultSettingButton</include>
+					<visible>System.HasAddon(service.coreelec.settings)</visible>
+					<onclick condition="String.IsEmpty(Skin.String(show_videoresolution))">Skin.SetString(show_videoresolution,31578)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31584)">Skin.SetString(show_videoresolution,31578)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31583)">Skin.SetString(show_videoresolution,31584)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31582)">Skin.SetString(show_videoresolution,31583)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31581)">Skin.SetString(show_videoresolution,31582)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31578)">Skin.SetString(show_videoresolution,31581)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(show_videoresolution)) + !String.IsEqual(Skin.String(show_videoresolution),31578) + !String.IsEqual(Skin.String(show_videoresolution),31581) + !String.IsEqual(Skin.String(show_videoresolution),31582) + !String.IsEqual(Skin.String(show_videoresolution),31583) + !String.IsEqual(Skin.String(show_videoresolution),31584)">Skin.SetString(show_videoresolution,31578)</onclick>
+				</control>
 				<control type="button" id="509">
 					<label>$LOCALIZE[31663]</label>
 					<label2>$VAR[SpinnerTypeVar]</label2>
@@ -775,6 +796,27 @@
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(KioskMode)</onclick>
 					<selected>Skin.HasSetting(KioskMode)</selected>
+				</control>
+				<control type="label" id="900014">
+					<textoffsetx>45</textoffsetx>
+					<top>0</top>
+					<height>80</height>
+					<label>$LOCALIZE[14260]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font28_title</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="button" id="511">
+					<label>$LOCALIZE[31671]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleDebug</onclick>
+				</control>
+				<control type="button" id="512">
+					<label>$LOCALIZE[20183]</label>
+					<include>DefaultSettingButton</include>
+					<onclick>ReloadSkin()</onclick>
 				</control>
 			</control>
 			<control type="grouplist" id="800">
@@ -887,18 +929,6 @@
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(autoscroll)</onclick>
 					<selected>Skin.HasSetting(autoscroll)</selected>
-				</control>
-				<control type="radiobutton" id="902">
-					<label>$LOCALIZE[31231]</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(hide_plotforspoiler)</onclick>
-					<selected>Skin.HasSetting(hide_plotforspoiler)</selected>
-				</control>
-				<control type="radiobutton" id="904">
-					<label>$LOCALIZE[31326]</label>
-					<include>DefaultSettingButton</include>
-					<onclick>Skin.ToggleSetting(hide_thumbforspoiler)</onclick>
-					<selected>Skin.HasSetting(hide_thumbforspoiler)</selected>
 				</control>
 				<control type="radiobutton" id="905">
 					<label>$LOCALIZE[31554]</label>
@@ -1239,6 +1269,7 @@
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.SelectBool(31602, 31603|tomatometerallcritics, 31604|tomatometeravgcritics, 31605|tomatometerallaudience, 31606|tomatometeravgaudience)</onclick>
 					<label2>$VAR[RottenSettingLabel2Var]</label2>
+					<enable>Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_bothrating)</enable>
 				</control>
 				<control type="radiobutton" id="715">
 					<label>$LOCALIZE[31285]</label>
@@ -1659,6 +1690,7 @@
 				<onleft condition="Container(9000).HasFocus(2)">1000</onleft>
 				<onleft condition="Container(9000).HasFocus(3)">600</onleft>
 				<onleft condition="Container(9000).HasFocus(5)">900</onleft>
+				<onleft condition="Container(9000).HasFocus(6)">500</onleft>
 				<onleft condition="Container(9000).HasFocus(7)">400</onleft>
 				<onleft condition="Container(9000).HasFocus(8)">300</onleft>
 				<onleft condition="Container(9000).HasFocus(9)">200</onleft>
@@ -1667,6 +1699,7 @@
 				<onright condition="Container(9000).HasFocus(2)">1000</onright>
 				<onright condition="Container(9000).HasFocus(3)">600</onright>
 				<onright condition="Container(9000).HasFocus(5)">900</onright>
+				<onright condition="Container(9000).HasFocus(6)">500</onright>
 				<onright condition="Container(9000).HasFocus(7)">400</onright>
 				<onright condition="Container(9000).HasFocus(8)">300</onright>
 				<onright condition="Container(9000).HasFocus(9)">200</onright>
@@ -1676,7 +1709,7 @@
 				<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
 				<hitrect x="0" y="0" w="60" h="100%" />
-				<visible>Control.IsVisible(100) | Control.IsVisible(200) | Control.IsVisible(300) | Control.IsVisible(600) | Control.IsVisible(700) | Control.IsVisible(900) | Control.IsVisible(1000)</visible>
+				<visible>Control.IsVisible(100) | Control.IsVisible(200) | Control.IsVisible(300) | Control.IsVisible(500) | Control.IsVisible(600) | Control.IsVisible(700) | Control.IsVisible(900) | Control.IsVisible(1000)</visible>
 			</control>
 		</control>
 		<include content="TopBar">

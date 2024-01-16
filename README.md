@@ -43,9 +43,28 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.0+omega ###
+- .4
+  * visibility conditions of ratings extended to video info flags
+  * settings of 'hide for spoiler', 'hide episode thumb of unseen episodes' removed from skin settings
+  
+
+- .3
+  * Debug controls to skin settings extras added
+  * Dialog select window of video versions improved
+  * added option showing CD replacement when primal CD art is not available 
+  * some visible conditions of tv show widgets (Home) depends on Embuary helper/info implemented
+  * Frame skip (FrameAdvance) implemented
+  * Skin Setting of video resolution timings on video startup improved
+
+
 - .2
   * missing condition of showing disc art on visualisations fixed
-  
+  * following improvements of the video versions implementation progress
+  * black screen mode while music playing improved (hide OSD independent of OSD info setting)
+  * Addon status symbols to addon lists added 
+  * customizable background to pvr radio station logos added (OSD)
+  * visible condition of audio channel count flag reversed
+
 
 - .1
   * Movie version item to movie category widget added
