@@ -44,6 +44,11 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.2.0+nexus ###
+- .7
+  * condition visibility of episode thumbs depending on watch status fixed (startup)
+  * colored icons redesigned (thanks to frodo19)
+
+
 - .6
   * visibility conditions of ratings extended to video info flags
   * settings of 'hide for spoiler', 'hide episode thumb of unseen episodes' removed from skin settings
