@@ -22,13 +22,13 @@ the root folder inside the ZIP needs unpacking/packing the zip in some cases.**
 If you want to use special flags like HDR or Dolby Vision or special 3D formats you have to name your files with proper tags, 
 preferably before the file extension: 
 
-| 3D with <br> stereoscopic detection |           MVC codec            |          Side by Side          |         Top and Bottom         |            HDR+ Files            |
-|:-----------------------------------:|:------------------------------:|:------------------------------:|:------------------------------:|:--------------------------------:|
-|     ![](resources/flags/3d.png)     | ![](resources/flags/3dmvc.png) | ![](resources/flags/3dsbs.png) | ![](resources/flags/3dtab.png) | ![](resources/flags/hdrplus.png) | 
-|             no tagging              |             3d.mvc             |             3d.sbs             |             3d.tab             |        hdrplus., .12bit.         |
+| 3D with <br> stereoscopic detection |           MVC codec            |          Side by Side          |         Top and Bottom         |
+|:-----------------------------------:|:------------------------------:|:------------------------------:|:------------------------------:|
+|     ![](resources/flags/3d.png)     | ![](resources/flags/3dmvc.png) | ![](resources/flags/3dsbs.png) | ![](resources/flags/3dtab.png) |
+|             no tagging              |             3d.mvc             |             3d.sbs             |             3d.tab             |
 
 
-The HDR type recognition by filename for HDR/HLG/Dolby Vision has been removed.
+The Video resolution type recognition by filename for HDR(+)/HLG/Dolby Vision has been removed.
 
 ### Animated Artwork ###
 
@@ -43,6 +43,12 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.0+omega ###
+- .5
+  * condition visibility of episode thumbs depending on watch status fixed (startup)
+  * colored icons redesigned (thanks to frodo19)
+  * minor improvements in video version selection dialog
+
+
 - .4
   * visibility conditions of ratings extended to video info flags
   * settings of 'hide for spoiler', 'hide episode thumb of unseen episodes' removed from skin settings
