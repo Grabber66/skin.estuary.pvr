@@ -1230,7 +1230,7 @@
 			<control type="group">
 				<width>104</width>
 				<height>40</height>
-				<visible>!String.IsEmpty(ListItem.Property($PARAM[infolabel_prefix]SubtitleLanguage.1)) + String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.2)) + String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.3))</visible>
+				<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.1)) + String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.2)) + String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.3))</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/st_language.png" />
 					<param name="width" value="104" />
@@ -1242,7 +1242,7 @@
 			<control type="group">
 				<width>164</width>
 				<height>40</height>
-				<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.1)) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property($PARAM[infolabel_prefix]SubtitleLanguage.2)) + String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.3))</visible>
+				<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.1)) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.2)) + String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.3))</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/st_language.2.png" />
 					<param name="width" value="164" />
@@ -1263,7 +1263,7 @@
 			<control type="group">
 				<width>224</width>
 				<height>40</height>
-				<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.1)) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property($PARAM[infolabel_prefix]SubtitleLanguage.2)) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.3))</visible>
+				<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.1)) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.2)) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.3))</visible>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/st_language.3.png" />
 					<param name="width" value="224" />
@@ -3547,18 +3547,17 @@
 					<visible>!VideoPlayer.HasEpg + !Player.ChannelPreviewActive</visible>
 				</control>
 				<control type="ranges">
-					<height>4</height>
-					<colordiffuse>$VAR[BackgroundColorVar]</colordiffuse>
+					<top>2</top>
+					<height>6</height>
 					<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
 					<lefttexture>colors/white.png</lefttexture>
-					<midtexture colordiffuse="FFFF0000">colors/white.png</midtexture>
-					<righttexture>colors/white.png</righttexture>
+					<midtexture colordiffuse="FFFF0000">colors/red50.png</midtexture>
+					<righttexture>colors/red.png</righttexture>
 					<info>Player.Cuts</info>
 				</control>
 				<control type="ranges">
 					<top>4</top>
 					<height>4</height>
-					<colordiffuse>$VAR[SkinColorVar]</colordiffuse>
 					<texturebg border="3" colordiffuse="00FFFFFF">colors/white.png</texturebg>
 					<righttexture>colors/white.png</righttexture>
 					<info>Player.Chapters</info>
@@ -3566,15 +3565,15 @@
 				<control type="ranges">
 					<top>4</top>
 					<height>4</height>
-					<colordiffuse>$VAR[BackgroundColorVar]</colordiffuse>
-					<texturebg border="3" colordiffuse="00FFFFFF">colors/white.png</texturebg>
+					<texturebg border="3" colordiffuse="00FFFFFF">colors/white50.png</texturebg>
+					<lefttexture>colors/white.png</lefttexture>
+					<midtexture colordiffuse="FFFF0000">colors/white.png</midtexture>
 					<righttexture>colors/white.png</righttexture>
-					<info>Player.EditList</info>
+					<info>Player.Editlist</info>
 				</control>
 				<control type="ranges">
 					<top>4</top>
 					<height>4</height>
-					<colordiffuse>$VAR[BackgroundColorVar]</colordiffuse>
 					<texturebg border="3" colordiffuse="00FFFFFF">colors/white.png</texturebg>
 					<righttexture>colors/white.png</righttexture>
 					<info>Player.SceneMarkers</info>
@@ -3764,10 +3763,13 @@
 					<include content="ItemBottom" condition="Window.IsVisible(visualisation) + !Skin.HasSetting(show_disc) + Player.HasAudio">
 						<param name="bottom" value="245" />
 					</include>
+					<include content="ItemBottom" condition="Window.IsVisible(visualisation) + Skin.HasSetting(show_disc) + Player.HasAudio">
+						<param name="bottom" value="65" />
+					</include>
 					<control type="group">
-						<visible>[Window.IsVisible(visualisation) + !Skin.HasSetting(show_disc)] | [!Window.IsVisible(visualisation) + !Skin.HasSetting(show_discart)]</visible>
+						<visible>Window.IsVisible(visualisation) | [!Window.IsVisible(visualisation) + !Skin.HasSetting(show_discart)]</visible>
 						<visible>Skin.HasSetting(show_replacement) | !String.IsEmpty(Player.Art(discart)) | !String.IsEmpty(Player.Art(album.discart)) | !String.IsEmpty(Window(Home).Property(PVR.Artwork.discart))</visible>
-						<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="Player.Playing">Conditional</animation>
+						<animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="Player.Playing + [Player.HasVideo + !Skin.HasSetting(show_discart)] | [Player.HasAudio + !Skin.HasSetting(show_disc)]">Conditional</animation>
 						<control type="image" id="4393">
 							<aligny>top</aligny>
 							<aspectratio align="left">keep</aspectratio>
@@ -3861,7 +3863,7 @@
 						<width>404</width>
 						<height>404</height>
 						<texture colordiffuse="$VAR[PvrIconBGVar]">colors/white.png</texture>
-						<visible>Skin.HasSetting(EnablePvrIconBG)</visible>
+						<visible>Skin.HasSetting(EnablePvrIconBG) + PVR.IsPlayingRadio</visible>
 					</control>
 					<control type="image" id="4392">
 						<depth>DepthOSD+</depth>
@@ -3966,6 +3968,7 @@
 					<scroll>true</scroll>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 					<visible>Window.IsVisible(visualisation) + String.IsEmpty(MusicPlayer.Offset(1).Title)</visible>
+					<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive">Conditional</animation>
 				</control>
 				<control type="label">
 					<left>460</left>
@@ -3979,6 +3982,7 @@
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 					<visible>Window.IsVisible(visualisation) + !String.IsEmpty(MusicPlayer.Offset(1).Title)</visible>
 					<animation effect="slide" end="0,-180" time="50" tween="sine" easing="out" condition="Window.IsVisible(1138) | [Window.IsActive(fullscreeninfo) + !String.IsEmpty(VideoPlayer.Plot)]">Conditional</animation>
+					<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive">Conditional</animation>
 				</control>
 				<control type="group">
 					<visible>!Window.IsVisible(playerprocessinfo) + !Window.IsVisible(videobookmarks) + !Window.IsVisible(1122) + !Window.IsVisible(1139)</visible>

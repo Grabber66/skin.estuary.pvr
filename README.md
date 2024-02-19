@@ -43,9 +43,21 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.0+omega ###
+- .8
+  * Subtitle flags in info views fixed
+  * Visibility condition of rotating disc art in video/audio OSD fixed
+
+
+- .7
+  * Title position on timeshift in music OSD fixed (PVR Radio)
+  * Visibility of EDL and Cuts in seek bar fixed
+  * Year from list views removed if year is shown behind title
+  
+
 - .6
   * Jump2Letter for Interprets (music videos) implemented
   * Option for showing rating flags in video info added
+  * Chinese language strings added
 
   
 - .5
