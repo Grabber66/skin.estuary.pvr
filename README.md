@@ -44,6 +44,15 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.2.0+nexus ###
+- .12
+  * visibility of cd art in music osd modified
+  * PVR widget update on content changes (info update) implemented
+
+
+- .11
+  * status overlays partial reverted
+  
+
 - .10
   * Subtitle flags in info views fixed
   * Visibility condition of rotating disc art in video/audio OSD fixed
