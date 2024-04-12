@@ -10,7 +10,7 @@
 			<width>1</width>
 			<height>1</height>
 			<left>-1000</left>
-        	</control>
+		</control>
 		<control type="group" id="0">
 			<control type="label" id="10">
 				<left>45</left>
