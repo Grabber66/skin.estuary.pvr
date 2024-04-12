@@ -43,6 +43,10 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.0+omega ###
+- .13
+  * missing condition for labels in wall view fixed
+  
+
 - .12
  * Channel manager, channel group manager fixed
 

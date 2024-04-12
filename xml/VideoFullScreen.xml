@@ -6,10 +6,10 @@
 	<onload condition="!String.IsEqual(Skin.String(show_videoresolution),31578) + !String.IsEqual(Skin.String(show_videoresolution),31334) + [String.StartsWith(Player.Process(amlogic.eoft_gamut),HDR10) | String.StartsWith(Player.Process(amlogic.eoft_gamut),HLG) | String.StartsWith(Player.Process(amlogic.eoft_gamut),DV)]">ActivateWindow(1111)</onload>
 	<onload condition="String.Contains(Player.Art(thumb),ytimg)">AlarmClock(setfo,SetFocus(9606),00:01,silent)</onload>
 	<controls>
-	<control type="button" id="9606">
-		<width>1</width>
-		<height>1</height>
-		<left>-1000</left>
+		<control type="button" id="9606">
+			<width>1</width>
+			<height>1</height>
+			<left>-1000</left>
         </control>
 		<control type="group" id="0">
 			<control type="label" id="10">
