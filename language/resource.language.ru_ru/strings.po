@@ -1972,8 +1972,8 @@ msgstr "Загрузить все изображения"
 
 #: /xml/Includes_MediaMenu.xml
 msgctxt "#31440"
-msgid "Standard colors for genres"
-msgstr "Стандартные цвета для жанров"
+msgid "Genre Colors"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31441"

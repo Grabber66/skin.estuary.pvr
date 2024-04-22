@@ -255,41 +255,41 @@
 	<!-- animated fanarts -->
 	<include name="GlobalAnimatedBackground">
 		<control type="fadelabel" id="4399">
-        	<top>-900</top>
-            <width>2560</width>
-            <height>0</height>
-            <scroll>false</scroll>
-            <scrollout>false</scrollout>
-            <randomize>true</randomize>
-            <resetonlabelchange>true</resetonlabelchange>
-            <visible>Skin.HasSetting(EnableExtraFanart)</visible>
-            <label>$INFO[ListItem.Art(fanart)]</label>
-            <label>$INFO[ListItem.Art(fanart1)]</label>
-            <label>$INFO[ListItem.Art(fanart2)]</label>
-            <label>$INFO[ListItem.Art(fanart3)]</label>
-            <label>$INFO[ListItem.Art(fanart4)]</label>
-            <label>$INFO[ListItem.Art(fanart5)]</label>
-            <label>$INFO[ListItem.Art(fanart6)]</label>
-            <label>$INFO[ListItem.Art(fanart7)]</label>
-            <label>$INFO[ListItem.Art(fanart8)]</label>
-            <label>$INFO[ListItem.Art(fanart9)]</label>
+			<top>-900</top>
+			<width>2560</width>
+			<height>0</height>
+			<scroll>false</scroll>
+			<scrollout>false</scrollout>
+			<randomize>true</randomize>
+			<resetonlabelchange>true</resetonlabelchange>
+			<visible>Skin.HasSetting(EnableExtraFanart)</visible>
+			<label>$INFO[ListItem.Art(fanart)]</label>
+			<label>$INFO[ListItem.Art(fanart1)]</label>
+			<label>$INFO[ListItem.Art(fanart2)]</label>
+			<label>$INFO[ListItem.Art(fanart3)]</label>
+			<label>$INFO[ListItem.Art(fanart4)]</label>
+			<label>$INFO[ListItem.Art(fanart5)]</label>
+			<label>$INFO[ListItem.Art(fanart6)]</label>
+			<label>$INFO[ListItem.Art(fanart7)]</label>
+			<label>$INFO[ListItem.Art(fanart8)]</label>
+			<label>$INFO[ListItem.Art(fanart9)]</label>
 			<label>$INFO[ListItem.Art(tvshow.fanart)]</label>
-            <label>$INFO[ListItem.Art(tvshow.fanart1)]</label>
-            <label>$INFO[ListItem.Art(tvshow.fanart2)]</label>
-            <label>$INFO[ListItem.Art(tvshow.fanart3)]</label>
-            <label>$INFO[ListItem.Art(tvshow.fanart4)]</label>
-            <label>$INFO[ListItem.Art(tvshow.fanart5)]</label>
-            <label>$INFO[ListItem.Art(tvshow.fanart6)]</label>
-            <label>$INFO[ListItem.Art(tvshow.fanart7)]</label>
-            <label>$INFO[ListItem.Art(tvshow.fanart8)]</label>
-            <label>$INFO[ListItem.Art(tvshow.fanart9)]</label>
+			<label>$INFO[ListItem.Art(tvshow.fanart1)]</label>
+			<label>$INFO[ListItem.Art(tvshow.fanart2)]</label>
+			<label>$INFO[ListItem.Art(tvshow.fanart3)]</label>
+			<label>$INFO[ListItem.Art(tvshow.fanart4)]</label>
+			<label>$INFO[ListItem.Art(tvshow.fanart5)]</label>
+			<label>$INFO[ListItem.Art(tvshow.fanart6)]</label>
+			<label>$INFO[ListItem.Art(tvshow.fanart7)]</label>
+			<label>$INFO[ListItem.Art(tvshow.fanart8)]</label>
+			<label>$INFO[ListItem.Art(tvshow.fanart9)]</label>
 			<label>$INFO[Window(Home).Property(PVR.Artwork.fanart)]</label>
-            <label>$INFO[Window(Home).Property(PVR.Artwork.fanart1)]</label>
-            <label>$INFO[Window(Home).Property(PVR.Artwork.fanart2)]</label>
-            <label>$INFO[Window(Home).Property(PVR.Artwork.fanart3)]</label>
-            <label>$INFO[Window(Home).Property(PVR.Artwork.fanart4)]</label>
-            <pauseatend>8000</pauseatend>
-        </control>
+			<label>$INFO[Window(Home).Property(PVR.Artwork.fanart1)]</label>
+			<label>$INFO[Window(Home).Property(PVR.Artwork.fanart2)]</label>
+			<label>$INFO[Window(Home).Property(PVR.Artwork.fanart3)]</label>
+			<label>$INFO[Window(Home).Property(PVR.Artwork.fanart4)]</label>
+			<pauseatend>8000</pauseatend>
+		</control>
 		<control type="image" id="4398">
 			<depth>DepthBackground</depth>
 			<include>FullScreenDimensions</include>

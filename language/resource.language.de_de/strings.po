@@ -1857,8 +1857,8 @@ msgstr "Hole alle Grafiken"
 
 #: /xml/Includes_MediaMenu.xml
 msgctxt "#31440"
-msgid "Standard colors for genres"
-msgstr "Standardfarben für Genres"
+msgid "Genre Colors"
+msgstr "Genre Farben"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31441"
