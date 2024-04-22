@@ -1910,8 +1910,8 @@ msgstr "Obtener todos los Artworks"
 
 #: /xml/Includes_MediaMenu.xml
 msgctxt "#31440"
-msgid "Standard colors for genres"
-msgstr "Colores estandar para géneros"
+msgid "Genre Colors"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31441"

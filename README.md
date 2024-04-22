@@ -46,6 +46,8 @@ supports animated poster only.
 - .14
   * Condition visibility of OSD fixed (Youtube recommended channels)
   * channelswitch options reverted back (Nexus behaviour)
+  * Genre IDs to genre info (EPG grid view) added, special genre labels from skin removed
+  * new customized genres added, genre colors selection extended to off/default/custom
 
 
 - .13

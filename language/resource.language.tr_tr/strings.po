@@ -1876,8 +1876,8 @@ msgstr "Tüm Artwork'leri al"
 
 #: /xml/Includes_MediaMenu.xml
 msgctxt "#31440"
-msgid "Standard colors for genres"
-msgstr "Türler için standart renkler"
+msgid "Genre Colors"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31441"

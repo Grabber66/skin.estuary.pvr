@@ -1918,8 +1918,8 @@ msgstr "Pobierz wszystkie Artworki"
 
 #: /xml/Includes_MediaMenu.xml
 msgctxt "#31440"
-msgid "Standard colors for genres"
-msgstr "Standardowe kolory dla gatunków"
+msgid "Genre Colors"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31441"
