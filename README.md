@@ -43,6 +43,10 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.0+omega ###
+- .15
+  * show year of release depending on skin settings in Live TV OSD main label
+
+
 - .14
   * Condition visibility of OSD fixed (Youtube recommended channels)
   * channelswitch options reverted back (Nexus behaviour)

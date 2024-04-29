@@ -843,8 +843,10 @@
 		<value>$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Plot,[COLOR white],[/COLOR]]</value>
 	</variable>
 	<variable name="OsdMainLabelVar">
-		<value condition="!VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.Artist,, [COLOR white]-[/COLOR] ]$INFO[VideoPlayer.Album,, [COLOR white]-[/COLOR] ]$INFO[VideoPlayer.TVShowTitle,, [COLOR white]-[/COLOR] ]$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</value>
-		<value condition="VideoPlayer.Content(LiveTV) + !Pvr.IsPlayingRadio">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - ,x]$INFO[VideoPlayer.Episode,,.]$INFO[VideoPlayer.EpisodeName, ]</value>
+		<value condition="!VideoPlayer.Content(LiveTV) + !Skin.HasSetting(hide_pubyear)">$INFO[VideoPlayer.Artist,, [COLOR white]-[/COLOR] ]$INFO[VideoPlayer.Album,, [COLOR white]-[/COLOR] ]$INFO[VideoPlayer.TVShowTitle,, [COLOR white]-[/COLOR] ]$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.Title]</value>
+		<value condition="!VideoPlayer.Content(LiveTV) + Skin.HasSetting(hide_pubyear)">$INFO[VideoPlayer.Artist,, [COLOR white]-[/COLOR] ]$INFO[VideoPlayer.Album,, [COLOR white]-[/COLOR] ]$INFO[VideoPlayer.TVShowTitle,, [COLOR white]-[/COLOR] ]$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</value>
+		<value condition="VideoPlayer.Content(LiveTV) + !Skin.HasSetting(hide_pubyear) + !Pvr.IsPlayingRadio">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - ,x]$INFO[VideoPlayer.Episode]$INFO[VideoPlayer.EpisodeName,. ]</value>
+		<value condition="VideoPlayer.Content(LiveTV) + Skin.HasSetting(hide_pubyear) + !Pvr.IsPlayingRadio">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Season, - ,x]$INFO[VideoPlayer.Episode]$INFO[VideoPlayer.EpisodeName,. ]$INFO[VideoPlayer.Year, (,)]</value>
 	</variable>
 	<variable name="OsdGenreLabelVar">
 		<value condition="!VideoPlayer.Content(LiveTV) + !VideoPlayer.Content(files) + !Window.IsVisible(1138) + ![Window.IsActive(fullscreeninfo) + !String.IsEmpty(VideoPlayer.Plot)]">$INFO[VideoPlayer.Genre]</value>
