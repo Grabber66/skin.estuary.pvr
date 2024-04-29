@@ -55,9 +55,10 @@
 				<top>10</top>
 				<right>30</right>
 				<height>30</height>
-				<label>[B]$INFO[VideoPlayer.Title]$VAR[SeasonEpisodePlayerLabel][/B]</label>
 				<scroll>true</scroll>
-				<font>font37</font>
+				<font>font37_bold</font>
+				<textcolor>$VAR[SkinColorVar]</textcolor>
+				<label>$VAR[OsdMainLabelVar]</label>
 			</control>
 			<control type="label">
 				<left>530</left>
@@ -66,7 +67,6 @@
 				<height>30</height>
 				<label>$VAR[SeekTimeLabelVar]</label>
 				<font>font12</font>
-				<visible>!Player.ChannelPreviewActive</visible>
 			</control>
 			<control type="label">
 				<left>530</left>
@@ -76,7 +76,7 @@
 				<label>$INFO[PVR.EpgEventRemainingTime,$LOCALIZE[31134] : ]</label>
 				<font>font12</font>
 				<align>right</align>
-				<visible>VideoPlayer.HasEpg + !Player.ChannelPreviewActive</visible>
+				<visible>VideoPlayer.HasEpg</visible>
 			</control>
 			<control type="progress">
 				<animation effect="fade" end="0" time="200">WindowClose</animation>

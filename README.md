@@ -44,6 +44,10 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.2.0+nexus ###
+- .16
+  * show year of release depending on skin settings in Live TV OSD main label
+
+
 - .15
   * Condition visibility of OSD fixed (Youtube recommended channels)
   * Genre IDs to genre info (EPG grid view) added, special genre labels from skin removed
