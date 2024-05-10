@@ -2824,3 +2824,23 @@ msgstr ""
 msgctxt "#31676"
 msgid "Show Video Size Icon in List Views"
 msgstr ""
+
+msgctxt "#31677"
+msgid "Now in Cinemas"
+msgstr ""
+
+msgctxt "#31678"
+msgid "Next up in Cinemas"
+msgstr ""
+
+msgctxt "#31679"
+msgid "Set Display of Episodes to"
+msgstr ""
+
+msgctxt "#31680"
+msgid "watched / total"
+msgstr ""
+
+msgctxt "#31681"
+msgid "unwatched / total"
+msgstr ""

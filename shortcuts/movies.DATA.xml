@@ -79,6 +79,20 @@
         <action>ActivateWindow(Videos,sources://videos/,return)</action>
     </shortcut>
     <shortcut>
+        <label>31677</label>
+        <label2>Common Shortcut</label2>
+        <icon>DefaultCinema.png</icon>
+        <action>ActivateWindow(videos,plugin://script.embuary.info/movie/now_playing,return)</action>
+        <visible>System.AddonIsEnabled(script.embuary.info)</visible>
+    </shortcut>
+    <shortcut>
+        <label>31678</label>
+        <label2>Common Shortcut</label2>
+        <icon>DefaultNextUp.png</icon>
+        <action>ActivateWindow(videos,plugin://script.embuary.info/movie/upcoming,return)</action>
+        <visible>System.AddonIsEnabled(script.embuary.info)</visible>
+    </shortcut>
+    <shortcut>
         <label>$VAR[VideoLibraryScanLabel]</label>
         <label2>Common Shortcut</label2>
         <icon>$VAR[VideoLibraryScanIcon]</icon>

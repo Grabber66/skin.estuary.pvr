@@ -100,6 +100,12 @@
 				</focusedlayout>
 				<content>
 					<item>
+						<label>$LOCALIZE[210]</label>
+						<icon>DefaultShortcut.png</icon>
+						<onclick>Back</onclick>
+						<visible>Skin.HasSetting(touchmode)</visible>
+					</item>
+					<item>
 						<label>$LOCALIZE[13012]</label>
 						<icon>special://skin/extras/icons/Power menu/exit.png</icon> 
 						<onclick>Quit</onclick>
@@ -333,6 +339,12 @@
 					</control>
 				</focusedlayout>
 				<content>
+					<item>
+						<label>$LOCALIZE[210]</label>
+						<icon>DefaultShortcut.png</icon>
+						<onclick>Back</onclick>
+						<visible>Skin.HasSetting(touchmode)</visible>
+					</item>
 					<item>
 						<label>$LOCALIZE[13012]</label>
 						<icon>special://skin/extras/icons/Power menu/exit.png</icon> 

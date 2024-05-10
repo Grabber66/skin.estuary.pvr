@@ -281,6 +281,16 @@
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 					<visible>System.HasAddon(service.coreelec.settings)</visible>
 				</control>
+				<control type="label">
+					<width>710</width>
+					<height>35</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[System.FPS,$LOCALIZE[14220] : [COLOR white], FPS[/COLOR]]</label>
+					<font>font12</font>
+					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+					<visible>!String.IsEmpty(System.FPS)</visible>
+				</control>
 			</control>
 			<control type="grouplist">
 				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">

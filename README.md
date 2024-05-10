@@ -44,14 +44,24 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 ### 4.2.0+nexus ###
+- .17
+  * extend watched/unwatched marker settings with off option
+  * Parental Rating flag of PVR client in Video OSD included 
+
+
 - .16
   * show year of release depending on skin settings in Live TV OSD main label
+  * skin shortcuts favourite (overrides.xml) modified
+  * now/next Up in Cinemas to movie widget added
+  * Display FPS to player process info added
+  * unwatched/total marker added to widgets. Configure them in skin settings
 
 
 - .15
   * Condition visibility of OSD fixed (Youtube recommended channels)
   * Genre IDs to genre info (EPG grid view) added, special genre labels from skin removed
   * new customized genres added, genre colors selection extended to off/default/custom
+
 
 - .14
   * Channel manager, channel group manager fixed

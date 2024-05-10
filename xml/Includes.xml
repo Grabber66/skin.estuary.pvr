@@ -1766,6 +1766,24 @@
 			<param name="width" value="62"/>
 			<param name="visible" value="Pvr.ActStreamIsEncrypted" />
 		</include>
+		<include content="MediaFlag">
+			<param name="texture" value="$VAR[ParentalRatingImageVar]" />
+			<param name="width" value="96" />
+			<param name="label_width" value="46" />
+			<param name="label_left" value="48" />
+			<param name="label" value="$VAR[ParentalRatingFlagVar]" />
+			<param name="visible" value="!String.IsEmpty(VideoPlayer.ParentalRating) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,song) + !Control.HasFocus(6600)  + !Control.HasFocus(66001)" />
+			<param name="visible2" value="!Skin.HasSetting(show_mpaaflag) + !String.Contains(VideoPlayer.ParentalRating,PG-13) + !String.Contains(VideoPlayer.ParentalRating,NC-17)" />
+		</include>
+		<include content="MediaFlag">
+			<param name="texture" value="$VAR[ParentalRatingImageVar]" />
+			<param name="width" value="144" />
+			<param name="label_width" value="94" />
+			<param name="label_left" value="48" />
+			<param name="label" value="$VAR[ParentalRatingFlagVar]" />
+			<param name="visible" value="!String.IsEmpty(VideoPlayer.ParentalRating) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBtype,song) + !Control.HasFocus(6600)  + !Control.HasFocus(66001)" />
+			<param name="visible2" value="!Skin.HasSetting(show_mpaaflag) + String.Contains(VideoPlayer.ParentalRating,PG-13) | String.Contains(VideoPlayer.ParentalRating,NC-17)" />
+		</include>
 	</include>
 	<include name="MediaFlagPvrOsd">
 		<param name="visible">true</param>
@@ -3045,16 +3063,23 @@
 			</control>
 			<include content="IconButton">
 				<param name="control_id" value="" />
-				<param name="onclick" value="ActivateWindow(favourites)" />
+				<param name="onclick" value="ActivateWindow(favouritesbrowser)" />
 				<param name="icon" value="icons/favourites.png" />
 				<param name="label" value="$LOCALIZE[10134]" />
+			</include>
+			<include content="IconButton">
+				<param name="control_id" value="" />
+				<param name="onclick" value="FullScreen" />
+				<param name="icon" value="icons/now-playing/fullscreen.png" />
+				<param name="label" value="$LOCALIZE[10134]" />
+				<param name="visible" value="Player.HasMedia" />
 			</include>
 		</control>
 	</include>
 	<include name="TouchBackButton">
 		<control type="radiobutton" id="799">
 			<left>-10</left>
-			<top>-25</top>
+			<top>-35</top>
 			<width>120</width>
 			<height>120</height>
 			<align>center</align>

@@ -1627,6 +1627,16 @@
 					<selected>!Skin.HasSetting(enable_HomeDiscArtOverlay)</selected>
 					<visible>Skin.HasSetting(enable_HomeDiscArt)</visible>
 				</control>
+				<control type="button" id="10028">
+					<label>$LOCALIZE[31679]</label>
+					<include>DefaultSettingButton</include>
+					<label2>$VAR[EpisodesDisplayVar]</label2>
+					<description>display watchted/unwatched Episodes of total</description>
+					<onclick condition="String.IsEmpty(Skin.String(EpisodesDisplay))">Skin.SetString(EpisodesDisplay,31680)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(EpisodesDisplay),31680)">Skin.SetString(EpisodesDisplay,31681)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(EpisodesDisplay),31681)">Skin.SetString(EpisodesDisplay,31578)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(EpisodesDisplay),31578)">Skin.SetString(EpisodesDisplay,31680)</onclick>
+				</control>
 				<control type="radiobutton" id="10017">
 					<label>$LOCALIZE[31364]</label>
 					<include>DefaultSettingButton</include>

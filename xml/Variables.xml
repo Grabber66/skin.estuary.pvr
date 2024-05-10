@@ -929,6 +929,37 @@
 		<value condition="String.Contains(ListItem.mpaa,6) | String.Contains(Container(60).ListItem.mpaa,6) | String.Contains(Window(Home).Property(PVR.Artwork.ListItem.mpaa),6)">6</value>
 		<value>NR</value>
 	</variable>
+	<variable name="ParentalRatingImageVar">
+		<value condition="String.Contains(VideoPlayer.ParentalRating,TV-Y7) | String.Contains(VideoPlayer.ParentalRating,TV-Y) | String.Contains(VideoPlayer.ParentalRating,TV-PG) | String.Contains(VideoPlayer.ParentalRating,TV-G) | String.Contains(VideoPlayer.ParentalRating,TV-14) | String.Contains(VideoPlayer.ParentalRating,TV-MA)">flags/mpaa-tv.png</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,PG-13) | String.Contains(Container(60).VideoPlayer.ParentalRating,PG-13) | String.Contains(Window(Home).Property(PVR.Artwork.VideoPlayer.ParentalRating),PG-13) | String.Contains(VideoPlayer.ParentalRating,NC-17) | String.Contains(Container(60).VideoPlayer.ParentalRating,NC-17) | String.Contains(Window(Home).Property(PVR.Artwork.VideoPlayer.ParentalRating),NC-17)">flags/mpaa-long.png</value>
+		<value>flags/mpaa.png</value>
+	</variable>
+	<variable name="ParentalRatingFlagVar">
+		<value condition="String.Contains(VideoPlayer.ParentalRating,TV-Y7)">Y7</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,TV-Y)">Y</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,TV-PG)">PG</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,TV-G)">G</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,TV-14)">14</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,TV-MA)">MA</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,Approved)">AP</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,Rated R)">R</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,Rated PG-13)">PG-13</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,Rated PG)">PG</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,Rated G)">G</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,Rated M)">M</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,Rated NC-17)">NC-17</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,Not Rated)">NR</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,12)">12</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,13)">13</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,14)">14</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,15)">15</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,16)">16</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,18)">18</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,U)">U</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,0)">0</value>
+		<value condition="String.Contains(VideoPlayer.ParentalRating,6)">6</value>
+		<value>NR</value>
+	</variable>
 	<variable name="PowerMenuAspectLabel2Var">
 		<value condition="Skin.HasSetting(powermenu_panel)">$LOCALIZE[31099]</value>
 		<value condition="Skin.HasSetting(powermenu_iconlist)">$LOCALIZE[31428]</value>
@@ -1217,7 +1248,13 @@
 		<value condition="String.IsEqual(Skin.String(show_videoresolution),31583)">$LOCALIZE[31583]</value>
 		<value condition="String.IsEqual(Skin.String(show_videoresolution),31584)">$LOCALIZE[31584]</value>
 		<value>$LOCALIZE[31334]</value>
-	</variable>	
+	</variable>
+	<variable name="EpisodesDisplayVar">
+		<value condition="String.IsEqual(Skin.String(EpisodesDisplay),31578)">$LOCALIZE[31578]</value>
+		<value condition="String.IsEqual(Skin.String(EpisodesDisplay),31680)">$LOCALIZE[31680]</value>
+		<value condition="String.IsEqual(Skin.String(EpisodesDisplay),31681)">$LOCALIZE[31681]</value>
+		<value>$LOCALIZE[31334]</value>
+	</variable>
 	<variable name="SeekBarOpacityVar">
 		<value condition="Skin.HasSetting(SeekbarOpacity)">3FFFFFFF</value>
 		<value>FFFFFFFF</value>
@@ -1416,7 +1453,8 @@
 		<value>$INFO[ListItem.Art(icon)]</value>
 	</variable>
 	<variable name="ListLabel2Var">
-		<value condition="String.IsEmpty(Container.PluginName) + [Container.Content(tvshows) | Container.Content(seasons)] + String.IsEqual(Container.SortMethod,$LOCALIZE[556])">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
+		<value condition="String.IsEmpty(Container.PluginName) + [Container.Content(tvshows) | Container.Content(seasons)] + String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + [String.IsEqual(Skin.String(EpisodesDisplay),31680) | String.IsEqual(Skin.String(EpisodesDisplay),31334)]">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
+		<value condition="String.IsEmpty(Container.PluginName) + [Container.Content(tvshows) | Container.Content(seasons)] + String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + String.IsEqual(Skin.String(EpisodesDisplay),31681)">$INFO[ListItem.Property(UnwatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
 		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + !Skin.HasSetting(hide_pubyear) + Skin.HasSetting(circle_rating)">$INFO[ListItem.Rating,, • ]$INFO[ListItem.Year]</value>
  		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + !Skin.HasSetting(hide_pubyear) + Skin.HasSetting(circle_userrating)">$INFO[ListItem.UserRating,, • ]$INFO[ListItem.Year]</value>
  		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + !Skin.HasSetting(hide_pubyear) + Skin.HasSetting(circle_bothrating) + !String.IsEmpty(ListItem.UserRating)">$INFO[ListItem.UserRating,, • ]$INFO[ListItem.Year]</value>
@@ -1712,7 +1750,8 @@
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 	</variable>
 	<variable name="BannerLabel2Var">
-		<value condition="String.IsEqual(Listitem.DBType,tvshow) | String.IsEqual(Listitem.DBType,season)">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
+		<value condition="[String.IsEqual(Listitem.DBType,tvshow) | String.IsEqual(Listitem.DBType,season)] + [String.IsEqual(Skin.String(EpisodesDisplay),31680) | String.IsEqual(Skin.String(EpisodesDisplay),31334)]">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
+		<value condition="[String.IsEqual(Listitem.DBType,tvshow) | String.IsEqual(Listitem.DBType,season)] + String.IsEqual(Skin.String(EpisodesDisplay),31681)">$INFO[ListItem.Property(UnwatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
 	</variable>
 	<variable name="VideoPlayerForwardRewindVar">
 		<value condition="Player.Forwarding2x | Player.Rewinding2x">2x</value>
