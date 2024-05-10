@@ -87,7 +87,15 @@
 				<width>28</width>
 				<height>28</height>
 				<texture>lists/played-total.png</texture>
-				<visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(ListItem.Property(TotalEpisodes)) + String.IsEqual(Skin.String(EpisodesDisplay),31680)</visible>
+			</control>
+			<control type="image">
+				<right>35</right>
+				<top>195</top>
+				<width>28</width>
+				<height>28</height>
+				<texture>lists/played-unwatched.png</texture>
+				<visible>[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(ListItem.Property(TotalEpisodes)) + String.IsEqual(Skin.String(EpisodesDisplay),31681)</visible>
 			</control>
 			<control type="label">
 				<left>80</left>

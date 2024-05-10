@@ -43,8 +43,17 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.0+omega ###
+- .16
+  * extend watched/unwatched marker settings with off option
+  * Parental Rating flag of PVR client in Video OSD included 
+
+
 - .15
   * show year of release depending on skin settings in Live TV OSD main label
+  * skin shortcuts favourite (overrides.xml) modified
+  * now/next Up in Cinemas to movie widget added 
+  * Display FPS to player process info added
+  * unwatched/total marker added to widgets. Configure them in skin settings
 
 
 - .14

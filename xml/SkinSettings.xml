@@ -788,14 +788,12 @@
 					<label2>$VAR[ShowVideoResolutionVar]</label2>
 					<visible>System.HasAddon(service.coreelec.settings)</visible>
 					<include>DefaultSettingButton</include>
-					<visible>System.HasAddon(service.coreelec.settings)</visible>
-					<onclick condition="String.IsEmpty(Skin.String(show_videoresolution))">Skin.SetString(show_videoresolution,31578)</onclick>
+					<onclick condition="String.IsEmpty(Skin.String(show_videoresolution)) | [!String.IsEqual(Skin.String(show_videoresolution),31578) + !String.IsEqual(Skin.String(show_videoresolution),31581) + !String.IsEqual(Skin.String(show_videoresolution),31582) + !String.IsEqual(Skin.String(show_videoresolution),31583) + !String.IsEqual(Skin.String(show_videoresolution),31584)]">Skin.SetString(show_videoresolution,31578)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31584)">Skin.SetString(show_videoresolution,31578)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31583)">Skin.SetString(show_videoresolution,31584)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31582)">Skin.SetString(show_videoresolution,31583)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31581)">Skin.SetString(show_videoresolution,31582)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31578)">Skin.SetString(show_videoresolution,31581)</onclick>
-					<onclick condition="!String.IsEmpty(Skin.String(show_videoresolution)) + !String.IsEqual(Skin.String(show_videoresolution),31578) + !String.IsEqual(Skin.String(show_videoresolution),31581) + !String.IsEqual(Skin.String(show_videoresolution),31582) + !String.IsEqual(Skin.String(show_videoresolution),31583) + !String.IsEqual(Skin.String(show_videoresolution),31584)">Skin.SetString(show_videoresolution,31578)</onclick>
 				</control>
 				<control type="button" id="509">
 					<label>$LOCALIZE[31663]</label>
@@ -1627,6 +1625,16 @@
 					<onclick>Skin.ToggleSetting(enable_HomeDiscArtOverlay)</onclick>
 					<selected>!Skin.HasSetting(enable_HomeDiscArtOverlay)</selected>
 					<visible>Skin.HasSetting(enable_HomeDiscArt)</visible>
+				</control>
+				<control type="button" id="10028">
+					<label>$LOCALIZE[31679]</label>
+					<include>DefaultSettingButton</include>
+					<label2>$VAR[EpisodesDisplayVar]</label2>
+					<description>display watchted/unwatched Episodes of total</description>
+					<onclick condition="String.IsEmpty(Skin.String(EpisodesDisplay))">Skin.SetString(EpisodesDisplay,31680)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(EpisodesDisplay),31680)">Skin.SetString(EpisodesDisplay,31681)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(EpisodesDisplay),31681)">Skin.SetString(EpisodesDisplay,31578)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(EpisodesDisplay),31578)">Skin.SetString(EpisodesDisplay,31680)</onclick>
 				</control>
 				<control type="radiobutton" id="10017">
 					<label>$LOCALIZE[31364]</label>

@@ -86,32 +86,6 @@
 						<left>30</left>
 						<top>280</top>
 						<width>537</width>
-						<bottom>100</bottom>
-						<align>justify</align>
-						<visible>!ListItem.IsCollection</visible>
-						<label>$VAR[PlotSpoilerVar][CR][CR]</label>
-						<textcolor>$VAR[SkinColorVar]</textcolor>
-						<autoscroll delay="10000" time="5000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
-						<visible>[String.IsEmpty(ListItem.Art(banner)) + String.IsEmpty(ListItem.Art(tvshow.banner))]</visible>
-						<visible>!String.IsEqual(Skin.Font, Arial)</visible>
-					</control>
-					<control type="textbox">
-						<left>30</left>
-						<top>280</top>
-						<width>537</width>
-						<bottom>225</bottom>
-						<align>justify</align>
-						<visible>!ListItem.IsCollection</visible>
-						<label>$VAR[PlotSpoilerVar][CR][CR]</label>
-						<textcolor>$VAR[SkinColorVar]</textcolor>
-						<autoscroll delay="10000" time="5000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
-						<visible>![String.IsEmpty(ListItem.Art(banner)) + String.IsEmpty(ListItem.Art(tvshow.banner))]</visible>
-						<visible>!String.IsEqual(Skin.Font, Arial)</visible>
-					</control>
-					<control type="textbox">
-						<left>30</left>
-						<top>280</top>
-						<width>537</width>
 						<bottom>110</bottom>
 						<align>justify</align>
 						<visible>!ListItem.IsCollection</visible>
@@ -119,7 +93,6 @@
 						<textcolor>$VAR[SkinColorVar]</textcolor>
 						<autoscroll delay="10000" time="5000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
 						<visible>[String.IsEmpty(ListItem.Art(banner)) + String.IsEmpty(ListItem.Art(tvshow.banner))]</visible>
-						<visible>String.IsEqual(Skin.Font, Arial)</visible>
 					</control>
 					<control type="textbox">
 						<left>30</left>
@@ -132,7 +105,6 @@
 						<textcolor>$VAR[SkinColorVar]</textcolor>
 						<autoscroll delay="10000" time="5000" repeat="10000">Skin.HasSetting(autoscroll)</autoscroll>
 						<visible>![String.IsEmpty(ListItem.Art(banner)) + String.IsEmpty(ListItem.Art(tvshow.banner))]</visible>
-						<visible>String.IsEqual(Skin.Font, Arial)</visible>
 					</control>
 					<control type="textbox">
 						<left>30</left>

@@ -131,7 +131,15 @@
 							<width>28</width>
 							<height>28</height>
 							<texture>lists/played-total.png</texture>
-							<visible>String.IsEqual(Listitem.dbtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+							<visible>String.IsEqual(Listitem.dbtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes)) + String.IsEqual(Skin.String(EpisodesDisplay),31680)</visible>
+						</control>
+						<control type="image">
+							<right>75</right>
+							<top>183</top>
+							<width>28</width>
+							<height>28</height>
+							<texture>lists/played-total.png</texture>
+							<visible>String.IsEqual(Listitem.dbtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes)) + String.IsEqual(Skin.String(EpisodesDisplay),31681)</visible>
 						</control>
 						<control type="label">
 							<right>118</right>
@@ -303,7 +311,15 @@
 							<width>28</width>
 							<height>28</height>
 							<texture>lists/played-total.png</texture>
-							<visible>String.IsEqual(Listitem.dbtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+							<visible>String.IsEqual(Listitem.dbtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes)) + String.IsEqual(Skin.String(EpisodesDisplay),31680)</visible>
+						</control>
+						<control type="image">
+							<right>75</right>
+							<top>183</top>
+							<width>28</width>
+							<height>28</height>
+							<texture>lists/played-unwatched.png</texture>
+							<visible>String.IsEqual(Listitem.dbtype,tvshow) + !String.IsEmpty(ListItem.Property(TotalEpisodes)) + String.IsEqual(Skin.String(EpisodesDisplay),31681)</visible>
 						</control>
 						<control type="label">
 							<right>118</right>
