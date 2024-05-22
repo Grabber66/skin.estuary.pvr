@@ -1481,7 +1481,7 @@
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoAspect)" />
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="$PARAM[audiocodec_var]" />
+					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioCodec,flags/audiocodec/,.png]" />
 					<param name="fallback" value="flags/audiocodec/fallback.png" />
 					<param name="width" value="104" />
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioCodec)" />
@@ -2295,7 +2295,7 @@
 					<left>0</left>
 					<top>0</top>
 					<width>110%</width>
-					<height>180</height>
+					<height>160</height>
 					<texture colordiffuse="$VAR[Bars_Opacity]">frame/osdfade.png</texture>
 					<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 					<visible>$PARAM[visible]</visible>
@@ -3806,7 +3806,7 @@
 							<height>73</height>
 							<align>center</align>
 							<aligny>center</aligny>
-							<font>Font-Disc</font>
+							<font>font10</font>
 							<label>$VAR[MusicPlayerDiscTitleVar]</label>
 							<textcolor>$VAR[SkinColorVar]</textcolor>
 							<wrapmultiline>true</wrapmultiline>
@@ -3819,7 +3819,7 @@
 							<height>73</height>
 							<align>center</align>
 							<aligny>center</aligny>
-							<font>Font-Disc2</font>
+							<font>font10</font>
 							<label>$VAR[MusicPlayerDiscAlbumVar]</label>
 							<textcolor>black</textcolor>
 							<wrapmultiline>true</wrapmultiline>
@@ -3858,7 +3858,7 @@
 						<align>center</align>
 						<aligny>top</aligny>
 						<top>225</top>
-						<font>Font-Disc</font>
+						<font>font10</font>
 						<textcolor>grey</textcolor>
 						<wrapmultiline>true</wrapmultiline>
 						<label>$VAR[MusicPlayerDiscAlbumVar]</label>
@@ -4109,12 +4109,12 @@
 							</include>
 							<include content="MediaFlag">
 								<param name="texture" value="$VAR[VideoPlayerHdrTypeVar]" />
-								<param name="visible" value="!String.IsEmpty(VideoPlayer.HdrType) + !String.Contains(VideoPlayer.HdrType,dolbyvision) + !Window.IsVisible(visualisation)" />
+								<param name="visible" value="[String.Contains(VideoPlayer.HdrType,hdr) | String.Contains(VideoPlayer.HdrType,hlg)] + !Window.IsVisible(visualisation)" />
 								<param name="width" value="58" />
 							</include>
 							<include content="MediaFlag">
 								<param name="texture" value="$VAR[VideoPlayerHdrTypeVar]" />
-								<param name="visible" value="!String.IsEmpty(VideoPlayer.HdrType) + String.Contains(VideoPlayer.HdrType,dolbyvision) + !Window.IsVisible(visualisation)" />
+								<param name="visible" value="String.IsEqual(VideoPlayer.HdrType,dolbyvision) + !Window.IsVisible(visualisation)" />
 								<param name="width" value="94" />
 							</include>
 							<include content="MediaFlag">

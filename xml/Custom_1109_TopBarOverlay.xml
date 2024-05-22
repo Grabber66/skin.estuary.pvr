@@ -17,7 +17,7 @@
 				<left>0</left>
 				<top>0</top>
 				<width>110%</width>
-				<height>250</height>
+				<height>160</height>
 				<texture colordiffuse="$VAR[Bars_Opacity]">frame/osdfade.png</texture>
 			</control>
 			<control type="image">
