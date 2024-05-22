@@ -213,14 +213,14 @@
 						<param name="width" value="104" />
 					</include>
 					<include content="MediaFlag">
-						<param name="texture" value="$VAR[VideoPlayerHdrTypeVar]" />
+						<param name="texture" value="$INFO[VideoPlayer.HdrType,flags/videoresolution/,.png]" />
 						<param name="width" value="58" />
-						<param name="visible" value="String.Contains(VideoPlayer.HdrType,hdr) | String.Contains(VideoPlayer.HdrType,hlg) | String.Contains(Player.Filenameandpath,.hdrplus.) | String.Contains(Player.Filenameandpath,.12bit.)" />
+						<param name="visible" value="String.Contains(VideoPlayer.HdrType,hdr) | String.IsEqual(VideoPlayer.HdrType,hlg)" />
 					</include>
 					<include content="MediaFlag">
-						<param name="texture" value="$VAR[VideoPlayerHdrTypeVar]" />
+						<param name="texture" value="$INFO[VideoPlayer.HdrType,flags/videoresolution/,.png]" />
 						<param name="width" value="92" />
-						<param name="visible" value="String.Contains(VideoPlayer.HdrType,dolbyvision)" />
+						<param name="visible" value="String.IsEqual(VideoPlayer.HdrType,dolbyvision)" />
 					</include>
 					<include content="MediaFlag">
 						<param name="texture" value="$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]" />

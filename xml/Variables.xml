@@ -1439,7 +1439,10 @@
 		<value condition="!String.IsEmpty(Container(6).ListItem.Art(set))">$INFO[Container(6).ListItem.Art(set)]</value>
 		<value condition="!String.IsEmpty(Container(6).ListItem.Art(landscape))">$INFO[Container(6).ListItem.Art(landscape)]</value>
 		<value condition="!String.IsEmpty(Container(6).ListItem.Art(thumb))">$INFO[Container(6).ListItem.Art(thumb)]</value>
-		<value>$INFO[Container(6).ListItem.Icon]</value>
+		<value condition="!String.IsEmpty(Container(50).ListItem.Art(poster))">$INFO[Container(50).ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(Container(50).ListItem.Art(thumb))">$INFO[Container(50).ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value>$INFO[ListItem.Art(thumb)]</value>
 	</variable>
 	<variable name="IconWallThumbVar">
 		<value condition="Container.Content(countries) + String.IsEqual(Skin.String(moviecountryicons.path),resource://resource.images.moviecountryicons.maps/)">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
@@ -1465,8 +1468,8 @@
 		<value>$INFO[ListItem.Art(icon)]</value>
 	</variable>
 	<variable name="ListLabel2Var">
-		<value condition="String.IsEmpty(Container.PluginName) + [Container.Content(tvshows) | Container.Content(seasons)] + String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + [String.IsEqual(Skin.String(EpisodesDisplay),31680) | String.IsEqual(Skin.String(EpisodesDisplay),31334)]">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
-		<value condition="String.IsEmpty(Container.PluginName) + [Container.Content(tvshows) | Container.Content(seasons)] + String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + String.IsEqual(Skin.String(EpisodesDisplay),31681)">$INFO[ListItem.Property(UnwatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
+		<value condition="String.IsEmpty(Container.PluginName) + [Container.Content(tvshows) | Container.Content(seasons)] + String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + [String.IsEqual(Skin.String(EpisodesDisplay),31680) | String.IsEqual(Skin.String(EpisodesDisplay),31334)]">$INFO[ListItem.Property(WatchedEpisodes),, / ]$INFO[ListItem.Property(TotalEpisodes)]</value>
+		<value condition="String.IsEmpty(Container.PluginName) + [Container.Content(tvshows) | Container.Content(seasons)] + String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + String.IsEqual(Skin.String(EpisodesDisplay),31681)">$INFO[ListItem.Property(UnwatchedEpisodes),, / ]$INFO[ListItem.Property(TotalEpisodes)]</value>
 		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + !Skin.HasSetting(hide_pubyear) + Skin.HasSetting(circle_rating)">$INFO[ListItem.Rating,, • ]$INFO[ListItem.Year]</value>
  		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + !Skin.HasSetting(hide_pubyear) + Skin.HasSetting(circle_userrating)">$INFO[ListItem.UserRating,, • ]$INFO[ListItem.Year]</value>
  		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[556]) + !Skin.HasSetting(hide_pubyear) + Skin.HasSetting(circle_bothrating) + !String.IsEmpty(ListItem.UserRating)">$INFO[ListItem.UserRating,, • ]$INFO[ListItem.Year]</value>
@@ -1619,19 +1622,6 @@
 		<value condition="String.Contains(ListItem.Filenameandpath,.iso)">flags/iso.png</value>
 		<value condition="String.Contains(ListItem.Filenameandpath,bluray) | String.Contains(ListItem.Filenameandpath,blu-ray) | String.Contains(ListItem.Filenameandpath,bdrip)">flags/bluray.png</value>
 	</variable>
-	<variable name="HdrTypeVar">
-		<value condition="!String.IsEmpty(ListItem.HdrType)">$INFO[ListItem.HdrType,flags/videoresolution/,.png]</value>
-		<value condition="!String.IsEmpty(Container.ListItem.HdrType)">$INFO[ListItem.Container.HdrType,flags/videoresolution/,.png]</value>
-		<value condition="!String.IsEmpty(Container(6).ListItem.HdrType)">$INFO[Container(6).ListItem.HdrType,flags/videoresolution/,.png]</value>
-		<value condition="!String.IsEmpty(Container(60).ListItem.HdrType)">$INFO[Container(60).ListItem.HdrType,flags/videoresolution/,.png]</value>
-		<value condition="!String.IsEmpty(Container(5083).ListItem.HdrType)">$INFO[Container(5083).ListItem.HdrType,flags/videoresolution/,.png]</value>
-		<value condition="!String.IsEmpty(Container(5084).ListItem.HdrType)">$INFO[Container(5084).ListItem.HdrType,flags/videoresolution/,.png]</value>
-		<value condition="!String.IsEmpty(Container(5094).ListItem.HdrType)">$INFO[Container(5094).ListItem.HdrType,flags/videoresolution/,.png]</value>
-	</variable>
-	<variable name="VideoPlayerHdrTypeVar">
-		<value condition="String.Contains(Player.Filenameandpath,.hdrplus.) | String.Contains(Player.Filenameandpath,.12bit.)">flags/videoresolution/hdrplus.png</value>
-		<value>$INFO[VideoPlayer.HdrType,flags/videoresolution/,.png]</value>
-	</variable>
 	<variable name="VideoresolutionFullScreenVar">
 		<value condition="String.StartsWith(Player.Process(amlogic.eoft_gamut),HDR10+)">flags/fullscreen/hdrplus_fs.png</value>
 		<value condition="String.StartsWith(Player.Process(amlogic.eoft_gamut),HDR10)">flags/fullscreen/hdr_fs.png</value>
@@ -1659,6 +1649,14 @@
 		<value condition="VideoPlayer.IsStereoscopic + String.Contains(Player.Filenameandpath,.3d.)">flags/videoresolution/3D.png</value>
 		<value condition="VideoPlayer.IsStereoscopic">flags/videoresolution/3D.png</value>
 		<value>$INFO[VideoPlayer.VideoResolution,flags/videoresolution/,.png]</value>
+	</variable>
+	<variable name="Container6_3DFlagVar">
+		<value condition="String.Contains(Container(6).ListItem.Filenameandpath,3d.mvc)">flags/videoresolution/3Dmvc.png</value>
+		<value condition="String.Contains(Container(6).ListItem.Filenameandpath,3d.sbs)">flags/videoresolution/3Dsbs.png</value>
+		<value condition="String.Contains(Container(6).ListItem.Filenameandpath,3d.tab)">flags/videoresolution/3Dtab.png</value>
+		<value condition="String.Contains(Container(6).ListItem.Filenameandpath,.3d.)">flags/videoresolution/3D.png</value>
+		<value condition="Container(6).ListItem.IsStereoscopic">flags/videoresolution/3D.png</value>
+		<value>$INFO[Container(6).ListItem.VideoResolution,flags/videoresolution/,.png]</value>
 	</variable>
 	<variable name="Container5083_3DFlagVar">
 		<value condition="String.Contains(Container(5083).ListItem.Filenameandpath,3d.mvc)">flags/videoresolution/3Dmvc.png</value>
@@ -1758,7 +1756,7 @@
 	</variable>
 	<variable name="VideoVersionFileVar">
 		<value condition="Control.HasFocus(50)">$INFO[Container(50).ListItem.FileNameAndPath]</value>
-	        <value condition="Control.HasFocus(51)">$INFO[Container(51).ListItem.FileNameAndPath]</value>
+		<value condition="Control.HasFocus(51)">$INFO[Container(51).ListItem.FileNameAndPath]</value>
 		<value>$INFO[ListItem.FileNameAndPath]</value>
 	</variable>
 	<variable name="InfoDialogPosterVar">
@@ -1774,8 +1772,8 @@
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 	</variable>
 	<variable name="BannerLabel2Var">
-		<value condition="[String.IsEqual(Listitem.DBType,tvshow) | String.IsEqual(Listitem.DBType,season)] + [String.IsEqual(Skin.String(EpisodesDisplay),31680) | String.IsEqual(Skin.String(EpisodesDisplay),31334)]">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
-		<value condition="[String.IsEqual(Listitem.DBType,tvshow) | String.IsEqual(Listitem.DBType,season)] + String.IsEqual(Skin.String(EpisodesDisplay),31681)">$INFO[ListItem.Property(UnwatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</value>
+		<value condition="[String.IsEqual(Listitem.DBType,tvshow) | String.IsEqual(Listitem.DBType,season)] + [String.IsEqual(Skin.String(EpisodesDisplay),31680) | String.IsEqual(Skin.String(EpisodesDisplay),31334)]">$INFO[ListItem.Property(WatchedEpisodes),, / ]$INFO[ListItem.Property(TotalEpisodes)]</value>
+		<value condition="[String.IsEqual(Listitem.DBType,tvshow) | String.IsEqual(Listitem.DBType,season)] + String.IsEqual(Skin.String(EpisodesDisplay),31681)">$INFO[ListItem.Property(UnwatchedEpisodes),, / ]$INFO[ListItem.Property(TotalEpisodes)]</value>
 	</variable>
 	<variable name="VideoPlayerForwardRewindVar">
 		<value condition="Player.Forwarding2x | Player.Rewinding2x">2x</value>
@@ -2155,7 +2153,8 @@
  		<value condition="Control.HasFocus(101)">$LOCALIZE[31034]</value>
  		<value condition="Control.HasFocus(444)">$LOCALIZE[20457]$INFO[ListItem.Set, : ]</value>
  		<value condition="Control.HasFocus(13)">$LOCALIZE[31123]</value>
-		<value condition="Control.HasFocus(14)">$LOCALIZE[40000]</value>
+		<value condition="Control.HasFocus(14)">$LOCALIZE[40210]</value>
+		<value condition="Control.HasFocus(15)">$LOCALIZE[40211]</value>
  		<value condition="Control.HasFocus(102)">$LOCALIZE[31028]</value>
  		<value condition="Control.HasFocus(10)">$LOCALIZE[13511]</value>
  		<value condition="Control.HasFocus(7) | Control.HasFocus(77)">$LOCALIZE[31033]$INFO[ListItem.UserRating, : ]</value>

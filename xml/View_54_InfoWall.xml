@@ -1487,8 +1487,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>String.IsEqual(ListItem.DBtype,tvshow) + !String.IsEmpty(Skin.String(EpisodesDisplay)) + !String.IsEqual(Skin.String(EpisodesDisplay),31578)</visible>
-				<visible>!String.IsEmpty(ListItem.Art(poster)) + !String.IsEmpty(ListItem.Property(WatchedEpisodes)) + !String.IsEmpty(ListItem.Property(UnwatchedEpisodes)) + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+				<visible>String.IsEqual(ListItem.DBtype,tvshow) + !String.IsEmpty(Skin.String(EpisodesDisplay)) + !String.IsEqual(Skin.String(EpisodesDisplay),31578) + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
 				<top>320</top>
 				<control type="image">
 					<left>35</left>
@@ -1501,7 +1500,7 @@
 					<left>0</left>
 					<top>20</top>
 					<width>244</width>
-					<label>$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
+					<label>$INFO[ListItem.Property(WatchedEpisodes),, / ]$INFO[ListItem.Property(TotalEpisodes)]</label>
 					<font>font20_title</font>
 					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<align>right</align>
@@ -1511,7 +1510,7 @@
 					<left>0</left>
 					<top>20</top>
 					<width>244</width>
-					<label>$INFO[ListItem.Property(UnwatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
+					<label>$INFO[ListItem.Property(UnwatchedEpisodes),, / ]$INFO[ListItem.Property(TotalEpisodes)]</label>
 					<font>font20_title</font>
 					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<align>right</align>
@@ -1523,7 +1522,7 @@
 					<width>24</width>
 					<height>24</height>
 					<texture>lists/played-total.png</texture>
-					<visible>[String.IsEqual(Skin.String(EpisodesDisplay),31680) | String.IsEqual(Skin.String(EpisodesDisplay),31334)] + !String.IsEmpty(ListItem.Property(WatchedEpisodes)) + !String.IsEmpty(ListItem.Property(UnwatchedEpisodes)) + !String.IsEmpty(ListItem.Property(TotalEpisodes))</visible>
+					<visible>!String.IsEmpty(ListItem.Property(WatchedEpisodes)) + String.IsEqual(Skin.String(EpisodesDisplay),31680)</visible>
 				</control>
 				<control type="image">
 					<left>254</left>
@@ -1531,7 +1530,15 @@
 					<width>24</width>
 					<height>24</height>
 					<texture>lists/played-unwatched.png</texture>
-					<visible>String.IsEqual(Skin.String(EpisodesDisplay),31681)</visible>
+					<visible>!String.IsEmpty(ListItem.Property(UnwatchedEpisodes)) + String.IsEqual(Skin.String(EpisodesDisplay),31681)</visible>
+				</control>
+				<control type="image">
+					<left>254</left>
+					<top>23</top>
+					<width>24</width>
+					<height>24</height>
+					<texture>lists/items-total.png</texture>
+					<visible>String.IsEmpty(ListItem.Property(WatchedEpisodes)) + String.IsEmpty(ListItem.Property(UnwatchedEpisodes)) + !String.IsEmpty(Skin.String(EpisodesDisplay)) + !String.IsEqual(Skin.String(EpisodesDisplay),31578)</visible>
 				</control>
 			</control>
 			<control type="image">
@@ -1757,7 +1764,7 @@
 				<visible>!String.StartsWith(Container.FolderPath,plugin://)</visible>
 			</control>
 			<control type="group">
-				<visible>Container.Content(tvshows) | Container.Content(seasons) + [!String.IsEmpty(Skin.String(EpisodesDisplay)) + !String.IsEqual(Skin.String(EpisodesDisplay),31578)]</visible>
+				<visible>Container.Content(tvshows) | Container.Content(seasons) + [!String.IsEmpty(Skin.String(EpisodesDisplay)) + !String.IsEqual(Skin.String(EpisodesDisplay),31578) + !String.IsEmpty(ListItem.Property(TotalEpisodes))]</visible>
 				<control type="image">
 					<right>15</right>
 					<top>242</top>
@@ -1769,7 +1776,7 @@
 					<left>298</left>
 					<top>270</top>
 					<width>244</width>
-					<label>$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
+					<label>$INFO[ListItem.Property(WatchedEpisodes),, /]$INFO[ListItem.Property(TotalEpisodes)]</label>
 					<font>font20_title</font>
 					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<align>right</align>
@@ -1779,7 +1786,7 @@
 					<left>298</left>
 					<top>270</top>
 					<width>244</width>
-					<label>$INFO[ListItem.Property(UnwatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ,]</label>
+					<label>$INFO[ListItem.Property(UnwatchedEpisodes),, / ]$INFO[ListItem.Property(TotalEpisodes)]</label>
 					<font>font20_title</font>
 					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<align>right</align>
@@ -1791,7 +1798,7 @@
 					<width>24</width>
 					<height>24</height>
 					<texture>lists/played-total.png</texture>
-					<visible>String.IsEqual(Skin.String(EpisodesDisplay),31680)</visible>
+					<visible>!String.IsEmpty(ListItem.Property(WatchedEpisodes)) + String.IsEqual(Skin.String(EpisodesDisplay),31680)</visible>
 				</control>
 				<control type="image">
 					<left>552</left>
@@ -1799,7 +1806,15 @@
 					<width>24</width>
 					<height>24</height>
 					<texture>lists/played-unwatched.png</texture>
-					<visible>String.IsEqual(Skin.String(EpisodesDisplay),31681)</visible>
+					<visible>!String.IsEmpty(ListItem.Property(UnwatchedEpisodes)) + String.IsEqual(Skin.String(EpisodesDisplay),31681)</visible>
+				</control>
+				<control type="image">
+					<left>552</left>
+					<top>273</top>
+					<width>24</width>
+					<height>24</height>
+					<texture>lists/items-total.png</texture>
+					<visible>String.IsEmpty(ListItem.Property(WatchedEpisodes)) + String.IsEmpty(ListItem.Property(UnwatchedEpisodes)) + !String.IsEmpty(Skin.String(EpisodesDisplay)) + !String.IsEqual(Skin.String(EpisodesDisplay),31578)</visible>
 				</control>
 			</control>	
 			<control type="image">

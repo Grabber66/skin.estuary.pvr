@@ -39,7 +39,7 @@
 					<param name="align" value="left" />
 					<param name="infolabel_prefix" value="Container(6)." />
 					<param name="show_ratings" value="false" />
-					<param name="resolution_var" value="$INFO[Container(6).ListItem.VideoResolution,flags/videoresolution/,.png]" />
+					<param name="resolution_var" value="$VAR[Container6_3DFlagVar]" />
 				</include>
 			</control>
 			<control type="list" id="3">
@@ -117,9 +117,9 @@
 						<top>40</top>
 						<right>14</right>
 						<height>35</height>
-						<label>$INFO[ListItem.Label] $INFO[ListItem.VideoVersionName,(,)]</label>
+						<label>$INFO[ListItem.VideoVersionName]</label>
 						<font>font12_bold</font>
-						<visible>String.IsEmpty(ListItem.Label2)</visible>
+						<visible>!String.IsEmpty(ListItem.VideoVersionName) + String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -127,8 +127,26 @@
 						<right>14</right>
 						<height>35</height>
 						<font>font12_bold</font>
-						<label>$INFO[ListItem.Label] $INFO[ListItem.VideoVersionName,(,)]</label>
-						<visible>!String.IsEmpty(ListItem.Label2)</visible>
+						<label>$INFO[ListItem.VideoVersionName]</label>
+						<visible>!String.IsEmpty(ListItem.VideoVersionName) + !String.IsEmpty(ListItem.Label2)</visible>
+					</control>
+					<control type="label">
+						<left>220</left>
+						<top>40</top>
+						<right>14</right>
+						<height>35</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font12_bold</font>
+						<visible>String.IsEmpty(ListItem.VideoVersionName) + String.IsEmpty(ListItem.Label2)</visible>
+					</control>
+					<control type="label">
+						<left>220</left>
+						<top>3</top>
+						<right>14</right>
+						<height>35</height>
+						<font>font12_bold</font>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>String.IsEmpty(ListItem.VideoVersionName) + !String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -205,10 +223,9 @@
 						<top>40</top>
 						<right>14</right>
 						<height>35</height>
-						<label>$INFO[ListItem.Label] $INFO[ListItem.VideoVersionName,(,)]</label>
+						<label>$INFO[ListItem.VideoVersionName]</label>
 						<font>font12_bold</font>
-						<scroll>true</scroll>
-						<visible>String.IsEmpty(ListItem.Label2)</visible>
+						<visible>!String.IsEmpty(ListItem.VideoVersionName) + String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -216,9 +233,26 @@
 						<right>14</right>
 						<height>35</height>
 						<font>font12_bold</font>
-						<label>$INFO[ListItem.Label] $INFO[ListItem.VideoVersionName,(,)]</label>
-						<scroll>true</scroll>
-						<visible>!String.IsEmpty(ListItem.Label2)</visible>
+						<label>$INFO[ListItem.VideoVersionName]</label>
+						<visible>!String.IsEmpty(ListItem.VideoVersionName) + !String.IsEmpty(ListItem.Label2)</visible>
+					</control>
+					<control type="label">
+						<left>220</left>
+						<top>40</top>
+						<right>14</right>
+						<height>35</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font12_bold</font>
+						<visible>String.IsEmpty(ListItem.VideoVersionName) + String.IsEmpty(ListItem.Label2)</visible>
+					</control>
+					<control type="label">
+						<left>220</left>
+						<top>3</top>
+						<right>14</right>
+						<height>35</height>
+						<font>font12_bold</font>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>String.IsEmpty(ListItem.VideoVersionName) + !String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>

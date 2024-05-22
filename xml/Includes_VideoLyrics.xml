@@ -6,12 +6,11 @@
 			<animation effect="slide" end="-8,200" condition="!Player.ShowInfo + !Window.IsVisible(musicosd)">Conditional</animation>
 			<visible>Skin.HasSetting(enable_animatedlyrics)</visible>
 			<control type="image">
-				<top>-180</top>
+				<top>-130</top>
 				<width>1280</width>
-				<height>960</height>
+				<height>1000</height>
 				<centerleft>50%</centerleft>
-				<texture colordiffuse="AA000000" diffuse="overlays/flix.png">colors/black.png</texture>
-				<animation effect="fade" start="100" end="0" time="200" condition="String.IsEmpty(Window(Home).Property(culrc.hidedialog)) + !Window.IsActive(musicosd) + !Player.ShowInfo">Conditional</animation>
+				<texture colordiffuse="FF000000" diffuse="overlays/flix.png">colors/black.png</texture>
 			</control>
 			<control type="list" id="110">
 				<centerleft>50%</centerleft>
