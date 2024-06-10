@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onunload>RunScript(skin.estuary.modv2,getKodiSetting,lookandfeel.startupaction)</onunload>
+	<onunload>RunScript(skin.estuary.pvr,getKodiSetting,lookandfeel.startupaction)</onunload>
 	<onunload condition="!String.IsEmpty(Window(home).property(lookandfeel.startupaction)) + !String.IsEqual(Window(home).property(lookandfeel.startupaction),0)">Skin.SetBool(EnableSplashScreen)</onunload>
-	<onunload>RunScript(skin.estuary.modv2,getKodiSetting,videolibrary.showunwatchedplots)</onunload>
+	<onunload>RunScript(skin.estuary.pvr,getKodiSetting,videolibrary.showunwatchedplots)</onunload>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<controls>
