@@ -5,7 +5,7 @@
 	<onunload condition="!Skin.HasSetting(ExtendedOSDInfo) + !Skin.HasSetting(disable_PauseOnExtraInfos) + !VideoPlayer.Content(musicvideos) + !Pvr.IsPlayingTV + !Pvr.IsPlayingRecording + !Player.IsInternetStream">PlayerControl(Play)</onunload>
 	<onunload>ClearProperty(size,home)</onunload>
 	<onload condition="!Window.IsVisible(videoosd) + !Window.IsVisible(1138) + [Skin.HasSetting(ExtendedOSDInfo) | VideoPlayer.Content(musicvideos) | Pvr.IsPlayingTV | Pvr.IsPlayingRecording | Player.IsInternetStream]">ActivateWindow(1143)</onload>
-	<onload condition="!String.StartsWith(Player.FileNameAndPath,'plugin://')">RunScript(skin.estuary.modv2,getFileSize,$ESCINFO[Player.FileNameAndPath])</onload>
+	<onload condition="!String.StartsWith(Player.FileNameAndPath,'plugin://')">RunScript(skin.estuary.pvr,getFileSize,$ESCINFO[Player.FileNameAndPath])</onload>
 	<controls>
 		<control type="group">
 			<visible>[VideoPlayer.content(movies) | VideoPlayer.Content(episodes)] + !Skin.HasSetting(ExtendedOSDInfo)</visible>
