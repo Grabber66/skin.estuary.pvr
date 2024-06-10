@@ -1471,7 +1471,7 @@
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoAspect)" />
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioCodec,flags/audiocodec/,.png]" />
+					<param name="texture" value="$PARAM[audiocodec_var]" />
 					<param name="fallback" value="flags/audiocodec/fallback.png" />
 					<param name="width" value="104" />
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioCodec)" />
@@ -2449,8 +2449,7 @@
 						</control>
 					</control>
 					<control type="label">
-						<-- ToDo zeige Uhr in PVRChannels & Videonav(favourite) -->
-						<visible>[Window.IsVisible(MyVideoNav.xml)] | [Window.IsVisible(MyPVRChannels.xml)] | ![Window.IsVisible(videos) + !Container.Content(addons)] + ![Window.IsVisible(music) + !Container.Content(addons)] + ![Window.IsVisible(pictures) + !Container.Content(addons)] + ![Window.IsVisible(favouritesbrowser) + !Container.Content(addons)] + ![Window.IsVisible(shutdownmenu) + Skin.HasSetting(powermenu_list)]</visible>
+						<visible>![Window.IsVisible(videos) + !Container.Content(addons)] + ![Window.IsVisible(music) + !Container.Content(addons)] + ![Window.IsVisible(pictures) + !Container.Content(addons)] + ![Window.IsVisible(favouritesbrowser) + !Container.Content(addons)] + ![Window.IsVisible(shutdownmenu) + Skin.HasSetting(powermenu_list)]</visible>
 						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 						<animation effect="slide" end="0,-10" time="0" condition="String.IsEqual(Skin.Font,Arial)">Conditional</animation>
 						<font>font_clock</font>
