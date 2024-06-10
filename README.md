@@ -43,6 +43,17 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.0+omega ###
+- .19
+  * Improvements on video set info window (1132) added 
+  * condition variables of special flags improved
+
+
+- .18
+  * wrong setting status in skin settings fixed
+  * not working option for showing fanart in music visualization fixed
+  * Conditional loading of code depending on script.embuary.* modified
+  
+
 - .17
   * smaller top bar overlay, lyrics background in fullscreen added
   * Improvements of video versions selection 

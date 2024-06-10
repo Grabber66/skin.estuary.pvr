@@ -204,7 +204,7 @@
 				<param name="info_visible" value="true" />
 			</include>
 			<include>CommonScrollbars</include>
-			<include>CommonAlphabet</include>
+			<include content="CommonAlphabet" condition="System.AddonIsEnabled(script.embuary.helper)" />
 			<include>MediaMenuMouseOverlay</include>
 			<control type="group">
 				<include>MediaMenuCommon</include>

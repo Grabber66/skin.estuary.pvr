@@ -28,6 +28,7 @@
 				<bordertexture colordiffuse="border_alpha">colors/black.png</bordertexture>
 				<bordersize>4</bordersize>
 				<texture border="4" background="true">$VAR[VideoVersionPosterVar]</texture>
+				<visible>Control.HasFocus(6)</visible>
 			</control>
 			<control type="group">
 				<left>-30</left>
@@ -40,6 +41,7 @@
 					<param name="infolabel_prefix" value="Container(6)." />
 					<param name="show_ratings" value="false" />
 					<param name="resolution_var" value="$VAR[Container6_3DFlagVar]" />
+					<param name="audiocodec_var" value="$VAR[Container6_AudioCodecFlagVar]" />
 				</include>
 			</control>
 			<control type="list" id="3">
@@ -119,7 +121,7 @@
 						<height>35</height>
 						<label>$INFO[ListItem.VideoVersionName]</label>
 						<font>font12_bold</font>
-						<visible>!String.IsEmpty(ListItem.VideoVersionName) + String.IsEmpty(ListItem.Label2)</visible>
+						<visible>ListItem.HasVideoVersions + String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -128,7 +130,7 @@
 						<height>35</height>
 						<font>font12_bold</font>
 						<label>$INFO[ListItem.VideoVersionName]</label>
-						<visible>!String.IsEmpty(ListItem.VideoVersionName) + !String.IsEmpty(ListItem.Label2)</visible>
+						<visible>ListItem.HasVideoVersions + !String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -137,7 +139,7 @@
 						<height>35</height>
 						<label>$INFO[ListItem.Label]</label>
 						<font>font12_bold</font>
-						<visible>String.IsEmpty(ListItem.VideoVersionName) + String.IsEmpty(ListItem.Label2)</visible>
+						<visible>!ListItem.HasVideoVersions + String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -146,7 +148,7 @@
 						<height>35</height>
 						<font>font12_bold</font>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>String.IsEmpty(ListItem.VideoVersionName) + !String.IsEmpty(ListItem.Label2)</visible>
+						<visible>!ListItem.HasVideoVersions + !String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -225,7 +227,7 @@
 						<height>35</height>
 						<label>$INFO[ListItem.VideoVersionName]</label>
 						<font>font12_bold</font>
-						<visible>!String.IsEmpty(ListItem.VideoVersionName) + String.IsEmpty(ListItem.Label2)</visible>
+						<visible>ListItem.HasVideoVersions + String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -234,7 +236,7 @@
 						<height>35</height>
 						<font>font12_bold</font>
 						<label>$INFO[ListItem.VideoVersionName]</label>
-						<visible>!String.IsEmpty(ListItem.VideoVersionName) + !String.IsEmpty(ListItem.Label2)</visible>
+						<visible>ListItem.HasVideoVersions + !String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -243,7 +245,7 @@
 						<height>35</height>
 						<label>$INFO[ListItem.Label]</label>
 						<font>font12_bold</font>
-						<visible>String.IsEmpty(ListItem.VideoVersionName) + String.IsEmpty(ListItem.Label2)</visible>
+						<visible>!ListItem.HasVideoVersions + String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -252,7 +254,7 @@
 						<height>35</height>
 						<font>font12_bold</font>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>String.IsEmpty(ListItem.VideoVersionName) + !String.IsEmpty(ListItem.Label2)</visible>
+						<visible>!ListItem.HasVideoVersions + !String.IsEmpty(ListItem.Label2)</visible>
 					</control>
 					<control type="label">
 						<left>220</left>
@@ -260,7 +262,7 @@
 						<right>14</right>
 						<height>35</height>
 						<font>font12</font>
-						<scroll>true</scroll>
+						<textcolor>grey</textcolor>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
 					<control type="label">
