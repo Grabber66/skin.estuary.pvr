@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onload>SetProperty(CurrentSkin,skin.estuary.modv2,home)</onload>
+	<onload>SetProperty(CurrentSkin,skin.estuary.pvr,home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
 	<onload>RunScript(skin.estuary.modv2,getKodiSetting,videolibrary.showunwatchedplots)</onload>
 	<defaultcontrol>9000</defaultcontrol>
@@ -1146,7 +1146,7 @@
 								<left>20</left>
 								<right>20</right>
 								<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
-								<label>$LOCALIZE[166] Estuary MOD V2 • $INFO[System.AddonVersion(skin.estuary.modv2),$LOCALIZE[24051] ]</label>
+								<label>$LOCALIZE[166] Estuary MOD PVR • $INFO[System.AddonVersion(skin.estuary.pvr),$LOCALIZE[24051] ]</label>
 								<scroll>true</scroll>
 								<animation effect="slide" end="-250,0" time="300" tween="sine" easing="out" condition="[Control.HasFocus(9000) | ControlGroup(700).HasFocus] + Skin.HasSetting(HideMainMenuWithWidgets) + !Skin.HasSetting(MinimizeMainMenu)">Conditional</animation>
 								<animation effect="slide" end="-67,0" time="300" tween="sine" easing="out" condition="[Control.HasFocus(9000) | ControlGroup(700).HasFocus] + Skin.HasSetting(HideMainMenuWithWidgets) + Skin.HasSetting(MinimizeMainMenu)">Conditional</animation>
