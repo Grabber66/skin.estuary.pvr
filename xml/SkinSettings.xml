@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<!-- determine startup action, that has to perform -->
-	<onload>RunScript(skin.estuary.modv2,getKodiSetting,lookandfeel.startupaction)</onload>
+	<onload>RunScript(skin.estuary.pvr,getKodiSetting,lookandfeel.startupaction)</onload>
 	<!-- build main menu -->
 	<onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onunload>
 	<defaultcontrol>9000</defaultcontrol>
@@ -296,8 +296,8 @@
 					<label>$LOCALIZE[31637]</label>
 					<include>DefaultSettingButton</include>
 					<onclick condition="System.HasAddon(script.cu.lrclyrics)">Skin.ToggleSetting(enable_lyrics)</onclick>
-					<onclick condition="System.HasAddon(script.cu.lrclyrics) + Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.modv2,toggleAddonStatus,script.cu.lrclyrics,false)</onclick>
-					<onclick condition="System.HasAddon(script.cu.lrclyrics) + !Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.modv2,toggleAddonStatus,script.cu.lrclyrics,true)</onclick>
+					<onclick condition="System.HasAddon(script.cu.lrclyrics) + Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.pvr,toggleAddonStatus,script.cu.lrclyrics,false)</onclick>
+					<onclick condition="System.HasAddon(script.cu.lrclyrics) + !Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.pvr,toggleAddonStatus,script.cu.lrclyrics,true)</onclick>
 					<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
 					<selected>!Skin.HasSetting(enable_lyrics)</selected>
 				</control>
