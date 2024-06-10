@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onload>SetProperty(CurrentSkin,skin.estuary.pvr,home)</onload>
+	<onload>SetProperty(CurrentSkin,skin.estuary.modv2,home)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu)</onload>
 	<onload>RunScript(skin.estuary.modv2,getKodiSetting,videolibrary.showunwatchedplots)</onload>
 	<defaultcontrol>9000</defaultcontrol>
@@ -200,32 +200,28 @@
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="61001"/>
 						</include>
-						<include content="WidgetNextWatchEpisodes" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_nextepisodes) + Skin.HasSetting(HomeBanner)">
-							<param name="visible" value="System.AddonIsEnabled(script.embuary.helper)" />
+						<include content="WidgetNextWatchEpisodes" condition="System.AddonIsEnabled(script.embuary.helper) + Library.HasContent(tvshows) + !Skin.HasSetting(hide_nextepisodes) + Skin.HasSetting(HomeBanner)">
 							<param name="content_path" value="plugin://script.embuary.helper?info=getnextup"/>
 							<param name="widget_header" value="$LOCALIZE[31212]"/>
 							<param name="widget_header_focus" value="$INFO[Container(6700).ListItem.TVShowTitle, | , - ]$INFO[Container(6700).ListItem.Season,,x]$INFO[Container(6700).ListItem.Episode,,. ]$INFO[Container(6700).ListItem.Title]$INFO[Container(6700).ListItem.Year, (,)]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6700"/>
 						</include>
-						<include content="WidgetNextWatchEpisodesBanner" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_nextepisodes) + !Skin.HasSetting(HomeBanner)">
-							<param name="visible" value="System.AddonIsEnabled(script.embuary.helper)" />
+						<include content="WidgetNextWatchEpisodesBanner" condition="System.AddonIsEnabled(script.embuary.helper) + Library.HasContent(tvshows) + !Skin.HasSetting(hide_nextepisodes) + !Skin.HasSetting(HomeBanner)">
 							<param name="content_path" value="plugin://script.embuary.helper?info=getnextup"/>
 							<param name="widget_header" value="$LOCALIZE[31212]"/>
 							<param name="widget_header_focus" value="$INFO[Container(67001).ListItem.TVShowTitle, | , - ]$INFO[Container(67001).ListItem.Season,,x]$INFO[Container(67001).ListItem.Episode,,. ]$INFO[Container(67001).ListItem.Title]$INFO[Container(67001).ListItem.Year, (,)]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="67001"/>
 						</include>
-						<include content="WidgetNextWatchEpisodes" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_nextaired) + Skin.HasSetting(HomeBanner)">
-							<param name="visible" value="System.AddonIsEnabled(script.embuary.info)" />
+						<include content="WidgetNextWatchEpisodes" condition="System.AddonIsEnabled(script.embuary.info) + Library.HasContent(tvshows) + !Skin.HasSetting(hide_nextaired) + Skin.HasSetting(HomeBanner)">
 							<param name="content_path" value="plugin://script.embuary.info/nextaired/week"/>
 							<param name="widget_header" value="$LOCALIZE[31572]"/>
 							<param name="widget_header_focus" value="$INFO[Container(6500).ListItem.Label, | ]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6500"/>
 						</include>
-						<include content="WidgetNextWatchEpisodesBanner" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_nextaired) + !Skin.HasSetting(HomeBanner)">
-							<param name="visible" value="System.AddonIsEnabled(script.embuary.info)" />
+						<include content="WidgetNextWatchEpisodesBanner" condition="System.AddonIsEnabled(script.embuary.info) + Library.HasContent(tvshows) + !Skin.HasSetting(hide_nextaired) + !Skin.HasSetting(HomeBanner)">
 							<param name="content_path" value="plugin://script.embuary.info/nextaired/week"/>
 							<param name="widget_header" value="$LOCALIZE[31572]"/>
 							<param name="widget_header_focus" value="$INFO[Container(65001).ListItem.Label, | ]"/>
@@ -1150,7 +1146,7 @@
 								<left>20</left>
 								<right>20</right>
 								<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
-								<label>$LOCALIZE[166] Estuary MOD PVR • $INFO[System.AddonVersion(skin.estuary.pvr),$LOCALIZE[24051] ]</label>
+								<label>$LOCALIZE[166] Estuary MOD V2 • $INFO[System.AddonVersion(skin.estuary.modv2),$LOCALIZE[24051] ]</label>
 								<scroll>true</scroll>
 								<animation effect="slide" end="-250,0" time="300" tween="sine" easing="out" condition="[Control.HasFocus(9000) | ControlGroup(700).HasFocus] + Skin.HasSetting(HideMainMenuWithWidgets) + !Skin.HasSetting(MinimizeMainMenu)">Conditional</animation>
 								<animation effect="slide" end="-67,0" time="300" tween="sine" easing="out" condition="[Control.HasFocus(9000) | ControlGroup(700).HasFocus] + Skin.HasSetting(HideMainMenuWithWidgets) + Skin.HasSetting(MinimizeMainMenu)">Conditional</animation>
