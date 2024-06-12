@@ -42,6 +42,11 @@ If you navigate in your movie library, you'll have a new entry now to (re)assign
 supports animated poster only.
 
 ![](resources/setup_ap.png)
+### 21.2.1+omega ###
+- .0
+  * Videoversion/-selection, DialogSelect fixed
+  
+
 ### 21.2.0+omega ###
 - .19
   * Improvements on video set info window (1132) added 
