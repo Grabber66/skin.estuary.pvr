@@ -43,6 +43,10 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.1+omega ###
+- .1
+  * smaller improvements for touch mode
+
+
 - .0
   * Videoversion/-selection, DialogSelect fixed
   

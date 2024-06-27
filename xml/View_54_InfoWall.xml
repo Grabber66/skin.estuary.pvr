@@ -260,7 +260,7 @@
 			<control type="textbox">
 				<left>25</left>
 				<top>296</top>
-				<width>266</width>
+				<width>270</width>
 				<height>68</height>
 				<font>font12</font>
 				<align>center</align>

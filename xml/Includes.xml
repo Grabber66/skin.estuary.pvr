@@ -99,9 +99,11 @@
 					<onright condition="!$EXP[isJump2Letter]">50</onright>
 					<orientation>vertical</orientation>
 					<texturesliderbackground />
+					<hitrect x="0" y="0" w="80" h="2160" />
 					<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
 					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-					<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531)">conditional</animation>
+					<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531) + !Skin.HasSetting(touchmode)">conditional</animation>
+					<animation effect="slide" end="12,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531) + Skin.HasSetting(touchmode)">conditional</animation>
 					<visible>Control.IsVisible(52) | Control.IsVisible(500) | Control.IsVisible(504) | Control.IsVisible(55) | Control.IsVisible(501) | Control.IsVisible(54) | Control.IsVisible(505) | Control.IsVisible(507)</visible>
 				</control>
 			</control>
@@ -117,6 +119,7 @@
 					<width>100%</width>
 					<height>12</height>
 					<texturesliderbackground />
+					<hitrect x="0" y="-80" w="3840" h="80" />
 					<onup>50</onup>
 					<ondown condition="String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)">SetFocus(8000)</ondown>
 					<orientation>horizontal</orientation>

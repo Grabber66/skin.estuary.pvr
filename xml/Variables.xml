@@ -695,7 +695,8 @@
 		<value condition="!String.IsEmpty(Listitem.Art(tvshow.fanart))">$INFO[ListItem.Art(tvshow.fanart)]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-		<value>$INFO[ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(Listitem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value>$INFO[ListItem.Art(icon)]</value>
 	</variable>
 	<variable name="InfoWidgetThumbVar2">
 		<value condition="!$EXP[show_unwatchedthumbs] + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>

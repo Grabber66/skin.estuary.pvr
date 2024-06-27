@@ -204,6 +204,7 @@
 							<param name="content_path" value="plugin://script.embuary.helper?info=getnextup"/>
 							<param name="widget_header" value="$LOCALIZE[31212]"/>
 							<param name="widget_header_focus" value="$INFO[Container(6700).ListItem.TVShowTitle, | , - ]$INFO[Container(6700).ListItem.Season,,x]$INFO[Container(6700).ListItem.Episode,,. ]$INFO[Container(6700).ListItem.Title]$INFO[Container(6700).ListItem.Year, (,)]"/>
+							<param name="browse" value="never"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="6700"/>
 						</include>
@@ -212,6 +213,7 @@
 							<param name="widget_header" value="$LOCALIZE[31212]"/>
 							<param name="widget_header_focus" value="$INFO[Container(67001).ListItem.TVShowTitle, | , - ]$INFO[Container(67001).ListItem.Season,,x]$INFO[Container(67001).ListItem.Episode,,. ]$INFO[Container(67001).ListItem.Title]$INFO[Container(67001).ListItem.Year, (,)]"/>
 							<param name="widget_target" value="videos"/>
+							<param name="browse" value="never"/>
 							<param name="list_id" value="67001"/>
 						</include>
 						<include content="WidgetNextWatchEpisodes" condition="System.AddonIsEnabled(script.embuary.info) + Library.HasContent(tvshows) + !Skin.HasSetting(hide_nextaired) + Skin.HasSetting(HomeBanner)">
