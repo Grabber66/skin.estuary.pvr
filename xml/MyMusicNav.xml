@@ -34,7 +34,7 @@
 				<param name="info_visible" value="true" />
 			</include>
 			<include>CommonScrollbars</include>
-			<include>CommonAlphabet</include>
+			<include content="CommonAlphabet" condition="System.AddonIsEnabled(script.embuary.helper)" />
 			<control type="group">
 				<visible>[Control.IsVisible(500) | Control.IsVisible(504) | Control.IsVisible(506) | Control.IsVisible(507)] + String.IsEqual(listitem.dbtype,artist)</visible>
 				<visible>!Skin.HasSetting(show_albumsartistlag)</visible>

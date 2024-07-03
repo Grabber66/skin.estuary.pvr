@@ -299,7 +299,7 @@
 					<onclick condition="System.HasAddon(script.cu.lrclyrics) + Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.modv2,toggleAddonStatus,script.cu.lrclyrics,false)</onclick>
 					<onclick condition="System.HasAddon(script.cu.lrclyrics) + !Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.modv2,toggleAddonStatus,script.cu.lrclyrics,true)</onclick>
 					<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
-					<selected>Skin.HasSetting(enable_lyrics)</selected>
+					<selected>!Skin.HasSetting(enable_lyrics)</selected>
 				</control>
 				<control type="radiobutton" id="214">
 					<label>  ∟$LOCALIZE[31379]</label>
@@ -1780,7 +1780,7 @@
 				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 				<animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
-				<hitrect x="0" y="0" w="60" h="100%" />
+				<hitrect x="0" y="0" w="80" h="2160" />
 				<visible>Control.IsVisible(100) | Control.IsVisible(200) | Control.IsVisible(300) | Control.IsVisible(500) | Control.IsVisible(600) | Control.IsVisible(700) | Control.IsVisible(900) | Control.IsVisible(1000)</visible>
 			</control>
 		</control>

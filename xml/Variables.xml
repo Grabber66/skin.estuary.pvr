@@ -1605,7 +1605,6 @@
 	<variable name="HdrTypeVar">
 		<value condition="!String.IsEmpty(ListItem.HdrType)">$INFO[ListItem.HdrType,flags/videoresolution/,.png]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.HdrType)">$INFO[ListItem.Container.HdrType,flags/videoresolution/,.png]</value>
-		<value condition="!String.IsEmpty(Container(6).ListItem.HdrType)">$INFO[Container(6).ListItem.HdrType,flags/videoresolution/,.png]</value>
 		<value condition="!String.IsEmpty(Container(60).ListItem.HdrType)">$INFO[Container(60).ListItem.HdrType,flags/videoresolution/,.png]</value>
 		<value condition="!String.IsEmpty(Container(5083).ListItem.HdrType)">$INFO[Container(5083).ListItem.HdrType,flags/videoresolution/,.png]</value>
 		<value condition="!String.IsEmpty(Container(5084).ListItem.HdrType)">$INFO[Container(5084).ListItem.HdrType,flags/videoresolution/,.png]</value>

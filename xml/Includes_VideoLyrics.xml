@@ -10,7 +10,7 @@
 				<width>1280</width>
 				<height>1000</height>
 				<centerleft>50%</centerleft>
-				<texture colordiffuse="FF000000" diffuse="overlays/flix.png">colors/black.png</texture>
+				<texture colordiffuse="AF000000" diffuse="overlays/flix.png">colors/black.png</texture>
 			</control>
 			<control type="list" id="110">
 				<centerleft>50%</centerleft>

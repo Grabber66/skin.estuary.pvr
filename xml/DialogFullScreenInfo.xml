@@ -157,7 +157,6 @@
 						<param name="visible" value="!String.IsEmpty(VideoPlayer.SubtitlesLanguage) + VideoPlayer.SubtitlesEnabled" />
 					</include>
 				</control>
-
 				<control type="grouplist">
 					<orientation>horizontal</orientation>
 					<left>10</left>

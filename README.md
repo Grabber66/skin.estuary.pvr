@@ -43,7 +43,24 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 
+### 4.2.1+nexus ###
+- .0
+  * Out of development
+  * smaller improvements in touch mode
+
+
 ### 4.2.0+nexus ###
+- .20
+  * Improvements on video set info window (1132) added 
+  * condition variables of special flags improved
+  
+
+- .19
+  * wrong setting status in skin settings fixed
+  * not working option for showing fanart in music visualization fixed
+  * Conditional loading of code depending on script.embuary.* modified
+  
+
 - .18
   * watched/unwatched marker for items in addons fixed/improved
   * smaller top bar overlay, lyrics background in fullscreen added
