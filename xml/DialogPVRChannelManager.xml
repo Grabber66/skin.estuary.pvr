@@ -138,8 +138,8 @@
 					<top>80</top>
 					<onleft>60</onleft>
 					<onright>9000</onright>
-					<onup>34</onup>
-					<ondown>30</ondown>
+					<onup>14</onup>
+					<ondown>7</ondown>
 					<itemgap>-25</itemgap>
 					<control type="label" id="9001">
 						<description>channel options Header</description>
@@ -170,7 +170,7 @@
 						<include>SettingsItemCommon</include>
 						<label>$LOCALIZE[19202]</label>
 					</control>
-					<control type="button">
+					<control type="button" id="39">
 						<description>Client name</description>
 						<width>700</width>
 						<include>SettingsItemCommon</include>

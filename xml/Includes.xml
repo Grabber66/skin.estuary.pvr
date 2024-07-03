@@ -4020,7 +4020,7 @@
 					<control type="label">
 						<left>460</left>
 						<bottom>210</bottom>
-						<right>30</right>
+						<right>745</right>
 						<height>30</height>
 						<scroll>true</scroll>
 						<font>font12</font>
@@ -4030,7 +4030,7 @@
 						<label>$VAR[OsdGenreLabelVar]</label>
 					</control>
 					<control type="label">
-						<left>1185</left>
+						<left>1190</left>
 						<bottom>210</bottom>
 						<right>30</right>
 						<height>30</height>
