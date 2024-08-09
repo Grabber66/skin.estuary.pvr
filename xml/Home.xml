@@ -83,7 +83,7 @@
 					<control type="grouplist" id="5001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>5010</pagecontrol>
-						<include content="WidgetListCategoriesBig" condition="Library.HasContent(movies) + !Skin.HasSetting(hide_moviescategory)">
+						<include content="WidgetListCategoriesBigPoster" condition="Library.HasContent(movies) + !Skin.HasSetting(hide_moviescategory)">
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_header_focus" value="$INFO[Container(5900).ListItem.Label, | ]"/>
 							<param name="list_id" value="5900"/>
@@ -160,7 +160,7 @@
 					<control type="grouplist" id="6001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>6010</pagecontrol>
-						<include content="WidgetListCategoriesBig" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_tvshowscategory)">
+						<include content="WidgetListCategoriesBigPoster" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_tvshowscategory)">
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_header_focus" value="$INFO[Container(6900).ListItem.Label, | ]"/>
 							<param name="list_id" value="6900"/>
@@ -910,7 +910,7 @@
 					<control type="grouplist" id="16001">
 						<include>WidgetGroupListCommon</include>
 						<pagecontrol>16010</pagecontrol>
-						<include content="WidgetListCategoriesBig" condition="Library.HasContent(musicvideos) + !Skin.HasSetting(hide_musicvideocategory)">
+						<include content="WidgetListCategoriesBigPoster" condition="Library.HasContent(musicvideos) + !Skin.HasSetting(hide_musicvideocategory)">
 							<param name="widget_header" value="$LOCALIZE[31148]"/>
 							<param name="widget_header_focus" value="$INFO[Container(16900).ListItem.Label, | ]"/>
 							<param name="list_id" value="16900"/>

@@ -403,7 +403,7 @@
 		<param name="animation">False</param>
 		<definition>
 			<control type="group">
-				<left>205</left>
+				<left>175</left>
 				<bottom>0</bottom>
 				<height>44</height>
 				<animation effect="fade" time="0" condition="$PARAM[animation]">VisibleChange</animation>
@@ -1018,7 +1018,7 @@
 				<include content="MediaFlag">
 					<param name="texture" value="$VAR[HdrTypeVar]" />
 					<param name="width" value="58" />
-					<param name="visible" value="String.Contains(Control.GetLabel(4396),hdr) | String.Contains(Control.GetLabel(4396),hlg)" />
+					<param name="visible" value="String.Contains(Control.GetLabel(4396),hdr) | String.Contains(Control.GetLabel(4396),hdrplus) | String.Contains(Control.GetLabel(4396),hlg)" />
 					<param name="visible2" value="!Skin.HasSetting(show_mediacolordepthflag)" />
 				</include>
 				<include content="MediaFlag">
@@ -1470,12 +1470,12 @@
 				<include content="MediaFlag">
 					<param name="texture" value="$VAR[HdrTypeVar]" />
 					<param name="width" value="58" />
-					<param name="visible" value="[String.Contains(Control.GetLabel(4394),hdr) | String.Contains(Control.GetLabel(4394),hlg)] + !Skin.HasSetting(show_mediacolordepthflag)" />
+					<param name="visible" value="[String.Contains(Control.GetLabel(4394),hdr) | String.Contains(Control.GetLabel(4394),hdrplus) | String.Contains(Control.GetLabel(4394),hlg)] + !Skin.HasSetting(show_mediacolordepthflag)" />
 				</include>
 				<include content="MediaFlag">
 					<param name="texture" value="$VAR[HdrTypeVar]" />
 					<param name="width" value="92" />
-					<param name="visible" value="String.Contains(Control.GetLabel(4394),dolbyvision) + !Skin.HasSetting(show_mediacolordepthflag)" />
+					<param name="visible" value="String.IsEqual(Control.GetLabel(4394),dolbyvision) + !Skin.HasSetting(show_mediacolordepthflag)" />
 				</include>
 				<include content="MediaFlag">
 					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.VideoAspect,flags/aspectratio/,.png]" />
@@ -1484,7 +1484,7 @@
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.VideoAspect)" />
 				</include>
 				<include content="MediaFlag">
-					<param name="texture" value="$INFO[$PARAM[infolabel_prefix]ListItem.AudioCodec,flags/audiocodec/,.png]" />
+					<param name="texture" value="$PARAM[audiocodec_var]" />
 					<param name="fallback" value="flags/audiocodec/fallback.png" />
 					<param name="width" value="104" />
 					<param name="visible" value="!String.IsEmpty($PARAM[infolabel_prefix]ListItem.AudioCodec)" />
@@ -3014,7 +3014,7 @@
 			<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(home)">WindowClose</animation>
 			<itemgap>0</itemgap>
 			<left>-8</left>
-			<width>480</width>
+			<width>450</width>
 			<height>110</height>
 			<bottom>-4</bottom>
 			<onup/>
@@ -4112,7 +4112,7 @@
 							</include>
 							<include content="MediaFlag">
 								<param name="texture" value="$VAR[VideoPlayerHdrTypeVar]" />
-								<param name="visible" value="[String.Contains(VideoPlayer.HdrType,hdr) | String.Contains(VideoPlayer.HdrType,hlg)] + !Window.IsVisible(visualisation)" />
+								<param name="visible" value="[String.IsEqual(VideoPlayer.HdrType,hdr10) | String.IsEqual(VideoPlayer.HdrType,hlg)] + !Window.IsVisible(visualisation)" />
 								<param name="width" value="58" />
 							</include>
 							<include content="MediaFlag">
