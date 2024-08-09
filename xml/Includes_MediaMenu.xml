@@ -162,7 +162,7 @@
 					<label>$LOCALIZE[31585]</label>
 					<selected>!Skin.HasSetting(ShowPVRChannelNumbers)</selected>
 					<onclick>Skin.ToggleSetting(ShowPVRChannelNumbers)</onclick>
-										<visible>Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRSearch.xml) | [Window.IsActive(MyPVRChannels.xml) + [String.IsEqual(Container.ViewMode,$LOCALIZE[31099]) | String.IsEqual(Container.ViewMode,$LOCALIZE[31108])]]</visible>
+					<visible>Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRSearch.xml) | [Window.IsActive(MyPVRChannels.xml) + [String.IsEqual(Container.ViewMode,$LOCALIZE[31099]) | String.IsEqual(Container.ViewMode,$LOCALIZE[31108])]]</visible>
 				</control>
 				<control type="radiobutton" id="6058">
 					<include>MediaMenuItemsCommonRadio</include>
@@ -177,7 +177,7 @@
 					<label2>[B]$VAR[GenreColorSwitchVar][/B]</label2>
 					<include>DefaultSettingButton</include>
 					<description>defined genre colors</description>
-					<onclick condition="String.IsEmpty(Skin.String(genrecolors)) | [!String.IsEqual(Skin.String(genrecolors),1223) + !String.IsEqual(Skin.String(genrecolors),571) + !String.IsEqual(Skin.String(genrecolors),1223)]">Skin.SetString(genrecolors,31334)</onclick>
+					<onclick condition="String.IsEmpty(Skin.String(genrecolors)) | [!String.IsEqual(Skin.String(genrecolors),1223) + !String.IsEqual(Skin.String(genrecolors),571) + !String.IsEqual(Skin.String(genrecolors),20190)]">Skin.SetString(genrecolors,1223)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(genrecolors),31334)">Skin.SetString(genrecolors,1223)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(genrecolors),1223)">Skin.SetString(genrecolors,571)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(genrecolors),571)">Skin.SetString(genrecolors,20190)</onclick>

@@ -43,6 +43,18 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.1+omega ###
+- .3
+  * improved adjustments of category widget items in home menu
+  * vertical slide of personal widget panels removed
+
+
+- .2
+  * Info labels to player process info added
+  * Visibility condition of items in media menu side blade fixed (PVR, EPG)
+  * Visibility of "Browse" item in home widgets are now conditional depending on info/play setting of widget 
+  * HDRplus detection by filename added (expects .hdrplus. in filename)
+
+
 - .1
   * smaller improvements for touch mode
 

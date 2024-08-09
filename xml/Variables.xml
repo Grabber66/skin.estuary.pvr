@@ -15,9 +15,9 @@
 		<value condition="Skin.HasSetting(show_fanart) + Control.HasFocus(12300) + !String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 	</variable>
 	<variable name="Label_SkinSetting_GlobalBackground">
-        <value condition="!String.IsEmpty(Skin.String(global-background))">$INFO[Skin.String(global-background)]</value>
-        <value>$LOCALIZE[31264]</value>
-    </variable>
+		<value condition="!String.IsEmpty(Skin.String(global-background))">$INFO[Skin.String(global-background)]</value>
+		<value>$LOCALIZE[31264]</value>
+	</variable>
 	<variable name="PlayButtonLabelInfoDialog">
 		<value condition="String.IsEqual(listitem.dbtype,tvshow)">$LOCALIZE[1024]</value>
 		<value>$LOCALIZE[208]</value>
@@ -30,6 +30,10 @@
 		<value condition="System.Platform.Windows">Windows</value>
 		<value condition="System.Platform.Linux">Linux</value>
 		<value>unknown</value>
+	</variable>
+	<variable name="BrowseVar">
+		<value condition="String.IsEqual(Skin.String(widget_action),31590)">never</value>
+		<value>auto</value>
 	</variable>
 	<variable name="ThemesBGVar">
 		<value condition="$EXP[ChristmasTheme]">special://skin/extras/themes/christmas/background.jpg</value>
