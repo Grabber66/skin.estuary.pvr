@@ -86,7 +86,7 @@
 					<width>476</width>
 					<height>678</height>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture>$VAR[PVRArtworksVarInfo]</texture>
+					<texture>$VAR[PVRArtworksVarInfo2]</texture>
 				</control>
 				<include content="BusyPvrArtworkSpinner">
 					<param name="top" value="301" />

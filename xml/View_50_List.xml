@@ -29,7 +29,7 @@
 						<width>12</width>
 						<bottom>list_y_offset</bottom>
 						<onleft>50</onleft>
-						<onright condition="String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)">SetFocus(8000)</onright>
+						<onright condition="$EXP[isJump2Letter]">SetFocus(8000)</onright>
 						<orientation>vertical</orientation>
 						<animation effect="zoom" end="50,100" time="300" tween="sine" center="20,0" easing="inout" condition="!Control.HasFocus(50600)">conditional</animation>
 						<hitrect x="-30" y="0" w="120" h="100%" />
