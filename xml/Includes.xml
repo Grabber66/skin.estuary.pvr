@@ -70,7 +70,7 @@
 	<!-- Expression Categories Widget has Focus -->
 	<expression name="widgetHasFocus">Control.HasFocus(4900) | Control.HasFocus(49001) | Control.HasFocus(5900) | Control.HasFocus(59001) | Control.HasFocus(6900) | Control.HasFocus(69001) | Control.HasFocus(7900) | Control.HasFocus(79001) | Control.HasFocus(8900) | Control.HasFocus(89001) | Control.HasFocus(11900) | Control.HasFocus(119001) | Control.HasFocus(12900) | Control.HasFocus(129001) | Control.HasFocus(13900) | Control.HasFocus(139001) | Control.HasFocus(16900) | Control.HasFocus(169001)</expression>
 	<!-- Expression showing Jump to Letter -->
-	<expression name="isJump2Letter">System.AddonIsEnabled(script.embuary.helper) + [String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[20376])] + [String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons) | Container.Content(artists)]</expression>
+	<expression name="isJump2Letter">System.AddonIsEnabled(script.embuary.helper) + [String.IsEqual(ListItem.dbtype,video) | String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,musicvideo) | String.IsEqual(ListItem.dbtype,music) | String.IsEqual(ListItem.dbtype,song) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,actor) | Container.Content(artists) | Container.Content(addons)] + [String.IsEqual(Container.SortMethod,$LOCALIZE[171]) | String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[20376])]</expression>
 	<!-- Expression showing Status icon on EPG timelime -->
 	<expression name="hasPvrStatus">ListItem.IsRecording | ListItem.HasReminder | ListItem.HasTimerSchedule | ListItem.HasTimer | ListItem.HasArchive | ListItem.IsPlaying | ListItem.IsLive | ListItem.IsPremiere | ListItem.IsNew | ListItem.IsFinale</expression>
 	<!-- Expression for showing pvr nextup window time slot -->
@@ -104,7 +104,7 @@
 					<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
 					<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531) + !Skin.HasSetting(touchmode)">conditional</animation>
 					<animation effect="slide" end="12,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(531) + Skin.HasSetting(touchmode)">conditional</animation>
-					<visible>Control.IsVisible(52) | Control.IsVisible(500) | Control.IsVisible(504) | Control.IsVisible(55) | Control.IsVisible(501) | Control.IsVisible(54) | Control.IsVisible(505) | Control.IsVisible(507)</visible>
+					<visible>Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(500) | Control.IsVisible(504) | Control.IsVisible(55) | Control.IsVisible(501) | Control.IsVisible(54) | Control.IsVisible(505) | Control.IsVisible(507)</visible>
 				</control>
 			</control>
 			<control type="group">
@@ -121,7 +121,8 @@
 					<texturesliderbackground />
 					<hitrect x="0" y="-80" w="3840" h="80" />
 					<onup>50</onup>
-					<ondown condition="String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)">SetFocus(8000)</ondown>
+					<ondown condition="$EXP[isJump2Letter]">SetFocus(8000)</ondown>
+					<ondown condition="!$EXP[isJump2Letter]">50</ondown>
 					<orientation>horizontal</orientation>
 					<visible>Control.IsVisible(51) | Control.IsVisible(53) | Control.IsVisible(503) | Control.IsVisible(506) | Control.IsVisible(510)</visible>
 					<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
@@ -163,7 +164,7 @@
 			<onfocus condition="String.IsEqual(ListItem.SortLetter,X)">SetFocus(8001,24)</onfocus>
 			<onfocus condition="String.IsEqual(ListItem.SortLetter,Y)">SetFocus(8001,25)</onfocus>
 			<onfocus condition="String.IsEqual(ListItem.SortLetter,Z)">SetFocus(8001,26)</onfocus>
-			<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons) | Container.Content(artists)</visible>
+			<visible>$EXP[isJump2Letter]</visible>
 		</control>
 		<control type="group">
 			<animation type="Conditional" reversible="false" condition="[Control.HasFocus(8001) | Control.HasFocus(8101)]">
