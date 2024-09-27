@@ -43,6 +43,18 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.1+omega ###
+- .6
+  * some smaller artwork issues in several views fixed
+
+
+- .5
+  * exclude special plugin from size calculation in helpers.py
+  * Code cleanup
+  * Some issues in Gallery view fixed
+  * unnecessary video flags removed when playing PVR radio stations
+  * service interval of view switcher increased
+
+
 - .4
   * Info panel of PVR guide list views improved
   * some fixes for jump2letter conditions adapted

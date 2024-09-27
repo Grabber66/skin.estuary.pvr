@@ -299,14 +299,14 @@
 					<onclick condition="System.HasAddon(script.cu.lrclyrics) + Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.pvr,toggleAddonStatus,script.cu.lrclyrics,false)</onclick>
 					<onclick condition="System.HasAddon(script.cu.lrclyrics) + !Skin.HasSetting(enable_lyrics)">RunScript(skin.estuary.pvr,toggleAddonStatus,script.cu.lrclyrics,true)</onclick>
 					<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
-					<selected>!Skin.HasSetting(enable_lyrics)</selected>
+					<selected>Skin.HasSetting(enable_lyrics)</selected>
 				</control>
 				<control type="radiobutton" id="214">
 					<label>  ∟$LOCALIZE[31379]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(enable_animatedlyrics)</onclick>
 					<selected>!Skin.HasSetting(enable_animatedlyrics)</selected>
-					<enable>!Skin.HasSetting(enable_lyrics)</enable>
+					<enable>Skin.HasSetting(enable_lyrics)</enable>
 				</control>
 				<control type="radiobutton" id="215">
 					<label>  ∟$LOCALIZE[31363]</label>
@@ -314,7 +314,7 @@
 					<selected>Skin.HasSetting(Alt_color.lyrics)</selected>
 					<onclick>Skin.ToggleSetting(Alt_color.lyrics)</onclick>
 					<visible>!Skin.HasSetting(enable_animatedlyrics)</visible>
-					<enable>!Skin.HasSetting(enable_lyrics)</enable>
+					<enable>Skin.HasSetting(enable_lyrics)</enable>
 				</control>
 				<include content="DefaultColorSettingButton">
 					<param name="visible">!Skin.HasSetting(enable_lyrics) + !Skin.HasSetting(enable_animatedlyrics) + Skin.HasSetting(Alt_color.lyrics)</param>

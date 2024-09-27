@@ -63,21 +63,12 @@
 					</control>
 				</control>
 				<control type="image">
+					<depth>DepthContentPopout</depth>
 					<top>-16</top>
 					<left>-16</left>
 					<width>516</width>
 					<height>718</height>
-					<texture border="21">dialogs/dialog-bg.png</texture>
-				</control>
-				<control type="image">
-					<depth>DepthContentPopout</depth>
-					<left>4</left>
-					<top>4</top>
-					<width>476</width>
-					<height>678</height>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>	
-					<visible>String.IsEmpty(Control.GetLabel(24000))</visible>
+					<texture border="20">dialogs/dialog-bg.png</texture>
 				</control>
 				<control type="image" id='24000'>
 					<depth>DepthContentPopout</depth>
@@ -86,7 +77,7 @@
 					<width>476</width>
 					<height>678</height>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<texture>$VAR[PVRArtworksVarInfo2]</texture>
+					<texture fallback="DefaultVideo.png" border="1">$VAR[PVRArtworksVarInfo2]</texture>
 				</control>
 				<include content="BusyPvrArtworkSpinner">
 					<param name="top" value="301" />
