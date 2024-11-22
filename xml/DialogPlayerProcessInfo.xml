@@ -11,6 +11,549 @@
 			<animation effect="slide" end="0,-135" time="0" condition="Skin.HasSetting(ScopeMode) + String.IsEqual(Skin.String(scope_mode),$LOCALIZE[31479])">Conditional</animation>
 			<animation effect="slide" end="0,-131.5" time="0" condition="Skin.HasSetting(ScopeMode) + String.IsEqual(Skin.String(scope_mode),$LOCALIZE[31475])">Conditional</animation>
 			<animation effect="slide" end="0,-21" time="0" condition="Skin.HasSetting(ScopeMode) + String.IsEqual(Skin.String(scope_mode),$LOCALIZE[31478])">Conditional</animation>
+			<!-- Player Info -->
+			<control type="grouplist">
+				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+					<param name="left" value="460"/>
+				</include>
+				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+					<param name="left" value="30"/>
+				</include>
+				<right>30</right>
+				<bottom>138</bottom>
+				<height>320</height>
+				<visible>Control.HasFocus(5552)</visible>
+				<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + ![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
+				<animation effect="slide" end="0,-50" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + [Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(videodecoder),$LOCALIZE[31139] : [COLOR white],]$VAR[VideoHWDecoder, (,)[/COLOR]]</label>
+					<font>font12</font>
+					<visible>Player.HasVideo</visible>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(amlogic.pixformat),$LOCALIZE[31140] : [COLOR white],[/COLOR]] $VAR[DVTunnelVar]</label>
+					<font>font12</font>
+					<visible>Player.HasVideo + System.HasAddon(service.coreelec.settings)</visible>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(pixformat),$LOCALIZE[31140] : [COLOR white],[/COLOR]]</label>
+					<font>font12</font>
+					<visible>Player.HasVideo + !System.HasAddon(service.coreelec.settings)</visible>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(deintmethod),$LOCALIZE[16038] : [COLOR white],[/COLOR]]</label>
+					<font>font12</font>
+					<visible>Player.HasVideo</visible>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(videowidth),$LOCALIZE[38031] : [COLOR white],x]$INFO[Player.Process(videoheight)]$INFO[Player.Process(videoscantype)]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS][/COLOR]</label>
+					<font>font12</font>
+					<visible>Player.HasVideo</visible>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="label">
+					<width>690</width>
+					<height>35</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[System.FPS,$LOCALIZE[14220] &amp; $LOCALIZE[439] : [COLOR white], FPS$COMMA ]$INFO[Player.CacheLevel] %[/COLOR]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+					<visible>!String.IsEmpty(System.FPS)</visible>
+				</control>
+				<control type="label">
+					<width>690</width>
+					<height>35</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(amlogic.eoft_gamut),$LOCALIZE[31611] : [COLOR white],[/COLOR]]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+					<visible>!String.IsEmpty(Player.Process(amlogic.eoft_gamut)) + !String.Contains(System.OSVersionInfo,(cpm))</visible>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<scroll>true</scroll>
+					<label>$LOCALIZE[460] : [COLOR white]$INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]$INFO[Player.Process(audio.live.kibit.rate,$COMMA , kb/s][/COLOR]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<label>$LOCALIZE[22012] : [COLOR white]$INFO[system.memory(used),, | ]$INFO[system.memory(total),,  -  ]$INFO[system.memory(used.percent),,] [/COLOR]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+					<visible>!System.Platform.Android</visible>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<label>$LOCALIZE[31703] : [COLOR white]$VAR[LabelAudioCodecVar] - $VAR[LabelAudioChannelsVar][/COLOR]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+			</control>
+			<control type="grouplist">
+				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+					<param name="left" value="1180"/>
+				</include>
+				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+					<param name="left" value="930"/>
+				</include>
+				<right>30</right>
+				<bottom>138</bottom>
+				<height>320</height>
+				<visible>Control.HasFocus(5552)</visible>
+				<usecontrolcoords>true</usecontrolcoords>
+				<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + ![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
+				<animation effect="slide" end="0,-50" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + [Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
+				<control type="label">
+					<width>690</width>
+					<height>35</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[System.CpuFrequency,$LOCALIZE[13284] [COLOR white],[/COLOR]]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				    <visible>!System.Platform.Android</visible>
+				</control>
+				<control type="label">
+					<width>690</width>
+					<height>35</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[System.CpuTemperature,$LOCALIZE[22011] [COLOR white],[/COLOR]]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="group">
+					<height>35</height>
+					<width>690</width>
+					<visible>!System.Platform.Android</visible>
+					<control type="label">
+						<width>300</width>
+						<aligny>bottom</aligny>
+						<label>$LOCALIZE[140] </label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="progress">
+						<description>CPU BAR</description>
+						<left>260</left>
+						<width>430</width>
+						<top>12</top>
+						<height>14</height>
+						<info>System.CPUUsage</info>
+					</control>
+				</control>
+				<control type="group">
+					<height>35</height>
+					<width>690</width>
+					<control type="label">
+						<width>300</width>
+						<aligny>bottom</aligny>
+						<label>$LOCALIZE[22012] : </label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="progress">
+						<description>Ram BAR</description>
+						<left>260</left>
+						<width>430</width>
+						<top>12</top>
+						<height>14</height>
+						<info>system.memory(used)</info>
+					</control>
+				</control>
+				<control type="grouplist">
+					<visible>String.Contains(System.OSVersionInfo,(cpm))</visible>
+					<control type="group">
+						<height>35</height>
+						<width>690</width>
+						<control type="label">
+							<width>300</width>
+							<aligny>bottom</aligny>
+							<label>$LOCALIZE[31686] : </label>
+							<font>font12</font>
+							<textcolor>$VAR[SkinColorVar]</textcolor>
+						</control>
+						<control type="progress">
+							<description>VIDEO QUEUE BAR</description>
+							<left>260</left>
+							<width>430</width>
+							<top>12</top>
+							<height>14</height>
+							<info>Player.Process(video.queue.level)</info>
+						</control>
+					</control>
+					<control type="group">
+						<height>35</height>
+						<width>690</width>
+						<control type="label">
+							<width>300</width>
+							<aligny>bottom</aligny>
+							<label>$LOCALIZE[31687] : </label>
+							<font>font12</font>
+							<textcolor>$VAR[SkinColorVar]</textcolor>
+						</control>
+						<control type="progress">
+							<description>VIDEO QUEUE DATA BAR</description>
+							<left>260</left>
+							<width>430</width>
+							<top>12</top>
+							<height>14</height>
+							<info>Player.Process(video.queue.data.level)</info>
+						</control>
+					</control>
+					<control type="group">
+						<height>35</height>
+						<width>690</width>
+						<control type="label">
+							<width>300</width>
+							<aligny>bottom</aligny>
+							<label>$LOCALIZE[31688] : </label>
+							<font>font12</font>
+							<textcolor>$VAR[SkinColorVar]</textcolor>
+						</control>
+						<control type="progress">
+							<description>AUDIO QUEUE BAR</description>
+							<left>260</left>
+							<width>430</width>
+							<top>12</top>
+							<height>14</height>
+							<info>Player.Process(audio.queue.level)</info>
+						</control>
+					</control>
+					<control type="group">
+						<height>35</height>
+						<width>690</width>
+						<control type="label">
+							<width>300</width>
+							<aligny>bottom</aligny>
+							<label>$LOCALIZE[31689] : </label>
+							<font>font12</font>
+							<textcolor>$VAR[SkinColorVar]</textcolor>
+						</control>
+						<control type="progress">
+							<description>AUDIO QUEUE DATA BAR</description>
+							<left>260</left>
+							<width>430</width>
+							<top>12</top>
+							<height>14</height>
+							<info>Player.Process(audio.queue.data.level)</info>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist">
+					<visible>Player.HasVideo + !String.Contains(System.OSVersionInfo,(cpm))</visible>
+					<control type="label">
+						<height>35</height>
+						<width>690</width>
+						<aligny>bottom</aligny>
+						<label/>
+					</control>
+					<control type="label">
+						<height>35</height>
+						<width>690</width>
+						<aligny>bottom</aligny>
+						<scroll>true</scroll>
+						<label>$LOCALIZE[31691] : [COLOR white]$VAR[LabelHdrTypeVar][/COLOR]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<height>35</height>
+						<width>690</width>
+						<aligny>bottom</aligny>
+						<scroll>true</scroll>
+						<label>$INFO[VideoPlayer.AudioLanguage,$LOCALIZE[21447] : [COLOR white][UPPERCASE],[/UPPERCASE][/COLOR]]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<height>35</height>
+						<width>690</width>
+						<aligny>bottom</aligny>
+						<scroll>true</scroll>
+						<label>$INFO[VideoPlayer.SubtitlesLanguage,$LOCALIZE[21448] : [COLOR white][UPPERCASE],[/UPPERCASE][/COLOR]]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+						<visible>VideoPlayer.SubtitlesEnabled</visible>
+					</control>
+					<control type="label">
+						<height>35</height>
+						<width>690</width>
+						<aligny>bottom</aligny>
+						<scroll>true</scroll>
+						<label>$INFO[VideoPlayer.SubtitlesLanguage,$LOCALIZE[21448] : [COLOR white][UPPERCASE], - [/UPPERCASE]$LOCALIZE[13106][/COLOR]]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+						<visible>!VideoPlayer.SubtitlesEnabled</visible>
+					</control>
+				</control>
+			</control>
+			<!-- HDR & DV -->
+			<control type="grouplist">
+				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+					<param name="left" value="460"/>
+				</include>
+				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+					<param name="left" value="30"/>
+				</include>
+				<right>30</right>
+				<bottom>138</bottom>
+				<height>320</height>
+				<visible>Control.HasFocus(5554)</visible>
+				<usecontrolcoords>true</usecontrolcoords>
+				<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + ![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
+				<animation effect="slide" end="0,-50" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + [Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
+				<control type="group">
+					<height>35</height>
+					<visible>String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
+					<control type="label">
+						<width>360</width>
+						<aligny>bottom</aligny>
+						<label>$LOCALIZE[31693] : </label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<left>360</left>
+						<width>330</width>
+						<aligny>bottom</aligny>
+						<label>[COLOR white]$INFO[Player.Process(video.dovi.source.min.nits)] | $INFO[Player.Process(video.dovi.source.max.nits)] $LOCALIZE[31699][/COLOR]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+				</control>
+				<control type="group">
+					<height>35</height>
+					<visible>String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
+					<control type="label">
+						<width>360</width>
+						<aligny>bottom</aligny>
+						<label>$LOCALIZE[31694] : </label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<left>360</left>
+						<width>330</width>
+						<aligny>bottom</aligny>
+						<label>[COLOR white]$INFO[Player.Process(video.dovi.l6.max.cll)] | $INFO[Player.Process(video.dovi.l6.max.fall)] $LOCALIZE[31699][/COLOR]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+						<visible>String.IsEqual(Player.Process(video.dovi.has.config),1) + String.IsEqual(Player.Process(video.dovi.has.l6),1)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<height>35</height>
+					<visible>String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
+					<control type="label">
+						<width>360</width>
+						<aligny>bottom</aligny>
+						<label>$LOCALIZE[31695] : </label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<left>360</left>
+						<width>330</width>
+						<aligny>bottom</aligny>
+						<label>[COLOR white] $INFO[Player.Process(video.dovi.l1.min.nits)] | $INFO[Player.Process(video.dovi.l1.max.nits)] | $INFO[Player.Process(video.dovi.l1.avg.nits)] $LOCALIZE[31699][/COLOR]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+						<visible>String.Contains(Player.Process(video.hdr.type),hdr)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<height>35</height>
+					<visible>String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
+					<control type="label">
+						<width>360</width>
+						<aligny>bottom</aligny>
+						<label>$LOCALIZE[31696] : </label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<left>360</left>
+						<width>330</width>
+						<aligny>bottom</aligny>
+						<label>[COLOR white] $INFO[Player.Process(video.dovi.l1.min.pq)] | $INFO[Player.Process(video.dovi.l1.max.pq)] | $INFO[Player.Process(video.dovi.l1.avg.pq)] PQ-12bit[/COLOR]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+				</control>
+				<control type="group">
+					<height>35</height>
+					<visible>String.Contains(Player.Process(video.hdr.type),dolby vision) | String.Contains(Player.Process(video.hdr.type),hdr)</visible>
+					<control type="label">
+						<width>360</width>
+						<aligny>bottom</aligny>
+						<label>$LOCALIZE[31697] : </label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<left>360</left>
+						<width>330</width>
+						<aligny>bottom</aligny>
+						<label>[COLOR white] $INFO[Player.Process(video.hdr.min.lum)] | $INFO[Player.Process(video.hdr.max.lum)] $LOCALIZE[31699][/COLOR]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+						<visible>String.Contains(Player.Process(video.hdr.type),hdr)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<height>35</height>
+					<visible>String.Contains(Player.Process(video.hdr.type),dolby vision) | String.Contains(Player.Process(video.hdr.type),hdr)</visible>
+					<control type="label">
+						<width>360</width>
+						<aligny>bottom</aligny>
+						<label>$LOCALIZE[31698] : </label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<left>360</left>
+						<width>330</width>
+						<aligny>bottom</aligny>
+						<label>[COLOR white] $INFO[Player.Process(video.hdr.max.cll)] | $INFO[Player.Process(video.hdr.max.fall)] $LOCALIZE[31699][/COLOR]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+				</control>
+				<control type="label">
+					<width>690</width>
+					<height>35</height>
+					<label>$LOCALIZE[31704] : $VAR[VS10ModeVar]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="label">
+					<width>690</width>
+					<height>35</height>
+					<label>$INFO[Player.Process(video.source.hdr.type),$LOCALIZE[31705] : [COLOR white]] $VAR[DVProfileVar] $VAR[DVELVar] $VAR[VideoConvVar][/COLOR]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+			</control>
+			<control type="grouplist">
+				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+					<param name="left" value="1180"/>
+				</include>
+				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
+					<param name="left" value="930"/>
+				</include>
+				<right>30</right>
+				<bottom>138</bottom>
+				<height>320</height>
+				<visible>Control.HasFocus(5554)</visible>
+				<usecontrolcoords>true</usecontrolcoords>
+				<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + ![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
+				<animation effect="slide" end="0,-50" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + [Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
+				<control type="label">
+					<width>690</width>
+					<height>35</height>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(amlogic.eoft_gamut),$LOCALIZE[31611] : [COLOR white],[/COLOR]]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(video.source.hdr.type),$LOCALIZE[31706] : [COLOR white],[/COLOR]]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="grouplist">
+					<visible>String.Contains(Player.Process(video.hdr.type),dolby vision)</visible>
+					<control type="label">
+						<width>690</width>
+						<height>35</height>
+						<aligny>bottom</aligny>
+						<label>$INFO[Player.Process(video.dovi.version.major),$LOCALIZE[31702] : [COLOR white]]$INFO[Player.Process(video.dovi.version.minor),.,[/COLOR]]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<width>690</width>
+						<height>35</height>
+						<aligny>bottom</aligny>
+						<label>$INFO[Player.Process(video.dovi.profile),$LOCALIZE[31700] : [COLOR white]]$INFO[Player.Process(video.dovi.bl.signal.compatibility),.] $VAR[DVELVar][/COLOR]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<width>690</width>
+						<height>35</height>
+						<aligny>bottom</aligny>
+						<label>$INFO[Player.Process(video.dovi.level),$LOCALIZE[31701] : ]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+						<visible>!String.Contains(Player.Process(video.dovi.level),0)</visible>
+					</control>
+					<control type="label">
+						<width>690</width>
+						<height>35</height>
+						<aligny>bottom</aligny>
+						<label>$VAR[RPUPresentVar]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<width>690</width>
+						<height>35</height>
+						<aligny>bottom</aligny>
+						<label>$VAR[BLPresentVar]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<height>35</height>
+						<width>690</width>
+						<aligny>bottom</aligny>
+						<label>$VAR[ELPresentVar]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+					</control>
+					<control type="label">
+						<height>35</height>
+						<width>690</width>
+						<aligny>bottom</aligny>
+						<label>$VAR[ELSourcePresentVar]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+						<visible>!String.IsEqual(Player.Process(video.source.dovi.profile),0)</visible>
+					</control>
+				</control>
+			</control>
+			<!-- PVR Info -->
 			<control type="grouplist">
 				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="460"/>
@@ -20,7 +563,7 @@
 				</include>
 				<right>710</right>
 				<bottom>138</bottom>
-				<height>280</height>
+				<height>320</height>
 				<visible>Control.HasFocus(5551)</visible>
 				<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + ![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
 				<animation effect="slide" end="0,-50" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + [Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
@@ -30,7 +573,6 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamServiceName,$LOCALIZE[19099] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 				<control type="label">
@@ -39,7 +581,6 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamProviderName,$LOCALIZE[19101] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 				<control type="label">
@@ -48,7 +589,6 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamClient,$LOCALIZE[19012] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 				<control type="label">
@@ -57,7 +597,6 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamDevice,$LOCALIZE[19006] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 				<control type="label">
@@ -66,7 +605,6 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamStatus,$LOCALIZE[19007] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 				<control type="label">
@@ -75,232 +613,10 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamEncryptionName,$LOCALIZE[19015] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 			</control>
-			<control type="grouplist">
-				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
-					<param name="left" value="460"/>
-				</include>
-				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
-					<param name="left" value="30"/>
-				</include>
-				<right>30</right>
-				<bottom>138</bottom>
-				<height>280</height>
-				<visible>Control.HasFocus(5552)</visible>
-				<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + ![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
-				<animation effect="slide" end="0,-50" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + [Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(videodecoder),$LOCALIZE[31139] : [COLOR white],]$VAR[VideoHWDecoder, (,)[/COLOR]]</label>
-					<font>font12</font>
-					<visible>Player.HasVideo</visible>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(pixformat),$LOCALIZE[31140] : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<visible>Player.HasVideo</visible>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(deintmethod),$LOCALIZE[16038] : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<visible>Player.HasVideo</visible>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(videowidth),$LOCALIZE[38031] : [COLOR white],x]$INFO[Player.Process(videoheight)]$INFO[Player.Process(videoscantype)]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS][/COLOR]</label>
-					<font>font12</font>
-					<visible>Player.HasVideo</visible>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<width>700</width>
-					<aligny>bottom</aligny>
-					<label>$LOCALIZE[22012] : [COLOR white]$INFO[system.memory(used),, / ]$INFO[system.memory(total),,  -  ]$INFO[system.memory(used.percent),,] [/COLOR]</label>
-					<font>font12</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>!System.Platform.Android</visible>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<scroll>true</scroll>
-					<label>$LOCALIZE[460] : [COLOR white]$INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]$INFO[VideoPlayer.AudioBitrate,$COMMA , kb/s][/COLOR]</label>
-					<font>font12</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<right>30</right>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[System.CpuUsage,$LOCALIZE[13271] [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>!System.Platform.Android</visible>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[System.CpuFrequency,$LOCALIZE[13284] [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				    <visible>System.Platform.Android</visible>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<right>30</right>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$LOCALIZE[22012] : [COLOR white]$INFO[system.memory(used),, / ]$INFO[system.memory(total),,  -  ]$INFO[system.memory(used.percent),,] [/COLOR]</label>
-					<font>font12</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>System.Platform.Android</visible>
-				</control>
-				<control type="label">
-					<height>10</height>
-					<width>1430</width>
-					<aligny>bottom</aligny>
-					<label></label>
-					<font>font8</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="progress">
-				    <visible>!Skin.HasSetting(SmallOSDVideo)</visible>
-					<description>CPU BAR</description>
-					<width>1430</width>
-					<height>14</height>
-					<info>System.CPUUsage</info>
-					<visible>!System.Platform.Android</visible>
-				</control>
-			    <control type="progress">
-				    <visible>Skin.HasSetting(SmallOSDVideo)</visible>
-					<description>CPU BAR</description>
-					<width>1860</width>
-					<height>14</height>
-					<info>System.CPUUsage</info>
-					<visible>!System.Platform.Android</visible>
-				</control>
-				<control type="progress">
-				    <visible>!Skin.HasSetting(SmallOSDVideo)</visible>
-					<description>Ram BAR</description>
-					<width>1430</width>
-					<height>14</height>
-					<info>system.memory(used)</info>
-					<visible>System.Platform.Android</visible>
-				</control>
-				<control type="progress">
-				    <visible>Skin.HasSetting(SmallOSDVideo)</visible>
-					<description>Ram BAR</description>
-					<width>1860</width>
-					<height>14</height>
-					<info>system.memory(used)</info>
-					<visible>System.Platform.Android</visible>
-				</control>
-			</control>
-			<control type="grouplist">
-				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
-					<param name="left" value="460"/>
-				</include>
-				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
-					<param name="left" value="30"/>
-				</include>
-				<right>30</right>
-				<bottom>138</bottom>
-				<height>280</height>
-				<visible>Control.HasFocus(5553) + Player.HasVideo</visible>
-				<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + ![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
-				<animation effect="slide" end="0,-50" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + [Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[VideoPlayer.HdrType,VideoPlayer.HdrType : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>!String.IsEmpty(VideoPlayer.HdrType)</visible>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[VideoPlayer.VideoCodec,VideoPlayer.VideoCodec : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[VideoPlayer.VideoResolution,VideoPlayer.VideoResolution : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[VideoPlayer.AudioCodec,VideoPlayer.AudioCodec : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[VideoPlayer.AudioChannels,VideoPlayer.AudioChannels : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[VideoPlayer.AudioLanguage,VideoPlayer.AudioLanguage : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[VideoPlayer.SubtitlesLanguage,VideoPlayer.SubtitlesLanguage : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<visible>Player.HasVideo</visible>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>VideoPlayer.SubtitlesEnabled</visible>
-				</control>
-				<control type="label">
-					<height>35</height>
-					<width>710</width>
-					<aligny>bottom</aligny>
-					<label>$INFO[VideoPlayer.SubtitlesLanguage,VideoPlayer.SubtitlesLanguage : [COLOR white], $LOCALIZE[31683][/COLOR]]</label>
-					<font>font12</font>
-					<visible>Player.HasVideo</visible>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>!VideoPlayer.SubtitlesEnabled</visible>
-				</control>
-			</control>
+			<!-- PVR -->
 			<control type="grouplist">
 				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
 					<param name="left" value="1180"/>
@@ -310,82 +626,7 @@
 				</include>
 				<right>30</right>
 				<bottom>138</bottom>
-				<height>280</height>
-				<visible>Control.HasFocus(5552)</visible>
-				<usecontrolcoords>true</usecontrolcoords>
-				<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + ![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
-				<animation effect="slide" end="0,-50" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + [Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
-				<control type="label">
-					<width>710</width>
-					<height>35</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(amlogic.displaymode),$LOCALIZE[31610] : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>!String.IsEmpty(Player.Process(amlogic.displaymode))</visible>
-				</control>
-				<control type="label">
-					<width>710</width>
-					<height>35</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(amlogic.pixformat),$LOCALIZE[31612] : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>!String.IsEmpty(Player.Process(amlogic.pixformat))</visible>
-				</control>
-				<control type="label">
-					<width>710</width>
-					<height>35</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(amlogic.eoft_gamut),$LOCALIZE[31611] : [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>!String.IsEmpty(Player.Process(amlogic.eoft_gamut))</visible>
-				</control>
-				<control type="label">
-					<width>710</width>
-					<height>35</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[System.CpuFrequency,$LOCALIZE[13284] [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-				    <visible>!System.Platform.Android</visible>
-				</control>
-				<control type="label">
-					<width>710</width>
-					<height>35</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[System.CpuTemperature,$LOCALIZE[22011] [COLOR white],[/COLOR]]</label>
-					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>System.HasAddon(service.coreelec.settings)</visible>
-				</control>
-				<control type="label">
-					<width>710</width>
-					<height>35</height>
-					<aligny>bottom</aligny>
-					<label>$INFO[System.FPS,$LOCALIZE[14220] : [COLOR white], FPS[/COLOR]]</label>
-					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
-					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>!String.IsEmpty(System.FPS)</visible>
-				</control>
-			</control>
-			<control type="grouplist">
-				<include content="ItemLeft" condition="![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
-					<param name="left" value="1180"/>
-				</include>
-				<include content="ItemLeft" condition="[Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">
-					<param name="left" value="930"/>
-				</include>
-				<right>30</right>
-				<bottom>138</bottom>
-				<height>280</height>
+				<height>320</height>
 				<visible>Control.HasFocus(5551)</visible>
 				<usecontrolcoords>true</usecontrolcoords>
 				<animation effect="slide" end="0,-45" time="50" tween="sine" easing="out" condition="PVR.IsTimeShift + !Player.ChannelPreviewActive + ![Skin.HasSetting(SmallOSDVideo) + Window.IsVisible(fullscreenvideo) + !Window.IsActive(fullscreeninfo)]">Conditional</animation>
@@ -396,7 +637,6 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamBer,$LOCALIZE[19010] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 				<control type="label">
@@ -405,7 +645,6 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamUnc,$LOCALIZE[19011] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 				<control type="label">
@@ -414,7 +653,6 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamMux,$LOCALIZE[19100] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-					<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 				<control type="group">
@@ -426,7 +664,6 @@
 						<aligny>bottom</aligny>
 						<label>$INFO[PVR.ActStreamSignal,$LOCALIZE[19008] : [COLOR white],[/COLOR]]</label>
 						<font>font12</font>
-						<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 						<textcolor>$VAR[SkinColorVar]</textcolor>
 					</control>
 					<control type="progress">
@@ -447,7 +684,6 @@
 						<aligny>bottom</aligny>
 						<label>$INFO[PVR.ActStreamSnr,$LOCALIZE[19009] : [COLOR white],[/COLOR]]</label>
 						<font>font12</font>
-						<shadowcolor>$VAR[ShadowColorVar]</shadowcolor>
 						<textcolor>$VAR[SkinColorVar]</textcolor>
 					</control>
 					<control type="progress">
@@ -469,7 +705,7 @@
 			</control>
 			<control type="grouplist" id="5550">
 				<left>440</left>
-				<bottom>420</bottom>
+				<bottom>460</bottom>
 				<width>1000</width>
 				<height>100</height>
 				<align>left</align>
@@ -488,10 +724,23 @@
 					<label>$LOCALIZE[31138]</label>
 					<font>font25_title</font>
 					<onup>5552</onup>
-					<ondown>5552</ondown>
+					<ondown>SetFocus(800)</ondown>
 					<onclick>SetFocus(800)</onclick>
 					<texturefocus border="40" colordiffuse="$VAR[SkinColorVar]">buttons/dialogbutton-fo.png</texturefocus>
 					<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+				</control>
+				<control type="button" id="5554">
+					<width>auto</width>
+					<height>100</height>
+					<textoffsetx>30</textoffsetx>
+					<label>$LOCALIZE[31690]</label>
+					<font>font25_title</font>
+					<onup>5554</onup>
+					<ondown>SetFocus(800)</ondown>
+					<onclick>SetFocus(800)</onclick>
+					<texturefocus border="40" colordiffuse="$VAR[SkinColorVar]">buttons/dialogbutton-fo.png</texturefocus>
+					<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+					<visible>String.Contains(System.OSVersionInfo,(cpm)) + [String.Contains(Player.Process(video.hdr.type),dolby vision) | String.Contains(Player.Process(video.hdr.type),hdr)]</visible>
 				</control>
 				<control type="button" id="5551">
 					<width>auto</width>
@@ -500,23 +749,11 @@
 					<label>$LOCALIZE[31137]</label>
 					<font>font25_title</font>
 					<onup>5551</onup>
-					<ondown>5551</ondown>
+					<ondown>SetFocus(800)</ondown>
 					<onclick>SetFocus(800)</onclick>
 					<texturefocus border="40" colordiffuse="$VAR[SkinColorVar]">buttons/dialogbutton-fo.png</texturefocus>
 					<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
 					<visible>VideoPlayer.Content(livetv)</visible>
-				</control>
-				<control type="button" id="5553">
-					<width>auto</width>
-					<height>100</height>
-					<textoffsetx>30</textoffsetx>
-					<label>$LOCALIZE[31682]</label>
-					<font>font25_title</font>
-					<onup>5553</onup>
-					<ondown>5553</ondown>
-					<onclick>SetFocus(800)</onclick>
-					<texturefocus border="40" colordiffuse="$VAR[SkinColorVar]">buttons/dialogbutton-fo.png</texturefocus>
-					<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
 				</control>
 			</control>
 		</control>
