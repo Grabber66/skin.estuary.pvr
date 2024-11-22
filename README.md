@@ -43,7 +43,13 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.1+omega ###
+- .10
+  * Player Process Info extended (regular Kodi builds)
+  * Introducing Player Process Info for Amlogic CPM builds (CoreELEC) (DV/HDR)
+
+
 - .9
+  * Player Process Info improved
   * Runtime (mins) of media files in list views added (file mode)
   * Visibility conditions of showing splash screen depending on startup action in skin settings fixed
   * Info View in PVR channels panel fixed
