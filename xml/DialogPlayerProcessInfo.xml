@@ -65,16 +65,27 @@
 					<height>35</height>
 					<width>690</width>
 					<aligny>bottom</aligny>
-					<label>$INFO[Player.Process(videowidth),$LOCALIZE[38031] : [COLOR white],x]$INFO[Player.Process(videoheight)]$INFO[Player.Process(videoscantype)]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.Process(videofps),$COMMA , FPS][/COLOR]</label>
+					<label>$INFO[Player.Process(videowidth),$LOCALIZE[38031] : [COLOR white],x]$INFO[Player.Process(videoheight)]$INFO[Player.Process(videoscantype)]$INFO[Player.Process(videofps),$COMMA , $LOCALIZE[31707]]$INFO[Player.Process(video.live.mibit.rate),$COMMA , $LOCALIZE[31708]][/COLOR]</label>
 					<font>font12</font>
 					<visible>Player.HasVideo</visible>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
+					<visible>!String.IsEmpty(Player.Process(video.live.mibit.rate))</visible>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<label>$INFO[Player.Process(videowidth),$LOCALIZE[38031] : [COLOR white],x]$INFO[Player.Process(videoheight)]$INFO[Player.Process(videoscantype)]$INFO[Player.Process(videofps),$COMMA , $LOCALIZE[31707]][/COLOR]</label>
+					<font>font12</font>
+					<visible>Player.HasVideo</visible>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+					<visible>String.IsEmpty(Player.Process(video.live.mibit.rate))</visible>
 				</control>
 				<control type="label">
 					<width>690</width>
 					<height>35</height>
 					<aligny>bottom</aligny>
-					<label>$INFO[System.FPS,$LOCALIZE[14220] &amp; $LOCALIZE[439] : [COLOR white], FPS$COMMA ]$INFO[Player.CacheLevel] %[/COLOR]</label>
+					<label>$INFO[System.FPS,$LOCALIZE[14220] &amp; $LOCALIZE[439] : [COLOR white], $LOCALIZE[31707]]$INFO[Player.Process(videodar),$COMMA , AR]$INFO[Player.CacheLevel,$COMMA , %][/COLOR]</label>
 					<font>font12</font>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 					<visible>!String.IsEmpty(System.FPS)</visible>
@@ -93,9 +104,20 @@
 					<width>690</width>
 					<aligny>bottom</aligny>
 					<scroll>true</scroll>
-					<label>$LOCALIZE[460] : [COLOR white]$INFO[Player.Process(audiochannels),,$COMMA ]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]$INFO[Player.Process(audio.live.kibit.rate,$COMMA , kb/s][/COLOR]</label>
+					<label>$LOCALIZE[14250] : [COLOR white]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]$INFO[Player.Process(audio.live.kibit.rate),$COMMA , kb/s][/COLOR]</label>
 					<font>font12</font>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
+					<visible>!String.IsEmpty(Player.Process(audio.live.kibit.rate))</visible>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<scroll>true</scroll>
+					<label>$LOCALIZE[14250] : [COLOR white]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz][/COLOR]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+					<visible>String.IsEmpty(Player.Process(audio.live.kibit.rate))</visible>
 				</control>
 				<control type="label">
 					<height>35</height>
@@ -370,7 +392,7 @@
 				</control>
 				<control type="group">
 					<height>35</height>
-					<visible>String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
+					<visible>String.IsEqual(Player.Process(video.dovi.has.config),1) | String.IsEqual(Player.Process(video.dovi.has.l6),1)</visible>
 					<control type="label">
 						<width>360</width>
 						<aligny>bottom</aligny>
@@ -385,7 +407,6 @@
 						<label>[COLOR white] $INFO[Player.Process(video.dovi.l1.min.nits)] | $INFO[Player.Process(video.dovi.l1.max.nits)] | $INFO[Player.Process(video.dovi.l1.avg.nits)] $LOCALIZE[31699][/COLOR]</label>
 						<font>font12</font>
 						<textcolor>$VAR[SkinColorVar]</textcolor>
-						<visible>String.Contains(Player.Process(video.hdr.type),hdr)</visible>
 					</control>
 				</control>
 				<control type="group">
