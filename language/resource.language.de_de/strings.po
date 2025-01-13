@@ -2801,3 +2801,15 @@ msgstr "VS10 Status"
 msgctxt "#31706"
 msgid "Media Source Type"
 msgstr "Medientyp der Quelle"
+
+msgctxt "#31707"
+msgid "fps"
+msgstr "fps"
+
+msgctxt "#31708"
+msgid "Mbit/s"
+msgstr "Mbit/s"
+
+msgctxt "#31709"
+msgid "Last updated TV Shows"
+msgstr "Zuletzt aktualisierte Serien"
