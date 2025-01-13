@@ -104,10 +104,20 @@
 					<width>690</width>
 					<aligny>bottom</aligny>
 					<scroll>true</scroll>
+					<label>$LOCALIZE[14250] : [COLOR white]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]$INFO[VideoPlayer.AudioBitrate,$COMMA , kb/s][/COLOR]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+					<visible>!String.IsEmpty(VideoPlayer.AudioBitrate)</visible>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<scroll>true</scroll>
 					<label>$LOCALIZE[14250] : [COLOR white]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz]$INFO[Player.Process(audio.live.kibit.rate),$COMMA , kb/s][/COLOR]</label>
 					<font>font12</font>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>!String.IsEmpty(Player.Process(audio.live.kibit.rate))</visible>
+					<visible>!String.IsEmpty(Player.Process(audio.live.kibit.rate)) + String.IsEmpty(VideoPlayer.AudioBitrate)</visible>
 				</control>
 				<control type="label">
 					<height>35</height>
@@ -117,7 +127,7 @@
 					<label>$LOCALIZE[14250] : [COLOR white]$INFO[Player.Process(audiodecoder)]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz][/COLOR]</label>
 					<font>font12</font>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
-					<visible>String.IsEmpty(Player.Process(audio.live.kibit.rate))</visible>
+					<visible>String.IsEmpty(Videoplayer.AudioBitrate) + String.IsEmpty(Player.Process(audio.live.kibit.rate))</visible>
 				</control>
 				<control type="label">
 					<height>35</height>
@@ -135,6 +145,15 @@
 					<width>690</width>
 					<aligny>bottom</aligny>
 					<label>$LOCALIZE[31703] : [COLOR white]$VAR[LabelAudioCodecVar] - $VAR[LabelAudioChannelsVar][/COLOR]</label>
+					<font>font12</font>
+					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="label">
+					<height>35</height>
+					<width>690</width>
+					<aligny>bottom</aligny>
+					<scroll>true</scroll>
+					<label>$INFO[VideoPlayer.AudioLanguage,$LOCALIZE[21447] : [COLOR white][UPPERCASE],[/UPPERCASE][/COLOR]]</label>
 					<font>font12</font>
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
@@ -287,6 +306,26 @@
 							<info>Player.Process(audio.queue.data.level)</info>
 						</control>
 					</control>
+					<control type="label">
+						<height>35</height>
+						<width>690</width>
+						<aligny>bottom</aligny>
+						<scroll>true</scroll>
+						<label>$INFO[VideoPlayer.SubtitlesLanguage,$LOCALIZE[21448] : [COLOR white][UPPERCASE],[/UPPERCASE][/COLOR]]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+						<visible>VideoPlayer.SubtitlesEnabled</visible>
+					</control>
+					<control type="label">
+						<height>35</height>
+						<width>690</width>
+						<aligny>bottom</aligny>
+						<scroll>true</scroll>
+						<label>$INFO[VideoPlayer.SubtitlesLanguage,$LOCALIZE[21448] : [COLOR white][UPPERCASE], - [/UPPERCASE]$LOCALIZE[13106][/COLOR]]</label>
+						<font>font12</font>
+						<textcolor>$VAR[SkinColorVar]</textcolor>
+						<visible>!VideoPlayer.SubtitlesEnabled</visible>
+					</control>
 				</control>
 				<control type="grouplist">
 					<visible>Player.HasVideo + !String.Contains(System.OSVersionInfo,(cpm))</visible>
@@ -302,15 +341,6 @@
 						<aligny>bottom</aligny>
 						<scroll>true</scroll>
 						<label>$LOCALIZE[31691] : [COLOR white]$VAR[LabelHdrTypeVar][/COLOR]</label>
-						<font>font12</font>
-						<textcolor>$VAR[SkinColorVar]</textcolor>
-					</control>
-					<control type="label">
-						<height>35</height>
-						<width>690</width>
-						<aligny>bottom</aligny>
-						<scroll>true</scroll>
-						<label>$INFO[VideoPlayer.AudioLanguage,$LOCALIZE[21447] : [COLOR white][UPPERCASE],[/UPPERCASE][/COLOR]]</label>
 						<font>font12</font>
 						<textcolor>$VAR[SkinColorVar]</textcolor>
 					</control>
@@ -445,7 +475,6 @@
 						<label>[COLOR white] $INFO[Player.Process(video.hdr.min.lum)] | $INFO[Player.Process(video.hdr.max.lum)] $LOCALIZE[31699][/COLOR]</label>
 						<font>font12</font>
 						<textcolor>$VAR[SkinColorVar]</textcolor>
-						<visible>String.Contains(Player.Process(video.hdr.type),hdr)</visible>
 					</control>
 				</control>
 				<control type="group">
@@ -502,7 +531,6 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[Player.Process(amlogic.eoft_gamut),$LOCALIZE[31611] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 				<control type="label">
@@ -535,7 +563,7 @@
 						<width>690</width>
 						<height>35</height>
 						<aligny>bottom</aligny>
-						<label>$INFO[Player.Process(video.dovi.level),$LOCALIZE[31701] : ]</label>
+						<label>$INFO[Player.Process(video.dovi.level),$LOCALIZE[31701] : [COLOR white],[/COLOR]]</label>
 						<font>font12</font>
 						<textcolor>$VAR[SkinColorVar]</textcolor>
 						<visible>!String.Contains(Player.Process(video.dovi.level),0)</visible>

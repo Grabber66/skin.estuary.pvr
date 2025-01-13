@@ -43,6 +43,32 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.1+omega ###
+- .15
+  * smaller issues in PVR Guide fixed
+
+
+- .14
+  * Revert background/video overlay to previous behaviour
+
+
+- .13
+  * slide animation to disc rotation in OSD added (THX frodo19)
+  * Item movement in Poster View improved, some overlaps of items fixed
+  * some changes on displaying background video on several widgets/dialogs applied
+  * Video preview in EPG dialog now depends on option "show video on background" in skin settings
+  * Validity in time of special themes in 2025 updated
+  * Display of video resolution (HDR, HDR+, HLG, Dolby Vision) and position setting (top/bottom left) improved (THX frodo19) - CoreElec only
+  * Issue in player process info fixed
+  * Textures updated (THX again frodo19)
+
+
+- .12
+  * "Last updated TV Shows" to TV Show Widgets added
+  * some issues with content related background images in video addons fixed, settings for background fanart and extra fanart improved
+  * Infolabel VideoPlayer.AudioBitrate as Fallback to Player Process Info added
+  * minor fixes and improvements
+
+
 - .11
   * disable seasonals on picture slideshow
   * show bitrate/samplerate in music OSD

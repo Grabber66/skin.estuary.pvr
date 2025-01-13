@@ -906,8 +906,8 @@ msgstr "Vorheriges Kapitel"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31237"
-msgid "Opacity for fanart as background"
-msgstr "Deckkraft für Fanart im Hintergrund"
+msgid "Opacity for background fanart"
+msgstr "Deckkraft für Hintergrund Fanart"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31238"
@@ -2797,9 +2797,25 @@ msgid "Media Source Type"
 msgstr "Medientyp der Quelle"
 
 msgctxt "#31707"
-msgid "FpS"
-msgstr "FpS"
+msgid "fps"
+msgstr "fps"
 
 msgctxt "#31708"
 msgid "Mbit/s"
 msgstr "Mbit/s"
+
+msgctxt "#31709"
+msgid "Last updated TV Shows"
+msgstr "Zuletzt aktualisierte Serien"
+
+msgctxt "#31710"
+msgid "upper left"
+msgstr "oben links"
+
+msgctxt "#31711"
+msgid "bottom left"
+msgstr "unten links"
+
+msgctxt "#31712"
+msgid "Display Position"
+msgstr "Anzeigeposition"

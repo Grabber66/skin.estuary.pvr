@@ -908,7 +908,7 @@ msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31237"
-msgid "Opacity for fanart as background"
+msgid "Opacity for background fanart"
 msgstr ""
 
 #: /xml/SkinSettings.xml
@@ -2956,9 +2956,25 @@ msgid "Media Source Type"
 msgstr ""
 
 msgctxt "#31707"
-msgid "FpS"
+msgid "fps"
 msgstr ""
 
 msgctxt "#31708"
 msgid "Mbit/s"
+msgstr ""
+
+msgctxt "#31709"
+msgid "Last updated TV Shows"
+msgstr ""
+
+msgctxt "#31710"
+msgid "upper left"
+msgstr ""
+
+msgctxt "#31711"
+msgid "bottom left"
+msgstr ""
+
+msgctxt "#31712"
+msgid "Display Position"
 msgstr ""

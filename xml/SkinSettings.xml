@@ -795,6 +795,15 @@
 					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31581)">Skin.SetString(show_videoresolution,31582)</onclick>
 					<onclick condition="String.IsEqual(Skin.String(show_videoresolution),31578)">Skin.SetString(show_videoresolution,31581)</onclick>
 				</control>
+				<control type="button" id="513">
+					<label>  ∟$LOCALIZE[31712]</label>
+					<label2>$VAR[VideoResolutionPositionVar]</label2>
+					<enable>System.HasAddon(service.coreelec.settings) + !String.IsEmpty(Skin.String(show_videoresolution)) + !String.IsEqual(Skin.String(show_videoresolution),31578)</enable>
+					<include>DefaultSettingButton</include>
+					<onclick condition="String.IsEmpty(Skin.String(videoresolutionpos))">Skin.SetString(videoresolutionpos,31710)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(videoresolutionpos),31711)">Skin.SetString(videoresolutionpos,31710)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(videoresolutionpos),31710)">Skin.SetString(videoresolutionpos,31711)</onclick>
+				</control>
 				<control type="button" id="509">
 					<label>$LOCALIZE[31663]</label>
 					<label2>$VAR[SpinnerTypeVar]</label2>
@@ -1360,6 +1369,7 @@
 					<label>$LOCALIZE[31002]</label>
 					<include>DefaultSettingButton</include>
 					<onclick>Skin.ToggleSetting(show_fanart)</onclick>
+					<onclick condition="!Skin.HasSetting(show_fanart)">Skin.Reset(global-background)</onclick>
 					<selected>Skin.HasSetting(show_fanart)</selected>
 				</control>
 				<control type="button" id="614">
@@ -1368,15 +1378,13 @@
 					<include>DefaultSettingButton</include>
 					<onclick condition="String.IsEmpty(Skin.String(global-background))">Skin.SetImage(global-background)</onclick>
 					<onclick condition="!String.IsEmpty(Skin.String(global-background))">Skin.Reset(global-background)</onclick>
-					<visible>!Skin.HasSetting(show_fanart)</visible>
+					<enable>!Skin.HasSetting(show_fanart)</enable>
 				</control>
 				<control type="radiobutton" id="602">
 					<label>$LOCALIZE[31259]</label>
 					<include>DefaultSettingButton</include>
-					<onclick condition="!System.HasAddon(script.artwork.dump)">InstallAddon(script.artwork.dump)</onclick>
-					<onclick condition="System.HasAddon(script.artwork.dump)">Skin.ToggleSetting(EnableExtraFanart)</onclick>
+					<onclick>Skin.ToggleSetting(EnableExtraFanart)</onclick>
 					<selected>Skin.HasSetting(EnableExtraFanart)</selected>
-					<enable>Skin.HasSetting(show_fanart)</enable>
 				</control>
 				<control type="radiobutton" id="603">
 					<label>$LOCALIZE[31319]</label>
