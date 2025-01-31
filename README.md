@@ -43,8 +43,19 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.1+omega ###
+- .17
+  * some improvements in triple list view
+
+
+- .16
+  * Revert/fix conditional visibility of Poster view when "Show media names with widget names" is disabled
+
+
 - .15
   * smaller issues in PVR Guide fixed
+  * Inconsistence of showing channel backgrounds in several PVR views fixed (thanks Atreyu)
+  * Introducing season fanart in Flix view
+  * Missing media flag dependencies to video info dialog added 
 
 
 - .14
