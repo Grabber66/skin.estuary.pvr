@@ -43,6 +43,10 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.1+omega ###
+- .19
+  * Visibility condition of 1142_themes changed (was always initialized before)
+
+
 - .18
   * Auto Hide OSD when player is forwarding
 
