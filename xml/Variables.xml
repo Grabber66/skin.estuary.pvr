@@ -327,6 +327,8 @@
 	<variable name="MainLabelMoviesSetsInfoVar">
 		<value condition="Control.HasFocus(60) + !String.IsEmpty(Container(60).ListItem.Title)">$INFO[Container(60).ListItem.Title]$INFO[Container(60).ListItem.Year, (,)]</value>
 		<value condition="Control.HasFocus(60) + String.IsEmpty(Container(60).ListItem.Title)">$INFO[Container(60).ListItem.Label]$INFO[Container(60).ListItem.Year, (,)]</value>
+		<value condition="Container.Content(seasons) + !String.IsEmpty(ListItem.Season)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]</value>
+ 		<value condition="Container.Content(seasons) + String.IsEmpty(ListItem.Season)">$LOCALIZE[20366]</value>
 		<value condition="ListItem.IsCollection">$INFO[ListItem.Label]</value>
 		<value>$INFO[ListItem.Title]</value>
 	</variable>
@@ -2004,7 +2006,7 @@
 		<value condition="ListItem.IsCollection">overlays/set.png</value>
 		<value condition="ListItem.HasVideoVersions + !Control.HasFocus(6)">overlays/versions.png</value>
 		<value condition="ListItem.IsPlaying">overlays/watched/OverlayPlaying-List.png</value>
-		<value condition="ListItem.IsResumable">overlays/watched/resume.png</value>
+		<value condition="ListItem.IsResumable + !String.IsEqual(ListItem.DBType,tvshow)">overlays/watched/resume.png</value>
 		<value condition="Integer.IsGreater(ListItem.Playcount,0) + [Window.IsVisible(script-globalsearch-main.xml) | Window.IsVisible(script-globalsearch.xml)]">OverlayWatched.png</value>
 		<value condition="Integer.IsGreater(ListItem.Playcount,0) + [String.IsEqual(Container(9000).ListItem.Property(widget),PersonalWidgetList) | String.IsEqual(Container(9000).ListItem.Property(widget),PersonalWidgetPanel)]">overlaywatched.png</value>
 		<value condition="Integer.IsGreater(ListItem.Playcount,0)">overlaywatched.png</value>
