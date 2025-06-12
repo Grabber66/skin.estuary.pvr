@@ -222,6 +222,20 @@
 							<param name="browse" value="never"/>
 							<param name="list_id" value="67001"/>
 						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_unwatchedtvshows)">
+							<param name="content_path" value="special://skin/playlists/unwatched_tvshows.xsp"/>
+							<param name="widget_header" value="$LOCALIZE[31122]"/>
+							<param name="widget_header_focus" value="$INFO[Container(6300).ListItem.Title, | ]$INFO[Container(6300).ListItem.Year, (,)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6300"/>
+						</include>
+						<include content="WidgetListPoster" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_randomtvshows)">
+							<param name="content_path" value="special://skin/playlists/random_tvshows.xsp"/>
+							<param name="widget_header" value="$LOCALIZE[31714]"/>
+							<param name="widget_header_focus" value="$INFO[Container(61000).ListItem.Title, | ]$INFO[Container(61000).ListItem.Year, (,)]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="61000"/>
+						</include>
 						<include content="WidgetNextWatchEpisodes" condition="System.AddonIsEnabled(script.embuary.info) + Library.HasContent(tvshows) + !Skin.HasSetting(hide_nextaired) + Skin.HasSetting(HomeBanner)">
 							<param name="content_path" value="plugin://script.embuary.info/nextaired/week"/>
 							<param name="widget_header" value="$LOCALIZE[31572]"/>
@@ -235,13 +249,6 @@
 							<param name="widget_header_focus" value="$INFO[Container(65001).ListItem.Label, | ]"/>
 							<param name="widget_target" value="videos"/>
 							<param name="list_id" value="65001"/>
-						</include>
-						<include content="WidgetListPoster" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_unwatchedtvshows)">
-							<param name="content_path" value="special://skin/playlists/unwatched_tvshows.xsp"/>
-							<param name="widget_header" value="$LOCALIZE[31122]"/>
-							<param name="widget_header_focus" value="$INFO[Container(6300).ListItem.Title, | ]$INFO[Container(6300).ListItem.Year, (,)]"/>
-							<param name="widget_target" value="videos"/>
-							<param name="list_id" value="6300"/>
 						</include>
 						<include content="WidgetListGenres" condition="Library.HasContent(tvshows) + !Skin.HasSetting(hide_genretvshows)">
 							<param name="content_path" value="videodb://tvshows/genres/"/>
@@ -529,6 +536,7 @@
 							<param name="widget_target" value="tvtimers"/>
 							<param name="list_id" value="12700"/>
 							<param name="item_limit" value="$VAR[Label_SkinSetting_WidgetNumber]"/>
+							<param name="info_update" value="5000"/>
 							<param name="label" value="$INFO[ListItem.Title]$INFO[ListItem.Date, - ,]"/>
 							<param name="label2" value="$VAR[SeasonEpisodeLabel]$INFO[ListItem.Label2]"/>
 							<param name="onclick" value="Info"/>
@@ -542,6 +550,7 @@
 							<param name="widget_target" value="tvtimers"/>
 							<param name="list_id" value="12700"/>
 							<param name="item_limit" value="$VAR[Label_SkinSetting_WidgetNumber]"/>
+							<param name="info_update" value="5000"/>
 							<param name="label" value="$INFO[ListItem.Title]$INFO[ListItem.Date, - ,]"/>
 							<param name="label2" value="$VAR[SeasonEpisodeLabel]$INFO[ListItem.Label2]"/>
 							<param name="onclick" value="Info"/>
