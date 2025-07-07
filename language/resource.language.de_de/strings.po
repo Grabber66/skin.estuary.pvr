@@ -2401,9 +2401,7 @@ msgctxt "#31614"
 msgid "current Time / total Time"
 msgstr "aktuelle Zeit / Gesamtzeit"
 
-msgctxt "#31615"
-msgid "Remaining Time"
-msgstr "verbleibende Zeit"
+# empty ID 31615
 
 #: SkinSettings.xml
 
@@ -2824,3 +2822,8 @@ msgstr "Anzahl der Elemente, die auf dem vertikalen Panel angezeigt werden"
 msgctxt "#31714"
 msgid "Random TV Shows"
 msgstr "Zufällige Serien"
+
+#:PlayerProcessInfo.xml
+msgctxt "#31715"
+msgid "Signal Strength"
+msgstr "Signalstärke"

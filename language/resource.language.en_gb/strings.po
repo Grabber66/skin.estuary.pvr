@@ -2550,9 +2550,7 @@ msgctxt "#31614"
 msgid "current Time / total Time"
 msgstr ""
 
-msgctxt "#31615"
-msgid "Remaining Time"
-msgstr ""
+# empty ID 31615
 
 #: SkinSettings.xml
 
@@ -2983,4 +2981,9 @@ msgstr ""
 #: /xml/custom_1124_SettingsTShowsWidgets.xml
 msgctxt "#31714"
 msgid "Random TV Shows"
+msgstr ""
+
+#:PlayerProcessInfo.xml
+msgctxt "#31715"
+msgid "Signal Strength"
 msgstr ""

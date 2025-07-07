@@ -647,7 +647,6 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamDevice,$LOCALIZE[19006] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-
 					<textcolor>$VAR[SkinColorVar]</textcolor>
 				</control>
 				<control type="label">
@@ -704,17 +703,20 @@
 					<aligny>bottom</aligny>
 					<label>$INFO[PVR.ActStreamMux,$LOCALIZE[19100] : [COLOR white],[/COLOR]]</label>
 					<font>font12</font>
-
 					<textcolor>$VAR[SkinColorVar]</textcolor>
+				</control>
+				<control type="label">
+					<height>40</height>
 				</control>
 				<control type="group">
 					<height>30</height>
 					<width>710</width>
+					<visible>System.GetBool(pvrplayback.signalquality) + [Integer.IsGreater(PVR.ActStreamSignal,0) | !Skin.HasSetting(disable_pvr_zerovalues)]</visible>
 					<control type="label">
 						<width>350</width>
 						<height>30</height>
 						<aligny>bottom</aligny>
-						<label>$INFO[PVR.ActStreamSignal,$LOCALIZE[19008] : [COLOR white],[/COLOR]]</label>
+						<label>$LOCALIZE[31715] : $INFO[PVR.ActStreamSignal,[COLOR white],[/COLOR]]</label>
 						<font>font12</font>
 						<textcolor>$VAR[SkinColorVar]</textcolor>
 					</control>
@@ -727,14 +729,15 @@
 					</control>
 				</control>
 				<control type="group">
+					<top>5</top>
 					<height>30</height>
 					<width>710</width>
+					<visible>System.GetBool(pvrplayback.signalquality) + [Integer.IsGreater(PVR.ActStreamSnr,0) | !Skin.HasSetting(disable_pvr_zerovalues)]</visible>
 					<control type="label">
-						<top>5</top>
 						<width>350</width>
 						<height>30</height>
 						<aligny>bottom</aligny>
-						<label>$INFO[PVR.ActStreamSnr,$LOCALIZE[19009] : [COLOR white],[/COLOR]]</label>
+						<label>$LOCALIZE[19009] : $INFO[PVR.ActStreamSnr,[COLOR white],[/COLOR]]</label>
 						<font>font12</font>
 						<textcolor>$VAR[SkinColorVar]</textcolor>
 					</control>
