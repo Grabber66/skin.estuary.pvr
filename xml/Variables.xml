@@ -1327,7 +1327,7 @@
 		<value condition="ListItem.HasTimer + ListItem.TimerHasError">windows/pvr/timer_error.png</value>
 		<value condition="ListItem.HasTimerSchedule + ListItem.TimerHasConflict">windows/pvr/schedule_conflict.png</value>
 		<value condition="ListItem.HasTimer + ListItem.TimerHasConflict">windows/pvr/timer_conflict.png</value>
-		<value condition="ListItem.HasArchive">windows/pvr/archive.png</value>
+		<value condition="ListItem.HasArchive | ListItem.IsPlayable">windows/pvr/archive.png</value>
 		<value condition="ListItem.IsPlaying">windows/pvr/play.png</value>
 		<value condition="ListItem.IsLive">windows/pvr/live.png</value>
 		<value condition="ListItem.IsPremiere | ListItem.IsNew">windows/pvr/premiered.png</value>
@@ -1401,7 +1401,6 @@
 	</variable>
 	<variable name="InfoWallThumbVar">
 		<value condition="!String.IsEmpty(ListItem.Art(animatedposter)) + Skin.HasSetting(Skin_EnableAnimatedPosters)">$INFO[ListItem.Art(animatedposter)]</value>
-		<value condition="!String.IsEmpty(Listitem.Art(tvshow.poster)) + Container.Content(seasons)">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(set)) + String.IsEqual(listitem.dbtype,set)">$INFO[ListItem.Art(set)]</value>
 		<value condition="!$EXP[show_unwatchedthumbs] + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
 		<value condition="String.IsEmpty(ListItem.Art(thumb)) + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
@@ -1412,6 +1411,8 @@
 	</variable>
 	<variable name="InfoWallThumbVar2">
 		<value condition="!String.IsEmpty(ListItem.Art(animatedposter)) + Skin.HasSetting(Skin_EnableAnimatedPosters)">$INFO[ListItem.Art(animatedposter)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster)) + [Container.Content(episodes) | Container.Content(seasons)]">$INFO[ListItem.Art(poster)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(tvshow.poster)) + [Container.Content(episodes) | Container.Content(seasons)]">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="!String.IsEmpty(Listitem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="!$EXP[show_unwatchedthumbs] + Integer.IsLess(ListItem.Playcount,1) + String.IsEqual(listitem.dbtype,episode)">$VAR[InfoWidgetThumbVar]</value>
 		<value>$INFO[ListItem.Icon]</value>
@@ -1744,6 +1745,7 @@
 		<value>$INFO[Container.ListItem.AudioCodec,flags/audiocodec/,.png]</value>
 	</variable>
 	<variable name="BannerVar">
+		<value condition="!String.IsEmpty(ListItem.Art(season.banner)) + String.IsEqual(ListItem.dbtype,episode)">$INFO[ListItem.Art(season.banner)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.banner))">$INFO[ListItem.Art(tvshow.banner)]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(PVR.Artwork.banner))">$INFO[Window(Home).Property(PVR.Artwork.banner)]</value>

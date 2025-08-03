@@ -43,10 +43,18 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.1+omega ###
+- .24
+  * switch between imdb and tmdb logo in flag configuration dialog added
+  * Rating settings in skin settings fixed
+  * tvshow banner/poster replaced with season banner/poster in episode listings
+  * isPlayable status in EPG grid added
+
+
 - .23
   * current/total time in music OSD reduced to remaining time only
   * Description of signal quality changed to signal strength
-  * tv scraper dialog window updated
+  * tv scraper dialog window updated (Telecast Offers, mostly german broadcasts)
+  * TMDB rating added to bottom flags
 
 
 - .22

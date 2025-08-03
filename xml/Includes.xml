@@ -72,7 +72,7 @@
 	<!-- Expression showing Jump to Letter -->
 	<expression name="isJump2Letter">System.AddonIsEnabled(script.embuary.helper) + [String.IsEqual(ListItem.dbtype,video) | String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,musicvideo) | String.IsEqual(ListItem.dbtype,music) | String.IsEqual(ListItem.dbtype,song) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,actor) | Container.Content(artists) | Container.Content(addons)] + [String.IsEqual(Container.SortMethod,$LOCALIZE[171]) | String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[20376])]</expression>
 	<!-- Expression showing Status icon on EPG timelime -->
-	<expression name="hasPvrStatus">ListItem.IsRecording | ListItem.HasReminder | ListItem.HasTimerSchedule | ListItem.HasTimer | ListItem.HasArchive | ListItem.IsPlaying | ListItem.IsLive | ListItem.IsPremiere | ListItem.IsNew | ListItem.IsFinale</expression>
+	<expression name="hasPvrStatus">ListItem.IsRecording | ListItem.HasReminder | ListItem.HasTimerSchedule | ListItem.HasTimer | ListItem.HasArchive | ListItem.IsPlaying | ListItem.IsLive | ListItem.IsPremiere | ListItem.IsNew | ListItem.IsFinale | ListItem.IsPlayable</expression>
 	<!-- Expression for showing pvr nextup window time slot -->
 	<expression name="PvrNextUpTimeSlot">[!Skin.HasSetting(disable_PVRNextUp) + Integer.IsEqual(PVR.EpgEventRemainingTime(hh),0) + Integer.IsEqual(PVR.EpgEventRemainingTime(mm),0) + Integer.IsLess(PVR.EpgEventRemainingTime(ss),36) + Integer.IsGreater(PVR.EpgEventRemainingTime(ss),4)]</expression>
 	<!-- Expression if PVR frontend has numbered Devices (#0 ... #8) -->
@@ -1129,7 +1129,23 @@
 				</include>
 				<include content="MediaFlag">
 					<param name="width" value="5" />
-					<param name="visible" value="!Skin.HasSetting(show_mpaaflag) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.mpaa)" />
+					<param name="visible" value="[!Skin.HasSetting(show_tmdbflag) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating)] | [!Skin.HasSetting(show_mpaaflag) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.mpaa)]" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="flags/tmdb.png" />
+					<param name="width" value="104" />
+					<param name="label_width" value="58" />
+					<param name="label_left" value="44" />
+					<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Rating]" />
+					<param name="visible" value="!Skin.HasSetting(use_imdblogo) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,album) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,song) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating)" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="flags/imdb.png" />
+					<param name="width" value="104" />
+					<param name="label_width" value="58" />
+					<param name="label_left" value="44" />
+					<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Rating]" />
+					<param name="visible" value="Skin.HasSetting(use_imdblogo) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,album) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,song) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating)" />
 				</include>
 				<include content="MediaFlag">
 					<param name="texture" value="$VAR[MPAAImageVar]" />
@@ -1217,13 +1233,6 @@
 					<font>Font-Flag-Small3</font>
 					<textcolor>$VAR[MediaFlagsColorVar]</textcolor>
 				</control>
-			</control>
-			<control type="group">
-				<width>5</width>
-				<visible>!String.IsEmpty($PARAM[infolabel_prefix]ListItem.Property(SubtitleLanguage.1))</visible>
-				<include content="MediaFlag">
-					<param name="width" value="0" />
-				</include>
 			</control>
 			<control type="group">
 				<width>104</width>
@@ -1789,7 +1798,7 @@
 		<param name="bottom">140</param>
 		<definition>
 			<control type="grouplist">
-				<left>1300</left>
+				<left>1295</left>
 				<bottom>$PARAM[bottom]</bottom>
 				<right>30</right>
 				<height>50</height>

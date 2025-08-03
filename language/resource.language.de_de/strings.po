@@ -2401,7 +2401,9 @@ msgctxt "#31614"
 msgid "current Time / total Time"
 msgstr "aktuelle Zeit / Gesamtzeit"
 
-# empty ID 31615
+msgctxt "#31615"
+msgid "Show TMDB/IMDB rating"
+msgstr "Zeige TMDB/IMDB Bewertung"
 
 #: SkinSettings.xml
 
@@ -2827,3 +2829,8 @@ msgstr "Zufällige Serien"
 msgctxt "#31715"
 msgid "Signal Strength"
 msgstr "Signalstärke"
+
+#:Custom_1137_SettingsFlags.xml
+msgctxt "#31716"
+msgid "Use IMDB logo instead of TMDB logo"
+msgstr "Benutze IMDB Logo anstelle des TMDB Logos"
