@@ -43,6 +43,11 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.1+omega ###
+- .25
+  * label overlap for long titles in small video OSD fixed
+  * Bounce animation code improved
+
+
 - .24
   * switch between imdb and tmdb logo in flag configuration dialog added
   * Rating settings in skin settings fixed
