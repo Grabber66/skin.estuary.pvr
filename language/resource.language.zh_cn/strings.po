@@ -56,7 +56,10 @@ msgctxt "#31007"
 msgid "Unwatched movies"
 msgstr "未观看的电影"
 
-#: Missing string 31108
+#: /xml/Home.xml
+msgctxt "#31008"
+msgid "Watched movies"
+msgstr "看过电影"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31009"

@@ -43,9 +43,17 @@ supports animated poster only.
 
 ![](resources/setup_ap.png)
 ### 21.2.1+omega ###
+- .26
+  * Media flags in PVR radio extended (sample rate, bit depth)
+  * Player process info in PVR radio added
+  * some errors in player process info for cpm builds fixed (DV & HDR)
+
+
 - .25
   * label overlap for long titles in small video OSD fixed
   * Bounce animation code improved
+  * syntax of empty xml tags corrected (cosmetic)
+  * Watched movies playlist added (PR #180)
 
 
 - .24

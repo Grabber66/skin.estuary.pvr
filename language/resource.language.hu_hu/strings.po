@@ -56,11 +56,12 @@ msgstr "Véletlenszerű filmek"
 #: /xml/Home.xml
 msgctxt "#31007"
 msgid "Unwatched movies"
-msgstr "Nem látott filmek"
+msgstr "Látott filmek"
 
+#: /xml/Home.xml
 msgctxt "#31008"
-msgid "Enable category widgets"
-msgstr "Kategória ablakelemek engedélyezése"
+msgid "Watched movies"
+msgstr "Nem látott filmek"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31009"

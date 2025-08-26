@@ -59,10 +59,10 @@ msgctxt "#31007"
 msgid "Unwatched movies"
 msgstr "Непросмотреные фильмы"
 
-#: /1080i/DialogAddonInfo.xml:32
+#: /xml/Home.xml
 msgctxt "#31008"
-msgid "No disclaimer"
-msgstr "Нет отказа от ответственности"
+msgid "Watched movies"
+msgstr "Просмотренные фильмы"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31009"

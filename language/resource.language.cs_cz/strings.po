@@ -59,12 +59,10 @@ msgctxt "#31007"
 msgid "Unwatched movies"
 msgstr "Nesledované filmy"
 
-#: Missing string 31108 
-#: I'm not sure if this is the right one (Pavuucek)
-#: /xml/SkinSettings.xml
+#: /xml/Home.xml
 msgctxt "#31008"
-msgid "Enable category widgets"
-msgstr "Povolit widgety kategorií"
+msgid "Watched movies"
+msgstr "Sledované filmy"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31009"

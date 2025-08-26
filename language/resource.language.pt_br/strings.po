@@ -56,7 +56,11 @@ msgctxt "#31007"
 msgid "Unwatched movies"
 msgstr "Filmes não vistos"
 
-#: Missing string 31108 /xml/MyVideoNav.xml
+#: /xml/Home.xml
+msgctxt "#31008"
+msgid "Watched movies"
+msgstr "Filmes vistos"
+
 msgctxt "#31009"
 msgid "Download icons"
 msgstr "Baixar ícones"
