@@ -189,6 +189,8 @@
 		<value condition="Control.IsVisible(55)">$INFO[Container(50055).NumItems,, $LOCALIZE[36901]]</value>
 		<value condition="Control.IsVisible(502) + String.IsEqual(Container(50502).NumItems,1)">$INFO[Container(50502).NumItems,, $LOCALIZE[36900]]</value>
 		<value condition="Control.IsVisible(502)">$INFO[Container(50502).NumItems,, $LOCALIZE[36901]]</value>
+		<value condition="Control.IsVisible(503) + String.IsEqual(Container(50302).NumItems,1)">$INFO[Container(50302).NumItems,, $LOCALIZE[36900]]</value>
+		<value condition="Control.IsVisible(503)">$INFO[Container(50302).NumItems,, $LOCALIZE[36901]]</value>
 	</variable>
 	<variable name="PVRGenresVar">
 		<value condition="String.IsEqual(Skin.String(genrecolors),31334) | String.IsEqual(Skin.String(genrecolors),1223)">windows/pvr/epg-genres/0.png</value>
@@ -1707,38 +1709,33 @@
 		<value>$INFO[Container.ListItem.VideoResolution,flags/videoresolution/,.png]</value>
 	</variable>
 	<variable name="AudioCodecFlagVar">
-		<value condition="String.Contains(ListItem.Filenameandpath,ATMOS)">flags/audiocodec/atmos.png</value>
 		<value condition="String.Contains(ListItem.Filenameandpath,DTS-X) | String.Contains(ListItem.Filenameandpath,DTSX)">flags/audiocodec/dts-x.png</value>
-		<value condition="Window.IsVisible(Custom_1132_MoviesSetsInfo.xml) + String.Contains(Container(60).ListItem.Filenameandpath,ATMOS)">flags/audiocodec/atmos.png</value>
 		<value condition="Window.IsVisible(Custom_1132_MoviesSetsInfo.xml) + [String.Contains(Container(60).ListItem.Filenameandpath,DTS-X) | String.Contains(Container(60).ListItem.Filenameandpath,DTSX)]">flags/audiocodec/dts-x.png</value>
 		<value condition="Window.IsVisible(Custom_1132_MoviesSetsInfo.xml) + !String.IsEmpty(Container(60).ListItem.AudioCodec)">$INFO[Container(60).ListItem.AudioCodec,flags/audiocodec/,.png]</value>
 		<value>$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]</value>
 	</variable>
 	<variable name="VideoPlayerAudioCodecFlagVar">
-		<value condition="String.Contains(Player.Filenameandpath,ATMOS)">flags/audiocodec/atmos.png</value>
 		<value condition="String.Contains(VideoPlayer.AudioCodec,dtshd_ma) + [String.Contains(Player.Filenameandpath,DTS-X) | String.Contains(Player.Filenameandpath,DTSX)]">flags/audiocodec/dts-x.png</value>
 		<value condition="String.Contains(VideoPlayer.AudioCodec,dtsma) + [String.Contains(Player.Filenameandpath,DTS-X) | String.Contains(Player.Filenameandpath,DTSX)]">flags/audiocodec/dts-x.png</value>
 		<value>$INFO[VideoPlayer.AudioCodec,flags/audiocodec/,.png]</value>
 	</variable>
 	<variable name="Container6_AudioCodecFlagVar">
-		<value condition="String.Contains(Container(6).ListItem.Filenameandpath,ATMOS)">flags/audiocodec/atmos.png</value>
 		<value condition="String.Contains(Container(6).ListItem.Filenameandpath,DTS-X) | String.Contains(Container(6).ListItem.Filenameandpath,DTSX)">flags/audiocodec/dts-x.png</value>
 		<value>$INFO[Container(6).ListItem.AudioCodec,flags/audiocodec/,.png]</value>
 	</variable>
 	<variable name="Container5083_AudioCodecFlagVar">
-		<value condition="String.Contains(Container(5083).ListItem.Filenameandpath,ATMOS)">flags/audiocodec/atmos.png</value>
 		<value condition="String.Contains(Container(5083).ListItem.Filenameandpath,DTS-X) | String.Contains(Container(5083).ListItem.Filenameandpath,DTSX)">flags/audiocodec/dts-x.png</value>
 		<value>$INFO[Container(5083).ListItem.AudioCodec,flags/audiocodec/,.png]</value>
-	</variable>
-	<variable name="Container5094_AudioCodecFlagVar">
-		<value condition="String.Contains(Container(5094).ListItem.Filenameandpath,ATMOS)">flags/audiocodec/atmos.png</value>
-		<value condition="String.Contains(Container(5094).ListItem.Filenameandpath,DTS-X) | String.Contains(Container(5094).ListItem.Filenameandpath,DTSX)">flags/audiocodec/dts-x.png</value>
-		<value>$INFO[Container(5094).ListItem.AudioCodec,flags/audiocodec/,.png]</value>
 	</variable>
 	<variable name="Container5084_AudioCodecFlagVar">
 		<value condition="String.Contains(Container(5084).ListItem.Filenameandpath,ATMOS)">flags/audiocodec/atmos.png</value>
 		<value condition="String.Contains(Container(5084).ListItem.Filenameandpath,DTS-X) | String.Contains(Container(5084).ListItem.Filenameandpath,DTSX)">flags/audiocodec/dts-x.png</value>
 		<value>$INFO[Container(5084).ListItem.AudioCodec,flags/audiocodec/,.png]</value>
+	</variable>
+	<variable name="Container5094_AudioCodecFlagVar">
+		<value condition="String.Contains(Container(5094).ListItem.Filenameandpath,ATMOS)">flags/audiocodec/atmos.png</value>
+		<value condition="String.Contains(Container(5094).ListItem.Filenameandpath,DTS-X) | String.Contains(Container(5094).ListItem.Filenameandpath,DTSX)">flags/audiocodec/dts-x.png</value>
+		<value>$INFO[Container(5094).ListItem.AudioCodec,flags/audiocodec/,.png]</value>
 	</variable>
 	<variable name="ContainerAudioCodecFlagVar">
 		<value condition="String.Contains(Container.ListItem.Filenameandpath,ATMOS)">flags/audiocodec/atmos.png</value>
