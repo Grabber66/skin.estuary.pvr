@@ -42,6 +42,15 @@ If you navigate in your movie library, you'll have a new entry now to (re)assign
 supports animated poster only.
 
 ![](resources/setup_ap.png)
+
+### 21.3+omega ###
+- .0
+  * Player Process Info update for avdvplus/cpm builds
+  * status flags for recordings (TV section) added
+  * seasonal dates for 2026 updated
+  * bump version, readme updated
+
+
 ### 21.2.1+omega ###
 - .28
   * Textures updated
