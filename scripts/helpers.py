@@ -41,11 +41,14 @@ if __name__ == '__main__':
         elif sys.argv[1] == 'getFileSize':
             '''
                 get the file size of a file object
-                [argv2]: the complete path and filename of the file object, plugin path is excluded by script
-                returns formatted file size (e.g. '12.05 GB') in property Window(Home).getProperty(size) 
+                [argv2]: the complete path and filename of the file object, plugin path or network paths (dav/http) are
+                excluded by script. Returns formatted file size (e.g. '12.05 GB') in property Window(Home).getProperty(size) 
             '''
             unit = 0
-            fs = 0 if sys.argv[2][0:9] == 'plugin://' or sys.argv[2][0:17] == '/emby_addon_mode/' else xbmcvfs.File(sys.argv[2]).size()
+            fs = 0 if (sys.argv[2][0:9] == 'plugin://' or sys.argv[2][0:7] == 'davs://'
+                       or sys.argv[2][0:6] == 'dav://' or sys.argv[2][0:8] or sys.argv[2][0:7] == 'http://'
+                       or sys.argv[2][0:8] == 'https://'
+                       or sys.argv[2][0:17] == '/emby_addon_mode/') else xbmcvfs.File(sys.argv[2]).size()
             fs = 0 if fs < 0 else fs
 
             while fs > 1024 and unit < 5:
@@ -53,6 +56,16 @@ if __name__ == '__main__':
                 unit += 1
             xbmcgui.Window(10000).setProperty('size', '%s%s' % ('{0:0.2f}'.format(fs), units[unit]))
             xbmc.log('set Property \'size\' to %s%s' % ('{0:0.2f}'.format(fs), units[unit]), xbmc.LOGINFO)
+
+        elif sys.argv[1] == 'calcSeek':
+            '''
+            calculate the seek position of a time string hh:mm:ss
+            [argv2]: time string (hh:)mm:ss
+        
+            '''
+            seeksecs = sum(x * int(t) for x, t in zip([1, 60, 3600], reversed(sys.argv[2].split(":")))) + 5
+            xbmcgui.Window(10000).setProperty('seeksecs', str(seeksecs * -1))
+            xbmc.log('set Property \'seeksecs\' to ' + str(seeksecs * -1), xbmc.LOGINFO)
 
         elif sys.argv[1] == 'calculate':
             '''

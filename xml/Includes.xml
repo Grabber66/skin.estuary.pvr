@@ -79,6 +79,8 @@
 	<expression name="PvrHasNumberedDevices">String.Contains(PVR.ActStreamDevice,#0) | String.Contains(PVR.ActStreamDevice,#1) | String.Contains(PVR.ActStreamDevice,#2) | String.Contains(PVR.ActStreamDevice,#3) | String.Contains(PVR.ActStreamDevice,#4) | String.Contains(PVR.ActStreamDevice,#5) | String.Contains(PVR.ActStreamDevice,#6) | String.Contains(PVR.ActStreamDevice,#7) | String.Contains(PVR.ActStreamDevice,#8)</expression>
 	<!-- Expression if show thumbs on unwatched episodes is set -->
 	<expression name="show_unwatchedthumbs">String.Contains(Window(home).Property(videolibrary.showunwatchedplots),2)</expression>
+	<!-- Expression if special versions of Kodi is installed (cpm, avdvplus, u3k) -->
+	<expression name="special_build">String.Contains(System.OSVersionInfo,(cpm)) | String.Contains(System.OSVersionInfo,(community)) | String.Contains(System.OSVersionInfo,(u3k)) | String.Contains(System.OSVersionInfo,(avdvplus)) | String.Contains(System.OSVersionInfo,(p3i))</expression>
 	<include name="CommonScrollbars">
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
@@ -1143,7 +1145,7 @@
 					<param name="label_width" value="58" />
 					<param name="label_left" value="44" />
 					<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Rating]" />
-					<param name="visible" value="!Skin.HasSetting(use_imdblogo) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,album) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,song) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,set) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,tvshow) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating)" />
+					<param name="visible" value="!Skin.HasSetting(use_imdblogo) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,album) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,song) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,set) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating)" />
 				</include>
 				<include content="MediaFlag">
 					<param name="texture" value="flags/imdb.png" />
@@ -1151,7 +1153,7 @@
 					<param name="label_width" value="58" />
 					<param name="label_left" value="44" />
 					<param name="label" value="$INFO[$PARAM[infolabel_prefix]ListItem.Rating]" />
-					<param name="visible" value="Skin.HasSetting(use_imdblogo) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,album) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,song) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,set) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,tvshow) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating)" />
+					<param name="visible" value="Skin.HasSetting(use_imdblogo) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,album) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,song) + !String.IsEqual($PARAM[infolabel_prefix]ListItem.DBType,set) + !String.IsEmpty($PARAM[infolabel_prefix]ListItem.Rating)" />
 				</include>
 				<include content="MediaFlag">
 					<param name="texture" value="$VAR[MPAAImageVar]" />
