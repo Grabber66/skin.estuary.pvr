@@ -45,12 +45,18 @@ supports animated poster only.
 
 
 ### 21.3+omega ###
+- .5
+  * fix helpers.py (Video OSD script error)
+  * smaller improvements
+
+
 - .4
-  * Implementation of jump to start of a dash stream in Video OSD
+  * Implementation of jump to start of a dash stream in Video OSD (experimental)
   * Rating added to tvshows (was accidently removed)
   * Exiting power menu on suspend/hibernate
   * p3i special build detection added
-  * hopefully fixed a widget navigation issue (issue #92)
+  * ~~hopefully fixed a widget navigation issue (issue #92)~~
+  * extended info dialogs improved (issue #194)
 
 
 - .3
