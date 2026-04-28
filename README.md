@@ -45,6 +45,31 @@ supports animated poster only.
 
 
 ### 21.3+omega ###
+- .9
+  * missing season labels in shift view fixed
+
+
+- .8
+- * Textures updated
+  * missing playlist button in video OSD added (#196)
+  * missing toggle option for studios in tvshow widget settings added
+  * hide collection (sets) flag if container contents are already sets 
+  * Moviesets info improved (video info, set info)
+  
+
+- .7
+  * Textures updated
+  * EPG Info in PVR OSD improved
+  * Picture Views/Info improved
+  * Colors of Holy Week theme adjusted
+
+
+- .6
+  * file size calculation fixed
+  * add option "left/right switches channelgroups" for PVR Channel OSD (skin settings, PVR & TV)
+  * minor improvements, see GitHub
+
+
 - .5
   * fix helpers.py (Video OSD script error)
   * smaller improvements

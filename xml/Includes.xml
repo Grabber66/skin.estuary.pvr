@@ -311,7 +311,7 @@
 			<control type="group">
 				<left>$PARAM[left]</left>
 				<top>$PARAM[top]</top>
-				<visible>!Player.HasVideo + !Pvr.IsPlayingRadio + String.IsEqual(Window(Home).Property(PVR.Artwork.Lookup),busy)</visible>
+				<visible>!Pvr.IsPlayingRadio + String.IsEqual(Window(Home).Property(PVR.Artwork.Lookup),busy)</visible>
 				<animation effect="fade" delay="500">VisibleChange</animation>
 				<control type="image">
 					<width>80</width>
@@ -1426,7 +1426,7 @@
 				<height>70</height>
 				<align>$PARAM[align]</align>
 				<itemgap>3</itemgap>
-				<width>1200</width>
+				<width>1270</width>
 				<usecontrolcoords>true</usecontrolcoords>
 				<visible>$PARAM[visible]</visible>
 				<include content="MediaFlag">
