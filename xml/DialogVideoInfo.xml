@@ -3,11 +3,11 @@
 	<defaultcontrol always="true">5000</defaultcontrol>
 	<onload>SetProperty(infobackground,$ESCINFO[ListItem.Art(fanart)],home)</onload>
 	<onload condition="Integer.IsGreater(ListItem.PercentPlayed,0)">SetFocus(446)</onload>
-	<onload condition="Skin.HasSetting(rottentomatoes) + !String.IsEmpty(ListItem.Rating(rottentomatoes))">RunScript(skin.estuary.modv2,calculate,mul,$INFO[ListItem.Rating(rottentomatoes)],10,rotten)</onload>
-	<onload condition="Skin.HasSetting(rottentomatoes_topcritics) + !String.IsEmpty(ListItem.Rating(rottentomatoes_topcritics))">RunScript(skin.estuary.modv2,calculate,mul,$INFO[ListItem.Rating(rottentomatoes_topcritics)],10,rotten)</onload>
-	<onload condition="Skin.HasSetting(rottentomatoes_audience) + !String.IsEmpty(ListItem.Rating(rottentomatoes_audience))">RunScript(skin.estuary.modv2,calculate,mul,$INFO[ListItem.Rating(rottentomatoes_audience)],10,rotten)</onload>
-	<onload condition="!String.IsEmpty(ListItem.Rating(metacritic))">RunScript(skin.estuary.modv2,calculate,mul,$INFO[ListItem.Rating(metacritic)],10,metacritic)</onload>
-	<onload condition="String.IsEmpty(ListItem.Size) | String.StartsWith(ListItem.Size,0.00)">RunScript(skin.estuary.modv2,getFileSize,$ESCINFO[ListItem.FileNameAndPath])</onload>
+	<onload condition="Skin.HasSetting(rottentomatoes) + !String.IsEmpty(ListItem.Rating(rottentomatoes))">RunScript(skin.estuary.pvr,calculate,mul,$INFO[ListItem.Rating(rottentomatoes)],10,rotten)</onload>
+	<onload condition="Skin.HasSetting(rottentomatoes_topcritics) + !String.IsEmpty(ListItem.Rating(rottentomatoes_topcritics))">RunScript(skin.estuary.pvr,calculate,mul,$INFO[ListItem.Rating(rottentomatoes_topcritics)],10,rotten)</onload>
+	<onload condition="Skin.HasSetting(rottentomatoes_audience) + !String.IsEmpty(ListItem.Rating(rottentomatoes_audience))">RunScript(skin.estuary.pvr,calculate,mul,$INFO[ListItem.Rating(rottentomatoes_audience)],10,rotten)</onload>
+	<onload condition="!String.IsEmpty(ListItem.Rating(metacritic))">RunScript(skin.estuary.pvr,calculate,mul,$INFO[ListItem.Rating(metacritic)],10,metacritic)</onload>
+	<onload condition="String.IsEmpty(ListItem.Size) | String.StartsWith(ListItem.Size,0.00)">RunScript(skin.estuary.pvr,getFileSize,$ESCINFO[ListItem.FileNameAndPath])</onload>
 	<onload condition="Window.IsVisible(Custom_1132_MoviesSetsInfo.xml)">Dialog.Close(1132)</onload>
 	<onunload>ClearProperty(infobackground,home)</onunload>
 	<onunload>ClearProperty(rotten,home)</onunload>
