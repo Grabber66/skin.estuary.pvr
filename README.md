@@ -44,12 +44,27 @@ supports animated poster only.
 ![](resources/setup_ap.png)
 
 
-### 21.3+omega ###
-- .9
+### 21.4+omega ###
+- .2
+  * some label/title issues fixed
+  * Skinshortcuts templates updated
+
+
+- .1
+  * Rotten Tomatoes categories updated (rottentomatoes, rottentomatoes_topcritics, rottentomatoes_audience), 
+    Universal Movie Scraper Python + OMDB Key required
+  * smaller fixes
+
+
+- .0
   * missing season labels in shift view fixed
-  * smaller adjustments in PVR area
+  * smaller adjustments in PVR area (label sizes, navigation)
+  * fix plot description in video info
+  * selection for default, localized and original title in skin settings added
+  * introducing original/localized titles in several views and home screen (except favourites). Requires scraper support.
 
 
+### 21.3+omega ###
 - .8
 - * Textures updated
   * missing playlist button in video OSD added (#196)

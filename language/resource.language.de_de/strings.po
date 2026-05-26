@@ -637,7 +637,7 @@ msgstr "Änderungen für Version"
 #: /xml/Variables.xml
 msgctxt "#31142"
 msgid "Play speed"
-msgstr "Apspiel-Geschwindigkeit"
+msgstr "Abspiel-Geschwindigkeit"
 
 #: /xml/Home.xml
 msgctxt "#31143"
@@ -896,8 +896,8 @@ msgstr "Hintergrundfarbe"
 
 #: /xml/Variables.xml
 msgctxt "#31234"
-msgid "Next chapter"
-msgstr "Nächstes Kapitel"
+msgid "Next chapter/title"
+msgstr "Nächstes Kapitel/Titel"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31235"
@@ -2354,21 +2354,20 @@ msgctxt "#31602"
 msgid "'Rotten Tomatoes' Rating Category"
 msgstr "'Rotten Tomatoes' Bewertungskategorie"
 
+#: SkinSettings.xml
 msgctxt "#31603"
-msgid "Tomatometer all Critics"
-msgstr "Tomatometer all Critics"
+msgid "All Critics"
+msgstr ""
 
+#: SkinSettings.xml
 msgctxt "#31604"
-msgid "Tomatometer average Critics"
-msgstr "Tomatometer average Critics"
+msgid "Top Critics"
+msgstr ""
 
+#: SkinSettings.xml
 msgctxt "#31605"
-msgid "Tomatometer all Audience"
-msgstr "Tomatometer all Audience"
-
-msgctxt "#31606"
-msgid "Tomatometer average Audience"
-msgstr "Tomatometer average Audience"
+msgid "Audience"
+msgstr ""
 
 msgctxt "#31607"
 msgid "Use simplified Video OSD Navigation"
@@ -2849,3 +2848,17 @@ msgstr "L5 aktiver Bereich [l,r,o,u]"
 msgctxt "#31718"
 msgid "Left/Right switches between Channelgroups"
 msgstr "Links/Rechts wechselt Kanalgruppen"
+
+#: xml/SkinSettings.xml
+msgctxt "#31719"
+msgid "Titles language settings"
+msgstr "Spracheinstellungen für Titel"
+
+msgctxt "#31720"
+msgid "Original title"
+msgstr "Originaltitel"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31721"
+msgid "Localized title"
+msgstr "Lokalisierter Titel"

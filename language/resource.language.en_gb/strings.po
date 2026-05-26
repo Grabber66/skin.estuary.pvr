@@ -896,7 +896,7 @@ msgstr ""
 
 #: /xml/Variables.xml
 msgctxt "#31234"
-msgid "Next chapter"
+msgid "Next chapter/title"
 msgstr ""
 
 #: /xml/SkinSettings.xml
@@ -2497,22 +2497,17 @@ msgstr ""
 
 #: SkinSettings.xml
 msgctxt "#31603"
-msgid "Tomatometer all Critics"
+msgid "All Critics"
 msgstr ""
 
 #: SkinSettings.xml
 msgctxt "#31604"
-msgid "Tomatometer average Critics"
+msgid "Top Critics"
 msgstr ""
 
 #: SkinSettings.xml
 msgctxt "#31605"
-msgid "Tomatometer all Audience"
-msgstr ""
-
-#: SkinSettings.xml
-msgctxt "#31606"
-msgid "Tomatometer average Audience"
+msgid "Audience"
 msgstr ""
 
 #: SkinSettings.xml
@@ -3008,3 +3003,16 @@ msgctxt "#31718"
 msgid "Left/Right switches between Channelgroups"
 msgstr ""
 
+#: xml/SkinSettings.xml
+msgctxt "#31719"
+msgid "Titles language settings"
+msgstr ""
+
+msgctxt "#31720"
+msgid "Original title"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31721"
+msgid "Localized title"
+msgstr ""
